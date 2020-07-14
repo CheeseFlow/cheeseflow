@@ -1,0 +1,97 @@
+---
+layout: default
+---
+				<!-- Intro -->
+					<section class="intro">
+						<header>
+							<h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+							<p class="post-meta">
+								<span class="date">
+								{%- assign date_format = "%-d %B %Y" -%}
+								<time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+									{{ page.date | date: date_format }} 
+								</time>
+								{%- if page.modified_date -%}
+									~ 
+									{%- assign mdate = page.modified_date | date_to_xmlschema -%}
+									<time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+										{{ mdate | date: date_format }} 
+									</time>
+								{%- endif -%}
+								</span> by 
+								<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="author" itemprop="name">CheeseFlow</span></span>
+							</p>
+							<ul class="tags items">
+								{% for tag in page.tags %}
+								<li><a class="button" href="/tags/#{{ tag | downcase }}/">{{ tag }}</a></li>
+								{% endfor %}
+							</ul>
+							<ul class="actions">
+								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+							</ul>	
+						</header>
+						<div class="content">
+							<span class="image fill" data-position="center"><img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" /></span>
+						</div>
+					</section>
+					
+				<!-- Section -->
+					<section id="first">
+						<header>
+							<h2>{{ page.intro }}</h2>
+						</header>
+						<div class="content">
+							<section>
+								<header>
+									<h3></h3>
+								</header>
+								<div class="content" itemprop="articleBody">
+									{{ content }}
+								</div>
+							</section>
+						</div>
+					</section>
+  		
+				<!-- Section -->
+<!-- See Also
+					<section>
+						<header>
+							<h2 class="archive-title">See also</h2>
+						</header>
+							<div class="content related-posts">
+								{% assign maxRelated = 4 %}
+								{% assign minCommonTags =  2 %}
+								{% assign maxRelatedCounter = 0 %}
+
+									{% for post in site.posts %}
+
+										{% assign sameTagCount = 0 %}
+										{% assign commonTags = '' %}
+
+										{% for tag in post.tags %}
+											{% if post.url != page.url %}
+												{% if page.tags contains tag %}
+													{% assign sameTagCount = sameTagCount | plus: 1 %}
+													{% capture tagmarkup %} <span class="label label-default">{{ tag }}</span> {% endcapture %}
+													{% assign commonTags = commonTags | append: tagmarkup %}
+												{% endif %}
+											{% endif %}
+										{% endfor %}
+
+										{% if sameTagCount >= minCommonTags %}
+											<ul class="archive-list items" aria-label="related posts">
+											<li>
+												<a class="related-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}{{ commonTags }}</a>
+											</li>
+											</ul>
+											{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+											{% if maxRelatedCounter >= maxRelated %}
+												{% break %}
+											{% endif %}
+										{% endif %}
+
+									{% endfor %}
+							</div>
+					</section>
+-->					

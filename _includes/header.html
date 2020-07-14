@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="wrapper">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
+    <span class="site-logo">
+			<a rel="home" href="{{ "/" | relative_url }}">
+				<img src="/images/cheeseflow-button.png" alt="CheeseFlow logo">
+			</a>
+		</span>
+			<h1 class="site-title"><a rel="home" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h1>
+			<p class=site-description>{{ site.description | escape }}</p>
+				{%- include header-navigation.html -%}
+  </div>
+</header>
