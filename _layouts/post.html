@@ -32,7 +32,7 @@ layout: default
 							</ul>	
 						</header>
 						<div class="content">
-							<span class="image fill" data-position="center"><img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" /></span>
+							<span class="image fill" data-position="center"><img src="{{ page.image }}" alt="{{ page.title }}" /></span>
 						</div>
 					</section>
 					
@@ -82,7 +82,7 @@ layout: default
 										{% if sameTagCount >= minCommonTags %}
 											<ul class="archive-list items" aria-label="related posts">
 											<li>
-												<a class="related-link" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}{{ commonTags }}</a>
+												<a class="related-link" href="{{ post.url }}">{{ post.title }}{{ commonTags }}</a>
 											</li>
 											</ul>
 											{% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
