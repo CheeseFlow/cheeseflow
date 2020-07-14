@@ -168,9 +168,10 @@
 			&:before {
 				background-attachment: fixed;
 				background-color: _palette(accent);
-				background-image: url('https://cheeseflow.github.io/cheeseflow/images/cheeseflow-pattern.png');
-				background-repeat: no-repeat;
-				background-position: 0% 100%;
+				background-image: url('https://cheeseflow.github.io/cheeseflow/images/cheeseflow-pattern-alt.png');
+				background-repeat: repeat;
+				background-position: -10% 0%;
+				background-blend-mode: overlay;
 				content: '';
 				display: block;
 				height: 100%;
