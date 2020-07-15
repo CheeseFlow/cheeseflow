@@ -261,6 +261,10 @@
 									position: absolute;
 									top: 1rem;
 								}
+								
+								&.featured:before {
+									top: 10rem;
+								}
 
 							// Terminator.
 								&:after {
@@ -272,6 +276,10 @@
 									position: absolute;
 									top: 0.75rem;
 									width: 0.5rem;
+								}
+
+								&.featured:after {
+									top: 9.8rem;
 								}
 
 						}
