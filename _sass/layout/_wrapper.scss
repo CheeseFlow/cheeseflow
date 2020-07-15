@@ -262,10 +262,6 @@
 									top: 1rem;
 								}
 								
-								&.featured:before {
-									top: 10rem;
-								}
-
 							// Terminator.
 								&:after {
 									background: _palette(accent-border);
@@ -276,10 +272,6 @@
 									position: absolute;
 									top: 0.75rem;
 									width: 0.5rem;
-								}
-
-								&.featured:after {
-									top: 9.8rem;
 								}
 
 						}
@@ -293,6 +285,17 @@
 
 							&:after {
 								top: 2.75rem;
+							}
+						}
+						
+						h2.featured {
+
+							&:before {
+								top: 10rem;
+							}
+
+							&:after {
+								top: 9.8rem;
 							}
 						}
 
