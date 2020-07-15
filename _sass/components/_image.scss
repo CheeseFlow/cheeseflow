@@ -156,10 +156,6 @@
 			img {
 				width: 100%;
 				
-				@include breakpoint('<=xsmall') {
-					width: 17rem;
-				}
-				
 			}
 				
 		}
