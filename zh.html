@@ -1,7 +1,16 @@
----
-permalink: /zh.html
-layout: default
----
+<!DOCTYPE html>
+<html lang=en-US>
+
+  {%- include head.html -%}
+
+	<body class="is-preload">
+
+    <main class="content" aria-label="Content">
+      <div class="wrapper">
+      
+		<!-- Wrapper -->
+			<div id="wrapper">
+			
 				<!-- Intro -->
 					<section class="intro">
 						<header>
@@ -92,6 +101,7 @@ layout: default
 							<div class="gallery">
 								<span class="featured"><img src="{{ site.url }}/images/gallery/fulls/kranio-side.png" alt="Kranio" /></span>
 							</div>
+							<h2></h2>
 						</header>
 						<div class="content">
 							<div class="gallery">
@@ -109,6 +119,7 @@ layout: default
 							<div class="gallery">
 								<span class="featured"><img src="{{ site.url }}/images/gallery/thumbs/innway-products.png" alt="Innway" /></span>
 							</div>
+							<h2></h2>
 						</header>
 						<div class="content">
 							<div class="gallery">
@@ -126,6 +137,7 @@ layout: default
 							<div class="gallery">
 								<span class="featured"><img src="{{ site.url }}/images/gallery/thumbs/thinkdiag.png" alt="" /></span>
 							</div>
+							<h2></h2>
 						</header>
 						<div class="content">
 							<div class="gallery">
@@ -163,3 +175,68 @@ layout: default
 							</section>
 						</div>
 					</section>
+					
+				<!-- Section -->
+					<section>
+						<header>
+							<h2>联系我们</h2>
+						</header>
+						<div class="content">
+							<p>欢迎您联系我们</p>
+							<form>
+								<div class="fields">
+									<div class="field half">
+										<input type="text" name="name" id="name" placeholder="姓名" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="邮箱地址" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="信息" rows="7"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="提交" class="button primary" /></li>
+								</ul>
+							</form>
+						</div>
+						<footer>
+							<ul class="items">
+								<li>
+									<h3>邮箱地址</h3>
+									<span>hey [at] cheeseflow [dot] com</span>
+								</li>
+								<li>
+									<h3>总部地址</h3>
+									<span>深圳市宝安区航城街道航城大道航城创新创业园A2栋二楼212</span>
+								</li>
+								<li>
+									<h3>社交平台</h3>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://www.linkedin.com/company/cheeseflow/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</footer>
+					</section>
+
+		<!-- Copyright -->
+					<div class="copyright">&copy; 2020 芝士溪谷 CheeseFlow</div>
+
+		<!-- Scripts -->
+			<script src="{{ site.url }}/assets/js/jquery.min.js"></script>
+			<script src="{{ site.url }}/assets/js/jquery.scrolly.min.js"></script>
+			<script src="{{ site.url }}/assets/js/browser.min.js""></script>
+			<script src="{{ site.url }}/assets/js/breakpoints.min.js"></script>
+			<script src="{{ site.url }}/assets/js/util.js"></script>
+			<script src="{{ site.url }}/assets/js/main.js"></script>
+
+				</div>
+			</article>
+    </main>
+
+	</body>
+</html>
