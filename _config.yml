@@ -23,7 +23,7 @@ email: hey@cheeseflow.com
 description: >- # this means to ignore newlines until "baseurl:"
   Brand Look, Personality &amp; Influence.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://cheeseflow.github.io/cheeseflow" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://cheeseflow.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 paginate: 10
