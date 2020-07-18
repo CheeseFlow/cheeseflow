@@ -1,25 +1,7 @@
 <!DOCTYPE html>
 <html lang=en-US>
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		{%- seo -%}
-		<meta property="og:type" content="article" />
-		<meta property="og:image" content="{{ site.url }}/images/cheeseflow-cover.png" />
-		<link rel="stylesheet" href="{{ site.url }}/assets/css/style.css">
-		{%- feed_meta -%}
-		<link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/images/icons/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/images/icons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/images/icons/favicon-16x16.png">
-		<link rel="manifest" href="{{ site.url }}/images/icons/site.webmanifest">
-		<link rel="mask-icon" href="{{ site.url }}/images/icons/safari-pinned-tab.svg" color="#2a8a15">
-		<link rel="shortcut icon" href="{{ site.url }}/images/icons/favicon.ico">
-		<meta name="msapplication-TileColor" content="#2a8a15">
-		<meta name="msapplication-config" content="{{ site.url }}/images/icons/browserconfig.xml">
-		<meta name="theme-color" content="#ffffff">  
-	</head>
+  {%- include head.html -%}
 
 	<body class="is-preload">
 
@@ -188,80 +170,9 @@
 						</div>
 					</section>
 					
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>联系我们</h2>
-						</header>
-						<div class="content">
-							<p>欢迎您联系我们</p>
-							<form>
-								<div class="fields">
-									<div class="field half">
-										<input type="text" name="name" id="name" placeholder="姓名" />
-									</div>
-									<div class="field half">
-										<input type="email" name="email" id="email" placeholder="邮箱地址" />
-									</div>
-									<div class="field">
-										<textarea name="message" id="message" placeholder="信息" rows="7"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="提交" class="button primary" /></li>
-								</ul>
-							</form>
-						</div>
-						<footer>
-							<ul class="items">
-								<li>
-									<h3>邮箱地址</h3>
-									<span>hey [at] cheeseflow [dot] com</span>
-								</li>
-								<li>
-									<h3>总部地址</h3>
-									<span>深圳市宝安区航城街道航城大道航城创新创业园A2栋二楼212</span>
-								</li>
-								<li>
-									<h3>关注我们</h3>
-									<ul class="icons">
-										<li><a href="https://www.twitter.com/theCheeseFlow/" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="https://www.facebook.com/CheeseFlow/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://www.instagram.com/thecheeseflow/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://www.linkedin.com/company/cheeseflow/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									</ul>
-								</li>
-							</ul>
-						</footer>
-					</section>
-
-		<!-- Copyright -->
-					<div class="copyright">&copy; 2020 芝士溪谷 CheeseFlow</div>
-
-		<!-- Scripts -->
-			<script src="{{ site.url }}/assets/js/jquery.min.js"></script>
-			<script src="{{ site.url }}/assets/js/jquery.scrolly.min.js"></script>
-			<script src="{{ site.url }}/assets/js/browser.min.js""></script>
-			<script src="{{ site.url }}/assets/js/breakpoints.min.js"></script>
-			<script src="{{ site.url }}/assets/js/util.js"></script>
-			<script src="{{ site.url }}/assets/js/main.js"></script>
-			<script type="text/javascript">
-				WebFontConfig = {
-						google: { families: [ 'Montserrat:300,600,800,300i,600i|Raleway:600,800' ] }
-				};
-
-				(function() {
-						var wf = document.createElement('script');
-						wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-						wf.type = 'text/javascript';
-						wf.async = 'true';
-						var s = document.getElementsByTagName('script')[0];
-						s.parentNode.insertBefore(wf, s);
-				})();
-		</script>
+    {%- include footer-zh.html -%}
 
 				</div>
-			</article>
     </main>
 
 	</body>
