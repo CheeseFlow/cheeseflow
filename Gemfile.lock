@@ -85,7 +85,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.0.1)
   jekyll-archives
-  jekyll-feed (~> 0.12)
+  jekyll-feed
   jekyll-paginate
   jekyll-seo-tag
   jekyll-sitemap
