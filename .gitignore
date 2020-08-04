@@ -4,3 +4,16 @@
 .jekyll-cache/*
 images/.DS_Store
 images/gallery/.DS_Store
+images/.DS_Store
+assets/.DS_Store
+_site/zh.html
+_site/style-guide/index.html
+_site/sitemap.xml
+_site/robots.txt
+_site/index.html
+_site/images/team/Valiant.jpg
+_site/images/team/Ale.jpg
+_site/images/cheeseflow-mark-fade.webp
+_site/feed.xml
+_site/about/index.html
+_site/404.html
