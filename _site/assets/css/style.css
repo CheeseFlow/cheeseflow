@@ -412,9 +412,9 @@ input[type="radio"] + label:before { border-radius: 100%; }
 
 @media screen and (max-width: 480px) { .image.tile { width: 32%; } }
 
-.image.tile img { display: block; filter: grayscale(100%); object-fit: cover; object-position: center; width: 100%; }
+.image.tile img { display: block; filter: grayscale(0%); object-fit: cover; object-position: center; width: 100%; }
 
-.image.tile img:hover { filter: grayscale(0%); transition-duration: 0.5s; transition-timing-function: ease-in-out; }
+.image.tile img:hover { filter: grayscale(100%); transition-duration: 0.5s; transition-timing-function: ease-in-out; }
 
 .image.fill { height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
 

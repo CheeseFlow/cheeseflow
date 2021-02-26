@@ -173,14 +173,14 @@
 
 			img {
 				display: block;
-				filter: grayscale(100%);
+				filter: grayscale(0%);
 				object-fit: cover;
 				object-position: center;
 				width: 100%;
 			}
 			
 			img:hover {
-				filter: grayscale(0%);
+				filter: grayscale(100%);
 				transition-duration: 0.5s;
 				transition-timing-function: ease-in-out;
 			}
