@@ -1,0 +1,21 @@
+{
+  "name": "cheeseflow-astro",
+  "version": "1.0.0",
+  "description": "CheeseFlow website built with Astro and Tailwind",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": ["astro", "tailwind", "cheeseflow"],
+  "author": "CheeseFlow",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.15.5",
+    "tailwindcss": "^3.4.18"
+  }
+}
