@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../../layouts/BaseLayoutZh.astro";
+import Header from "../../../components/HeaderZh.astro";
+import Footer from "../../../components/FooterZh.astro";
+import { getCollection } from "astro:content";
+---
+
+<BaseLayout title="Blog - CheeseFlow 芝士溪谷">
+  <Header />
+
+  <!-- Blog Content -->
+  <main class="pt-32">
+    <section class="py-48 px-6 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h1
+          class="max-w-3xl text-6xl md:text-7xl font-body font-bold text-ink mb-8"
+        >
+          通过国际视角带来优质品牌出海
+        </h1>
+        <p class="text-xl text-ink/80 mb-12">
+          即将推出。敬请期待关于品牌、创意和战略的见解。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+

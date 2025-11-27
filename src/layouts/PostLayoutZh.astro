@@ -1,0 +1,253 @@
+---
+import BaseLayout from "./BaseLayoutZh.astro";
+import Header from "../components/HeaderZh.astro";
+import Footer from "../components/FooterZh.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  readingTime?: number;
+  tags?: string[];
+  heroImage?: string;
+  heroImageAlt?: string;
+  Content?: any;
+}
+
+const {
+  title,
+  description,
+  date,
+  readingTime,
+  tags = [],
+  heroImage,
+  heroImageAlt = "",
+  Content,
+} = Astro.props;
+
+// Format date
+const formattedDate = date.toLocaleDateString("zh-CN", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+---
+
+<BaseLayout title={`${title} - CheeseFlow 芝士溪谷`} description={description}>
+  <Header />
+
+  <main class="pt-32">
+    <!-- Hero Image -->
+    {heroImage && (
+      <section class="mb-12">
+        <div class="max-w-5xl mx-auto px-6">
+          <img
+            src={heroImage}
+            alt={heroImageAlt}
+            class="w-full h-auto rounded-2xl"
+          />
+        </div>
+      </section>
+    )}
+
+    <!-- Post Header -->
+    <section class="py-12 px-6 bg-white">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-body font-bold text-ink mb-6">
+          {title}
+        </h1>
+        
+        <div class="flex flex-wrap items-center gap-4 text-lg text-ink/80 mb-6">
+          <time datetime={date.toISOString()}>{formattedDate}</time>
+          {readingTime && (
+            <>
+              <span>·</span>
+              <span>{readingTime} 分钟阅读</span>
+            </>
+          )}
+          {tags.length > 0 && (
+            <>
+              <span>·</span>
+              <div class="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span
+                    class="px-3 py-1 bg-brand text-ink rounded-full text-sm font-medium"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="px-6 bg-white mb-12">
+      <div class="max-w-4xl mx-auto">
+        <div id="toc" class="border-l-4 border-ink pl-6 py-4">
+          <h2 class="text-2xl font-heading font-bold text-ink mb-4">
+            目录
+          </h2>
+          <nav>
+            <ul class="space-y-2" id="toc-list">
+              <!-- TOC will be populated by client-side script -->
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="py-12 px-6 bg-white">
+      <article class="max-w-4xl mx-auto prose prose-lg">
+        {Content ? <Content /> : <slot />}
+      </article>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script>
+    // Generate TOC from headings
+    function generateTOC() {
+      const article = document.querySelector("article");
+      if (!article) return;
+
+      const headings = article.querySelectorAll("h2, h3, h4");
+      const tocList = document.getElementById("toc-list");
+      if (!tocList) return;
+
+      const tocItems = [];
+
+      headings.forEach((heading) => {
+        const id =
+          heading.id ||
+          heading.textContent
+            ?.toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-|-$/g, "") || "";
+        heading.id = id;
+
+        const level = parseInt(heading.tagName.charAt(1));
+        tocItems.push({ id, text: heading.textContent || "", level });
+      });
+
+      if (tocItems.length === 0) {
+        const tocSection = document.getElementById("toc");
+        if (tocSection) tocSection.style.display = "none";
+        return;
+      }
+
+      tocList.innerHTML = tocItems
+        .map((item) => {
+          const indent = item.level === 2 ? "" : item.level === 3 ? "ml-4" : "ml-8";
+          return `<li class="${indent}"><a href="#${item.id}" class="text-ink/80 hover:text-ink transition-colors">${item.text}</a></li>`;
+        })
+        .join("");
+    }
+
+    // Make all images in article rounded-2xl
+    function styleImages() {
+      const article = document.querySelector("article");
+      if (!article) return;
+
+      const images = article.querySelectorAll("img");
+      images.forEach((img) => {
+        img.classList.add("rounded-2xl", "w-full", "h-auto", "my-8");
+      });
+    }
+
+    // Run on page load
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        generateTOC();
+        styleImages();
+      });
+    } else {
+      generateTOC();
+      styleImages();
+    }
+  </script>
+
+  <style>
+    /* Prose styles for article content */
+    .prose {
+      color: var(--colour-ink);
+    }
+
+    .prose h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .prose h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .prose h4 {
+      font-size: 1.25rem;
+      font-weight: 900;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+
+    .prose p {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+      color: var(--colour-ink-80);
+    }
+
+    .prose ul,
+    .prose ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .prose ul {
+      list-style-type: disc;
+    }
+
+    .prose ol {
+      list-style-type: decimal;
+    }
+
+    .prose li {
+      font-size: 1.125rem;
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+      color: var(--colour-ink-80);
+    }
+
+    .prose a {
+      color: var(--colour-ink);
+      text-decoration: underline;
+    }
+
+    .prose a:hover {
+      color: var(--colour-ink-80);
+    }
+
+    .prose img {
+      display: block;
+      margin: 2rem auto;
+    }
+
+    .prose strong {
+      font-weight: 700;
+      color: var(--colour-ink);
+    }
+  </style>
+</BaseLayout>
+

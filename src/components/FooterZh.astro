@@ -1,0 +1,141 @@
+---
+import wechatQRCode from "../assets/images/wechat-qr-code.jpg";
+
+const currentYear = new Date().getFullYear();
+---
+
+<!-- Let's create delight with your brand Section -->
+<section id="contact" class="py-48 px-6 bg-brand">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="text-right">
+        <h2 class="text-7xl md:text-8xl font-body font-bold text-ink">
+          让您的品牌<br />带来喜悦
+        </h2>
+      </div>
+      <div>
+        <form
+          action="https://formspree.io/f/mwkrwqdd"
+          method="POST"
+          class="space-y-6"
+        >
+          <div>
+            <label for="name" class="sr-only">名字</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="名字"
+              required
+              class="w-full px-4 py-3 border border-grey rounded-lg focus:outline-none focus:ring-2 focus:ring-ink bg-white"
+            />
+          </div>
+          <div>
+            <label for="email" class="sr-only">邮箱地址</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="邮箱地址"
+              required
+              class="w-full px-4 py-3 border border-grey rounded-lg focus:outline-none focus:ring-2 focus:ring-ink bg-white"
+            />
+          </div>
+          <div>
+            <label for="message" class="sr-only">信息</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="信息"
+              rows="6"
+              required
+              class="w-full px-4 py-3 border border-grey rounded-lg focus:outline-none focus:ring-2 focus:ring-ink bg-white"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="text-lg w-full md:w-auto px-6 py-4 bg-ink text-white rounded-lg hover:bg-white hover:text-ink transition-colors"
+          >
+            提交
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pt-48 pb-8 bg-ink text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-start justify-between gap-6 mb-8">
+      <h2 class="text-white text-7xl font-body font-bold">芝士就是力量</h2>
+      <img
+        src={wechatQRCode.src}
+        alt="WeChat QR Code"
+        class="w-32 h-32 rounded-2xl flex-shrink-0"
+      />
+    </div>
+
+    <div class="flex flex-wrap gap-6 text-sm text-white mb-8">
+      <a href="#services" class="hover:text-brand transition-colors">服务</a>
+      <a href="#contact" class="hover:text-brand transition-colors">联系</a>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-between gap-6 text-sm">
+      <p class="text-white">
+        © 2019-{currentYear} CheeseFlow <span
+          >芝士溪谷</span
+        > · 鲁比克（深圳）科技有限公司 ·
+        <a href="https://beian.miit.gov.cn/" class="text-white"
+          >粤ICP备2021021297号-1</a
+        >
+      </p>
+      <div class="flex items-center gap-6">
+        <div class="flex gap-6">
+          <a
+            href="https://www.twitter.com/theCheeseFlow/"
+            class="text-white hover:text-brand transition-colors"
+            aria-label="Twitter"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+              ></path></svg
+            >
+          </a>
+          <a
+            href="https://www.linkedin.com/company/cheeseflow/"
+            class="text-white hover:text-brand transition-colors"
+            aria-label="LinkedIn"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+              ><path
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+              ></path><circle cx="4" cy="4" r="2"></circle></svg
+            >
+          </a>
+          <a
+            href="https://www.instagram.com/thecheeseflow/"
+            class="text-white hover:text-brand transition-colors"
+            aria-label="Instagram"
+          >
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
+              ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+              ></rect><path
+                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+              ></path></svg
+            >
+          </a>
+        </div>
+        <a
+          href="/zh/blog"
+          class="text-white hover:text-brand transition-colors text-lg">博客</a
+        >
+        <a
+          href="/en"
+          class="text-white hover:text-brand transition-colors text-lg"
+          >English</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
