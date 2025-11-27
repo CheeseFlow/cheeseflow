@@ -1,43 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import cheeseflowLogo from "../../assets/cheeseflow-logo.svg";
-
-const currentYear = new Date().getFullYear();
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 ---
 
 <BaseLayout title="Blog - CheeseFlow 芝士溪谷">
-  <!-- Header Navigation -->
-  <header
-    class="fixed top-0 left-0 right-0 z-50 bg-brand border-b border-ink/10"
-  >
-    <nav class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
-      <div class="flex items-center">
-        <a
-          href="/"
-          class="flex items-center"
-          aria-label="CheeseFlow 芝士溪谷 - Home"
-        >
-          <img
-            src={cheeseflowLogo.src}
-            alt="CheeseFlow 芝士溪谷"
-            class="h-12 w-auto"
-          />
-        </a>
-      </div>
-      <div class="hidden md:flex items-center gap-8">
-        <a
-          href="/#services"
-          class="text-ink hover:text-ink/80 transition-colors font-body"
-          >Services</a
-        >
-        <a
-          href="/#contact"
-          class="text-ink hover:text-ink/80 transition-colors font-body"
-          >Contact</a
-        >
-      </div>
-    </nav>
-  </header>
+  <Header />
 
   <!-- Blog Content -->
   <main class="pt-32">
@@ -53,66 +21,6 @@ const currentYear = new Date().getFullYear();
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="pt-48 pb-6 px-6 bg-ink text-white">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-white text-7xl font-body font-bold mb-6">Making magic happen.</h2>
-      
-      <div class="flex flex-wrap gap-6 text-sm text-white mb-8">
-        <a href="/#services" class="hover:text-brand transition-colors">Services</a>
-        <a href="/#contact" class="hover:text-brand transition-colors">Contact</a>
-      </div>
-      
-      <div class="flex flex-wrap items-center justify-between gap-6 text-sm">
-        <p class="text-white">
-          © 2019-{currentYear} CheeseFlow <span class="font-chinese">芝士溪谷</span> ·
-          <a href="https://beian.miit.gov.cn/" class="text-white font-chinese">粤ICP备2021021297号-1</a>
-        </p>
-        <div class="flex items-center gap-6">
-          <div class="flex gap-6">
-            <a
-              href="https://www.twitter.com/theCheeseFlow/"
-              class="text-white hover:text-brand transition-colors"
-              aria-label="Twitter"
-            >
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
-                ><path
-                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                ></path></svg
-              >
-            </a>
-            <a
-              href="https://www.linkedin.com/company/cheeseflow/"
-              class="text-white hover:text-brand transition-colors"
-              aria-label="LinkedIn"
-            >
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
-                ><path
-                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-                ></path><circle cx="4" cy="4" r="2"></circle></svg
-              >
-            </a>
-            <a
-              href="https://www.instagram.com/thecheeseflow/"
-              class="text-white hover:text-brand transition-colors"
-              aria-label="Instagram"
-            >
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
-                ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
-                ></rect><path
-                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
-                ></path></svg
-              >
-            </a>
-          </div>
-          <a href="/blog" class="text-white hover:text-brand transition-colors text-lg">Blog</a>
-          <a
-            href="https://cheeseflow.cn/"
-            class="text-white hover:text-brand transition-colors font-chinese text-lg">中文</a
-          >
-        </div>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 </BaseLayout>
 

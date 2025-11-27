@@ -25,6 +25,8 @@ All notable changes to this project will be documented in this file.
 - Updated all case studies to use consistent layout and styling
 - Improved footer layout and alignment
 - Updated "Improve your brand" link to point to /blog
+- Refactored header and footer into reusable components
+- Moved "Let's create delight with your brand" contact section to footer component
 
 ### Removed
 - All Jekyll files and dependencies
