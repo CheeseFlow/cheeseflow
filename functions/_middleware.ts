@@ -6,8 +6,9 @@ export async function onRequest({ request, next }: { request: Request; next: () 
   const url = new URL(request.url);
   const hostname = url.hostname;
   
-  // Only handle root path redirects
-  if (url.pathname === '/' || url.pathname === '') {
+  // Handle root path redirects - intercept before static index.html is served
+  // Also handle /index.html in case it's requested directly
+  if (url.pathname === '/' || url.pathname === '' || url.pathname === '/index.html') {
     // Redirect .com.cn and cheeseflow.cn to Chinese
     if (hostname.includes('.com.cn') || hostname.includes('cheeseflow.cn')) {
       return Response.redirect(new URL('/zh', url), 302);
