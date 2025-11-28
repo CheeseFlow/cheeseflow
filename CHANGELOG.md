@@ -62,6 +62,8 @@ All notable changes to this project will be documented in this file.
 - Package manager switched from `npm` to `pnpm`
 - Output mode set to `static` for Cloudflare Pages compatibility
 - Domain-based routing now handled automatically via Cloudflare Pages Functions (no manual Transform Rules needed)
+- Removed static `index.astro` to prevent conflicts with Cloudflare Pages Function middleware
+- Middleware now intercepts all root path requests before static files are served
 
 ### Removed
 - All Jekyll files and dependencies
@@ -73,4 +75,5 @@ All notable changes to this project will be documented in this file.
 - `lang` field requirement from blog post frontmatter (now derived from file path)
 - Cover image rendering from individual blog post layouts
 - Astro middleware (replaced with Cloudflare Pages Functions for edge-based routing)
+- Static root `index.astro` file (replaced with Cloudflare Pages Function middleware for domain-based routing)
 
