@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- 404 error page (`src/pages/404.astro`) with bilingual support (English/Chinese)
+- Automatic language detection for 404 page based on hostname and pathname
+- 404 page with consistent design matching site aesthetic and navigation links
 - Blog cover images using Astro's Image component with automatic optimization
 - Image import system using `import.meta.glob` for blog cover images
 - Helper function to resolve cover image paths from frontmatter to imported assets
@@ -64,6 +67,10 @@ All notable changes to this project will be documented in this file.
 - Domain-based routing now handled automatically via Cloudflare Pages Functions (no manual Transform Rules needed)
 - Removed static `index.astro` to prevent conflicts with Cloudflare Pages Function middleware
 - Middleware now intercepts all root path requests before static files are served
+- Blog post URLs now use flat structure at root level (e.g., `/post-slug` instead of `/blog/post-slug`)
+- All internal links updated to use flat URLs without `/en` or `/zh` prefixes
+- Middleware improved to handle `.com.cn`, `.cn`, and exact domain matches correctly
+- Middleware now rewrites URLs internally without visible redirects
 
 ### Removed
 - All Jekyll files and dependencies
@@ -76,4 +83,5 @@ All notable changes to this project will be documented in this file.
 - Cover image rendering from individual blog post layouts
 - Astro middleware (replaced with Cloudflare Pages Functions for edge-based routing)
 - Static root `index.astro` file (replaced with Cloudflare Pages Function middleware for domain-based routing)
+- Blog post routes moved from `/en/blog/[slug].astro` and `/zh/blog/[slug].astro` to root-level `/en/[slug].astro` and `/zh/[slug].astro` for flat URLs
 

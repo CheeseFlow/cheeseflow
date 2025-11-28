@@ -49,6 +49,12 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
 
 const { page } = Astro.props as PageProps;
 
+// Helper to strip language prefix from URLs
+function stripLangPrefix(url: string | undefined): string | undefined {
+  if (!url) return url;
+  return url.replace(/^\/(en|zh)\//, '/');
+}
+
 // Generate page numbers to display
 function getPageNumbers(currentPage: number, lastPage: number): (number | string)[] {
   const pages: (number | string)[] = [];
@@ -112,7 +118,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
             {page.data.map((post) => (
               <article class="flex flex-col">
                 <a
-                  href={`/en/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
+                  href={`/${post.slug.replace(/^(en|zh)\//, '')}`}
                   class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
                 >
                   {(() => {
@@ -134,7 +140,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
                 <div class="flex flex-1 flex-col">
                   <h2 class="text-2xl font-body font-bold text-ink mb-3">
                     <a
-                      href={`/en/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
+                      href={`/${post.slug.replace(/^(en|zh)\//, '')}`}
                       class="text-ink hover:text-brand transition-colors"
                     >
                       {post.data.title}
@@ -163,7 +169,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
             {/* Previous Arrow */}
             {page.url.prev ? (
               <a
-                href={page.url.prev}
+                href={stripLangPrefix(page.url.prev)}
                 class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
                 aria-label="Previous page"
               >
@@ -200,7 +206,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
               
               return (
                 <a
-                  href={pageNumValue === 1 ? '/en/blog' : `/en/blog/${pageNumValue}`}
+                  href={pageNumValue === 1 ? '/blog' : `/blog/${pageNumValue}`}
                   class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
                 >
                   {pageNumValue}
@@ -211,7 +217,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
             {/* Next Arrow */}
             {page.url.next ? (
               <a
-                href={page.url.next}
+                href={stripLangPrefix(page.url.next)}
                 class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
                 aria-label="Next page"
               >

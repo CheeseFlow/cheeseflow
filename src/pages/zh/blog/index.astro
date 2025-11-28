@@ -63,7 +63,7 @@ const sortedPosts = blogPosts
             {sortedPosts.map((post) => (
               <article class="flex flex-col">
                 <a
-                  href={`/zh/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
+                  href={`/${post.slug.replace(/^(en|zh)\//, '')}`}
                   class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
                 >
                   {(() => {
@@ -85,7 +85,7 @@ const sortedPosts = blogPosts
                 <div class="flex flex-1 flex-col">
                   <h2 class="text-3xl font-body font-black text-ink mb-3">
                     <a
-                      href={`/zh/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
+                      href={`/${post.slug.replace(/^(en|zh)\//, '')}`}
                       class="text-ink hover:text-brand transition-colors"
                     >
                       {post.data.title}
@@ -118,7 +118,7 @@ const sortedPosts = blogPosts
               1
             </span>
             <a
-              href="/zh/blog/2"
+              href="/blog/2"
               class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
             >
               2
@@ -129,7 +129,7 @@ const sortedPosts = blogPosts
               </span>
             )}
             <a
-              href="/zh/blog/2"
+              href="/blog/2"
               class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
               aria-label="下一页"
             >

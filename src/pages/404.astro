@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayoutZh from "../layouts/BaseLayoutZh.astro";
+import Header from "../components/Header.astro";
+import HeaderZh from "../components/HeaderZh.astro";
+import Footer from "../components/Footer.astro";
+import FooterZh from "../components/FooterZh.astro";
+
+// Detect language from hostname (same logic as middleware)
+// or fallback to pathname if hostname doesn't indicate language
+const hostname = Astro.url.hostname;
+const pathname = Astro.url.pathname;
+const isChinese = 
+  hostname.includes('.com.cn') || 
+  hostname.includes('cheeseflow.cn') ||
+  pathname.startsWith('/zh/') || 
+  pathname.startsWith('/zh');
+
+// Use appropriate layout and components based on language
+const Layout = isChinese ? BaseLayoutZh : BaseLayout;
+const HeaderComponent = isChinese ? HeaderZh : Header;
+const FooterComponent = isChinese ? FooterZh : Footer;
+
+const title = isChinese 
+  ? "404 - 页面未找到 | CheeseFlow 芝士溪谷"
+  : "404 - Page Not Found | CheeseFlow 芝士溪谷";
+
+const description = isChinese
+  ? "抱歉，您访问的页面不存在。"
+  : "Sorry, the page you're looking for doesn't exist.";
+---
+
+<Layout title={title} description={description}>
+  <HeaderComponent />
+
+  <section class="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-12 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-8xl md:text-9xl font-body font-bold text-ink mb-8">
+        404
+      </h1>
+      <p class="text-4xl md:text-5xl text-ink mb-8">
+        {isChinese ? "页面未找到" : "Page Not Found"}
+      </p>
+      <p class="text-xl md:text-2xl text-ink/70 mb-12 max-w-2xl mx-auto">
+        {isChinese 
+          ? "抱歉，您访问的页面不存在。它可能已被移动或删除。"
+          : "Sorry, the page you're looking for doesn't exist. It may have been moved or deleted."}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/"
+          class="text-lg !px-6 !py-4 bg-ink text-white rounded-lg hover:bg-white hover:text-ink transition-colors"
+        >
+          {isChinese ? "返回首页" : "Go Home"}
+        </a>
+        <a
+          href="/blog"
+          class="text-lg !px-6 !py-4 border-2 border-ink text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
+        >
+          {isChinese ? "查看博客" : "View Blog"}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FooterComponent />
+</Layout>
+
