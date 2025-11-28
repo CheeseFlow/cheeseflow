@@ -24,6 +24,7 @@
   --colour-brand-90: rgba(248, 209, 23, 0.9);
   
   --colour-grey-100: var(--colour-grey);
+  --colour-grey-60: rgba(218, 218, 218, 0.6);
   --colour-grey-30: rgba(218, 218, 218, 0.3);
   
   --colour-white-100: var(--colour-white);
@@ -205,6 +206,14 @@ button {
 
 .bg-grey {
   background-color: var(--colour-grey);
+}
+
+.bg-grey-30 {
+  background-color: var(--colour-grey-30);
+}
+
+.bg-grey-60 {
+  background-color: var(--colour-grey-60);
 }
 
 .bg-white {

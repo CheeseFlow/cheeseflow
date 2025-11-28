@@ -27,7 +27,7 @@
   const deletingSpeed = 50;
   const pauseBeforeDelete = 2000;
   const pauseBeforeType = 500;
-  let timeoutId = null;
+  let timeoutId: number | null = null;
 
   function type() {
     const typingElement = document.getElementById("typing-text");
@@ -62,7 +62,7 @@
 
   // Set cursor width to half of "I" width
   function setCursorWidth() {
-    const widthRef = document.querySelector('.cursor-width-ref');
+    const widthRef = document.querySelector('.cursor-width-ref') as HTMLElement;
     const cursorBlock = document.getElementById('cursor-block');
     if (widthRef && cursorBlock) {
       const width = widthRef.offsetWidth;

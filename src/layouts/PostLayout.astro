@@ -9,8 +9,6 @@ interface Props {
   date: Date;
   readingTime?: number;
   tags?: string[];
-  heroImage?: string;
-  heroImageAlt?: string;
   Content?: any;
 }
 
@@ -20,8 +18,6 @@ const {
   date,
   readingTime,
   tags = [],
-  heroImage,
-  heroImageAlt = "",
   Content,
 } = Astro.props;
 
@@ -35,29 +31,16 @@ const formattedDate = date.toLocaleDateString("en-GB", {
 ---
 
 <BaseLayout title={`${title} - CheeseFlow 芝士溪谷`} description={description}>
-  <Header />
+  <Header noBorder />
 
-  <main class="pt-32">
-    <!-- Hero Image -->
-    {heroImage && (
-      <section class="mb-12">
-        <div class="max-w-5xl mx-auto px-6">
-          <img
-            src={heroImage}
-            alt={heroImageAlt}
-            class="w-full h-auto rounded-2xl"
-          />
-        </div>
-      </section>
-    )}
-
-    <!-- Post Header -->
-    <section class="py-12 px-6 bg-white">
-      <div class="max-w-4xl mx-auto">
+  <main>
+    <!-- Post Header - Full Width Brand Background -->
+    <section class="pt-56 pb-12 px-6 bg-brand">
+      <div class="max-w-2xl mx-auto">
         <h1 class="text-5xl md:text-6xl font-body font-bold text-ink mb-6">
           {title}
         </h1>
-        
+
         <div class="flex flex-wrap items-center gap-4 text-lg text-ink/80 mb-6">
           <time datetime={date.toISOString()}>{formattedDate}</time>
           {readingTime && (
@@ -72,7 +55,7 @@ const formattedDate = date.toLocaleDateString("en-GB", {
               <div class="flex flex-wrap gap-2">
                 {tags.map((tag) => (
                   <span
-                    class="px-3 py-1 bg-brand text-ink rounded-full text-sm font-medium"
+                    class="px-3 py-1 bg-white text-ink rounded-full text-sm font-medium"
                   >
                     {tag}
                   </span>
@@ -84,27 +67,28 @@ const formattedDate = date.toLocaleDateString("en-GB", {
       </div>
     </section>
 
-    <!-- Table of Contents -->
-    <section class="px-6 bg-white mb-12">
-      <div class="max-w-4xl mx-auto">
-        <div id="toc" class="border-l-4 border-ink pl-6 py-4">
-          <h2 class="text-2xl font-heading font-bold text-ink mb-4">
-            Contents
-          </h2>
-          <nav>
-            <ul class="space-y-2" id="toc-list">
-              <!-- TOC will be populated by client-side script -->
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </section>
-
-    <!-- Post Content -->
+    <!-- Content with TOC -->
     <section class="py-12 px-6 bg-white">
-      <article class="max-w-4xl mx-auto prose prose-lg">
-        {Content ? <Content /> : <slot />}
-      </article>
+      <div class="max-w-7xl mx-auto relative">
+        <!-- Post Content - Centered -->
+        <article class="max-w-2xl mx-auto prose prose-lg">
+          {Content ? <Content /> : <slot />}
+        </article>
+
+        <!-- Sticky TOC Sidebar - Positioned to right of centered content -->
+        <aside class="hidden lg:block absolute left-[calc(50%+336px+2rem)] top-0 w-72">
+          <div id="toc" class="bg-grey-30 rounded-2xl p-6" data-toc-sticky>
+            <h2 class="text-xl font-body font-bold text-ink mb-4">
+              Contents
+            </h2>
+            <nav>
+              <ul class="space-y-2 text-sm list-inside list-disc" id="toc-list">
+                <!-- TOC will be populated by client-side script -->
+              </ul>
+            </nav>
+          </div>
+        </aside>
+      </div>
     </section>
   </main>
 
@@ -120,7 +104,7 @@ const formattedDate = date.toLocaleDateString("en-GB", {
       const tocList = document.getElementById("toc-list");
       if (!tocList) return;
 
-      const tocItems = [];
+      const tocItems: Array<{ id: string; text: string; level: number }> = [];
 
       headings.forEach((heading) => {
         const id =
@@ -137,7 +121,9 @@ const formattedDate = date.toLocaleDateString("en-GB", {
 
       if (tocItems.length === 0) {
         const tocSection = document.getElementById("toc");
-        if (tocSection) tocSection.style.display = "none";
+        if (tocSection) {
+          tocSection.closest("aside")?.style.setProperty("display", "none");
+        }
         return;
       }
 
@@ -149,15 +135,47 @@ const formattedDate = date.toLocaleDateString("en-GB", {
         .join("");
     }
 
-    // Make all images in article rounded-2xl
+    // Make all images in article rounded-2xl and wider
     function styleImages() {
       const article = document.querySelector("article");
       if (!article) return;
 
       const images = article.querySelectorAll("img");
       images.forEach((img) => {
-        img.classList.add("rounded-2xl", "w-full", "h-auto", "my-8");
+        img.classList.add("rounded-2xl", "w-3/4", "h-auto", "my-8", "mx-auto");
+        img.style.display = "block";
       });
+    }
+
+    // Make TOC sticky after scrolling past its initial position
+    function initStickyTOC() {
+      const toc = document.getElementById("toc");
+      if (!toc) return;
+
+      const tocAside = toc.parentElement;
+      if (!tocAside) return;
+
+      // Get initial position
+      const initialTop = tocAside.getBoundingClientRect().top + window.scrollY;
+      const headerOffset = 128; // top-32 = 8rem = 128px
+
+      function handleScroll() {
+        const scrollY = window.scrollY;
+        if (!tocAside) return;
+
+        if (scrollY > initialTop - headerOffset) {
+          // Switch to fixed positioning
+          tocAside.style.position = "fixed";
+          tocAside.style.top = `${headerOffset}px`;
+        } else {
+          // Return to absolute positioning
+          tocAside.style.position = "absolute";
+          tocAside.style.top = "0";
+        }
+      }
+
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Initial check
     }
 
     // Run on page load
@@ -165,89 +183,38 @@ const formattedDate = date.toLocaleDateString("en-GB", {
       document.addEventListener("DOMContentLoaded", () => {
         generateTOC();
         styleImages();
+        initStickyTOC();
       });
     } else {
       generateTOC();
       styleImages();
+      initStickyTOC();
     }
   </script>
 
   <style>
-    /* Prose styles for article content */
-    .prose {
-      color: var(--colour-ink);
+    /* Additional custom styles */
+    .prose img {
+      border-radius: 1rem;
+      width: 75%;
+      height: auto;
+      margin: 2rem auto;
+      display: block;
     }
 
-    .prose h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      line-height: 1.25;
-    }
-
-    .prose h3 {
-      font-size: 1.5rem;
-      font-weight: 900;
-      margin-top: 1.5rem;
-      margin-bottom: 0.75rem;
-      line-height: 1.25;
-    }
-
-    .prose h4 {
-      font-size: 1.25rem;
-      font-weight: 900;
-      margin-top: 1.25rem;
-      margin-bottom: 0.5rem;
-      line-height: 1.25;
-    }
-
-    .prose p {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      margin-bottom: 1.25rem;
-      color: var(--colour-ink-80);
-    }
-
-    .prose ul,
-    .prose ol {
-      margin-bottom: 1.25rem;
-      padding-left: 1.5rem;
-    }
-
-    .prose ul {
-      list-style-type: disc;
-    }
-
-    .prose ol {
-      list-style-type: decimal;
-    }
-
-    .prose li {
-      font-size: 1.125rem;
-      line-height: 1.75;
-      margin-bottom: 0.5rem;
-      color: var(--colour-ink-80);
+    .prose blockquote {
+      border-left-color: #f3c55e;
     }
 
     .prose a {
-      color: var(--colour-ink);
-      text-decoration: underline;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
     }
 
     .prose a:hover {
-      color: var(--colour-ink-80);
+      border-bottom-color: #f3c55e;
     }
 
-    .prose img {
-      display: block;
-      margin: 2rem auto;
-    }
-
-    .prose strong {
-      font-weight: 700;
-      color: var(--colour-ink);
-    }
   </style>
 </BaseLayout>
 

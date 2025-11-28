@@ -1,0 +1,54 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getLangFromEntry } from '../../../content/config';
+import PostLayout from '../../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const blogPosts = await getCollection('blog', (entry) => getLangFromEntry(entry) === 'en');
+  return blogPosts.map((post) => {
+    // Use frontmatter slug if available, otherwise strip directory prefix from file-based slug
+    const slug = post.data.slug || post.slug.replace(/^(en|zh)\//, '');
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props as { post: CollectionEntry<'blog'> };
+const { Content } = await post.render();
+const { title, description, date, readingTime: frontmatterReadingTime, tags } = post.data;
+
+// Calculate reading time if not provided in frontmatter
+// English: ~200 words per minute
+let readingTime = frontmatterReadingTime;
+if (!readingTime && post.body) {
+  // Use the raw markdown body to count words
+  const body = post.body;
+  // Remove markdown syntax and count words
+  const textContent = body
+    .replace(/```[\s\S]*?```/g, '') // Remove code blocks
+    .replace(/`[^`]*`/g, '') // Remove inline code
+    .replace(/\[([^\]]*)\]\([^\)]*\)/g, '$1') // Replace links with link text
+    .replace(/!\[([^\]]*)\]\([^\)]*\)/g, '') // Remove images
+    .replace(/#{1,6}\s+/g, '') // Remove heading markers
+    .replace(/\*\*([^\*]+)\*\*/g, '$1') // Remove bold
+    .replace(/\*([^\*]+)\*/g, '$1') // Remove italic
+    .replace(/<[^>]*>/g, ' ') // Remove any HTML tags
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim();
+  const wordCount = textContent.split(/\s+/).filter(word => word.length > 0).length;
+  readingTime = Math.max(1, Math.ceil(wordCount / 200));
+}
+---
+
+<PostLayout
+  {title}
+  {description}
+  {date}
+  {readingTime}
+  {tags}
+  Content={Content}
+/>
+
+

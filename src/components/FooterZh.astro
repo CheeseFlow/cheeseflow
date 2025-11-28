@@ -9,16 +9,17 @@ const currentYear = new Date().getFullYear();
   <div class="max-w-7xl mx-auto">
     <div class="grid md:grid-cols-2 gap-12 items-start">
       <div class="text-right">
-        <h2 class="text-7xl md:text-8xl font-body font-bold text-ink">
+        <h2 class="text-7xl md:text-8xl font-body font-black text-ink">
           让您的品牌<br />带来喜悦
         </h2>
       </div>
       <div>
         <form
-          action="https://formspree.io/f/mwkrwqdd"
+          action="/api/contact"
           method="POST"
           class="space-y-6"
         >
+          <input type="hidden" name="locale" value="zh" />
           <div>
             <label for="name" class="sr-only">名字</label>
             <input
@@ -67,7 +68,7 @@ const currentYear = new Date().getFullYear();
 <footer class="pt-48 pb-8 bg-ink text-white">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex items-start justify-between gap-6 mb-8">
-      <h2 class="text-white text-7xl font-body font-bold">芝士就是力量</h2>
+      <h2 class="text-white text-7xl font-body font-black">芝士就是力量</h2>
       <img
         src={wechatQRCode.src}
         alt="WeChat QR Code"
@@ -84,8 +85,10 @@ const currentYear = new Date().getFullYear();
       <p class="text-white">
         © 2019-{currentYear} CheeseFlow <span
           >芝士溪谷</span
-        > · 鲁比克（深圳）科技有限公司 ·
-        <a href="https://beian.miit.gov.cn/" class="text-white"
+        > · <a href="https://rubycoded.cn" class="text-white hover:text-brand transition-colors">鲁比克（深圳）科技有限公司</a> ·
+        <a
+          href="https://beian.miit.gov.cn/"
+          class="text-white hover:text-brand transition-colors"
           >粤ICP备2021021297号-1</a
         >
       </p>
@@ -96,10 +99,15 @@ const currentYear = new Date().getFullYear();
             class="text-white hover:text-brand transition-colors"
             aria-label="Twitter"
           >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
-              ><path
-                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-              ></path></svg
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <g
+                ><path
+                  d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+                ></path><path
+                  fill="currentColor"
+                  d="M19.753 4.659a1 1 0 0 0-1.506-1.317l-5.11 5.84L8.8 3.4A1 1 0 0 0 8 3H4a1 1 0 0 0-.8 1.6l6.437 8.582l-5.39 6.16a1 1 0 0 0 1.506 1.317l5.11-5.841L15.2 20.6a1 1 0 0 0 .8.4h4a1 1 0 0 0 .8-1.6l-6.437-8.582l5.39-6.16Z"
+                ></path></g
+              ></svg
             >
           </a>
           <a
@@ -107,10 +115,15 @@ const currentYear = new Date().getFullYear();
             class="text-white hover:text-brand transition-colors"
             aria-label="LinkedIn"
           >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
-              ><path
-                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
-              ></path><circle cx="4" cy="4" r="2"></circle></svg
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <g
+                ><path
+                  d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                ></path><path
+                  fill="currentColor"
+                  d="M18 3a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3zm0 2H6a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1M8 10a1 1 0 0 1 .993.883L9 11v5a1 1 0 0 1-1.993.117L7 16v-5a1 1 0 0 1 1-1m3-1a1 1 0 0 1 .984.821a6 6 0 0 1 .623-.313c.667-.285 1.666-.442 2.568-.159c.473.15.948.43 1.3.907c.315.425.485.942.519 1.523L17 12v4a1 1 0 0 1-1.993.117L15 16v-4c0-.33-.08-.484-.132-.555a.55.55 0 0 0-.293-.188c-.348-.11-.849-.052-1.182.09c-.5.214-.958.55-1.27.861L12 12.34V16a1 1 0 0 1-1.993.117L10 16v-6a1 1 0 0 1 1-1M8 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2"
+                ></path></g
+              ></svg
             >
           </a>
           <a
@@ -118,11 +131,15 @@ const currentYear = new Date().getFullYear();
             class="text-white hover:text-brand transition-colors"
             aria-label="Instagram"
           >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
-              ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
-              ></rect><path
-                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
-              ></path></svg
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <g
+                ><path
+                  d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
+                ></path><path
+                  fill="currentColor"
+                  d="M16 3a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5zm0 2H8a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3m-4 3a4 4 0 1 1 0 8a4 4 0 0 1 0-8m0 2a2 2 0 1 0 0 4a2 2 0 0 0 0-4m4.5-3.5a1 1 0 1 1 0 2a1 1 0 0 1 0-2"
+                ></path></g
+              ></svg
             >
           </a>
         </div>
@@ -131,7 +148,7 @@ const currentYear = new Date().getFullYear();
           class="text-white hover:text-brand transition-colors text-lg">博客</a
         >
         <a
-          href="/en"
+          href="https://cheeseflow.com/"
           class="text-white hover:text-brand transition-colors text-lg"
           >English</a
         >

@@ -1,9 +1,15 @@
 ---
 import cheeseflowLogo from "../assets/cheeseflow-logo.svg";
+
+interface Props {
+  noBorder?: boolean;
+}
+
+const { noBorder = false } = Astro.props;
 ---
 
 <header
-  class="fixed top-0 left-0 right-0 z-50 bg-brand border-b border-ink/10"
+  class={`fixed top-0 left-0 right-0 z-50 bg-brand ${noBorder ? '' : 'border-b border-ink/10'}`}
 >
   <nav class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
     <div class="flex items-center">
@@ -21,8 +27,8 @@ import cheeseflowLogo from "../assets/cheeseflow-logo.svg";
     </div>
     <div class="flex items-center gap-10">
       <a
-        href="/blog"
-        class="text-lg text-ink/80 hover:text-ink transition-colors"
+        href="/en/blog"
+        class="text-lg text-ink px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
         >Improve your brand</a
       >
       <a

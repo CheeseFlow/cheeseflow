@@ -60,10 +60,26 @@ npm run preview
 
 - Single-page design with smooth sections
 - Responsive design with Tailwind CSS
-- Contact forms integrated with Formspree
+- Serverless contact form via Astro API + Cranemail SMTP relay
 - Team member showcase
 - Portfolio/work showcase
 - Modern performance optimizations
+
+## Contact Form SMTP Setup
+
+The `/api/contact` endpoint delivers submissions through Cranemail (or any SMTP server)
+using Nodemailer. Configure the following environment variables in your deployment
+environment (for both `cheeseflow.com` and `cheeseflow.cn`):
+
+- `CRANEMAIL_SMTP_HOST` – SMTP host provided by Cranemail
+- `CRANEMAIL_SMTP_PORT` – SMTP port (587 for STARTTLS or 465 for SSL)
+- `CRANEMAIL_SMTP_USER` – SMTP username
+- `CRANEMAIL_SMTP_PASS` – SMTP password
+- `CONTACT_FROM_EMAIL` – Optional “from” address (defaults to `CRANEMAIL_SMTP_USER`)
+- `CONTACT_RECIPIENT_EMAIL` – Optional destination mailbox (defaults to `CRANEMAIL_SMTP_USER`)
+
+After setting the variables, restart the Astro server. Form submissions will redirect
+back to the originating page with `?contact=success` or `?contact=error` query params.
 
 ## Website
 
