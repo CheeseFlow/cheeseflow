@@ -1,0 +1,42 @@
+---
+import cheeseflowLogo from "../assets/cheeseflow-logo.svg";
+
+interface Props {
+  noBorder?: boolean;
+}
+
+const { noBorder = false } = Astro.props;
+---
+
+<header
+  class={`fixed top-0 left-0 right-0 z-50 bg-brand ${noBorder ? '' : 'border-b border-ink/10'}`}
+>
+  <nav class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+    <div class="flex items-center">
+      <a
+        href="/"
+        class="flex items-center"
+        aria-label="CheeseFlow 芝士溪谷 - Home"
+      >
+        <img
+          src={cheeseflowLogo.src}
+          alt="CheeseFlow 芝士溪谷"
+          class="h-12 w-auto"
+        />
+      </a>
+    </div>
+    <div class="flex items-center gap-10">
+      <a
+        href="/en/blog"
+        class="text-lg text-ink px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
+        >Improve your brand</a
+      >
+      <a
+        href="#contact"
+        class="text-lg !px-6 !py-4 bg-ink text-white rounded-lg hover:bg-white hover:text-ink transition-colors"
+        >Contact us</a
+      >
+    </div>
+  </nav>
+</header>
+

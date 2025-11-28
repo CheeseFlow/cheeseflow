@@ -1,0 +1,126 @@
+---
+---
+
+<div class="typing-hero">
+  <span class="text-8xl md:text-9xl font-heading font-bold text-ink uppercase leading-tight whitespace-nowrap">
+    C<span id="typing-text" class="text-ink"></span><span class="cursor"><span class="cursor-width-ref">I</span><span id="cursor-block" class="cursor-block"></span></span>
+  </span>
+</div>
+
+<script>
+  const lines = [
+    "INEMATIC",
+    "OMMERICALS.",
+    "APTIVATING",
+    "ONTENT.",
+    "REATIVE",
+    "OPYWRITING.",
+    "OMMUNITY",
+    "HOOSE",
+    "HEESEFLOW.",
+  ];
+
+  let currentLineIndex = 0;
+  let currentText = "";
+  let isTyping = true;
+  const typingSpeed = 100;
+  const deletingSpeed = 50;
+  const pauseBeforeDelete = 2000;
+  const pauseBeforeType = 500;
+  let timeoutId: number | null = null;
+
+  function type() {
+    const typingElement = document.getElementById("typing-text");
+    if (!typingElement) return;
+
+    const currentLine = lines[currentLineIndex];
+    
+    if (isTyping) {
+      if (currentText.length < currentLine.length) {
+        currentText = currentLine.substring(0, currentText.length + 1);
+        typingElement.textContent = currentText;
+        timeoutId = window.setTimeout(type, typingSpeed);
+      } else {
+        // Finished typing, wait then start deleting
+        isTyping = false;
+        timeoutId = window.setTimeout(type, pauseBeforeDelete);
+      }
+    } else {
+      // Deleting
+      if (currentText.length > 0) {
+        currentText = currentText.substring(0, currentText.length - 1);
+        typingElement.textContent = currentText;
+        timeoutId = window.setTimeout(type, deletingSpeed);
+      } else {
+        // Finished deleting, move to next line
+        currentLineIndex = (currentLineIndex + 1) % lines.length;
+        isTyping = true;
+        timeoutId = window.setTimeout(type, pauseBeforeType);
+      }
+    }
+  }
+
+  // Set cursor width to half of "I" width
+  function setCursorWidth() {
+    const widthRef = document.querySelector('.cursor-width-ref') as HTMLElement;
+    const cursorBlock = document.getElementById('cursor-block');
+    if (widthRef && cursorBlock) {
+      const width = widthRef.offsetWidth;
+      cursorBlock.style.width = (width / 2) + 'px';
+    }
+  }
+
+  // Start the animation when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      setCursorWidth();
+      type();
+    });
+  } else {
+    setCursorWidth();
+    type();
+  }
+
+  // Cleanup on page unload
+  window.addEventListener("beforeunload", () => {
+    if (timeoutId !== null) {
+      clearTimeout(timeoutId);
+    }
+  });
+</script>
+
+<style>
+  .typing-hero {
+    min-height: 1.2em;
+  }
+  
+  .cursor {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .cursor-width-ref {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .cursor-block {
+    display: inline-block;
+    height: 1em;
+    background-color: #f8d117;
+    animation: blink 1s infinite;
+    vertical-align: 0;
+  }
+  
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+</style>
+

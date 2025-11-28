@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+
+// Import all blog images
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+  "../../../assets/images/blog/**/*.{jpg,jpeg,png,webp}",
+  { eager: true }
+);
+
+// Helper to resolve cover image path
+function getCoverImage(coverPath: string | undefined): ImageMetadata | null {
+  if (!coverPath) return null;
+  
+  // Extract filename from path (e.g., "Secret-of-Brand-Power-Part-2-11.webp")
+  const filename = coverPath.split('/').pop() || '';
+  
+  // Find matching image in glob by filename
+  for (const [path, image] of Object.entries(blogImages)) {
+    if (path.endsWith(filename)) {
+      return image.default;
+    }
+  }
+  
+  return null;
+}
+
+// Get all posts and filter for English (same approach as [page].astro)
+const allBlogPosts = await getCollection("blog");
+const { getLangFromEntry: getLang } = await import("../../../content/config");
+const blogPosts = allBlogPosts.filter((entry) => {
+  const lang = getLang(entry);
+  return lang === "en";
+});
+const sortedPosts = blogPosts
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
+  .slice(0, 9); // First 9 posts for page 1
+---
+
+<BaseLayout title="Blog - CheeseFlow 芝士溪谷">
+  <Header />
+
+  <!-- Blog Content -->
+  <main class="pt-32">
+    <section class="py-48 px-6 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h1
+            class="max-w-3xl text-6xl md:text-7xl font-body font-bold text-ink mb-6"
+          >
+            Improve your brand with creative ideas.
+          </h1>
+          <p class="text-xl text-ink">
+            Explore fresh thinking on branding, creativity, and strategy.
+          </p>
+        </div>
+
+        {sortedPosts.length ? (
+          <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+            {sortedPosts.map((post) => (
+              <article class="flex flex-col">
+                <a
+                  href={`/en/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
+                  class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
+                >
+                  {post.data.cover ? (
+                    (() => {
+                      const coverImage = getCoverImage(post.data.cover);
+                      if (coverImage) {
+                        return (
+                          <Image
+                            src={coverImage}
+                            alt={post.data.coverAlt ?? post.data.title}
+                            class="w-full h-auto"
+                            loading="lazy"
+                          />
+                        );
+                      }
+                      // Fallback to regular img if Image component fails
+                      return (
+                        <img
+                          src={post.data.cover}
+                          alt={post.data.coverAlt ?? post.data.title}
+                          class="w-full h-auto"
+                          loading="lazy"
+                        />
+                      );
+                    })()
+                  ) : (
+                    <div class="flex h-full w-full items-center justify-center text-ink/40">
+                      No cover image
+                    </div>
+                  )}
+                </a>
+                <div class="flex flex-1 flex-col">
+                  <h2 class="text-2xl font-body font-bold text-ink mb-3">
+                    <a
+                      href={`/en/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
+                      class="text-ink hover:text-brand transition-colors"
+                    >
+                      {post.data.title}
+                    </a>
+                  </h2>
+                  <p class="text-base text-ink mb-6">
+                    {post.data.excerpt ??
+                      post.data.description ??
+                      "Discover the latest insights from CheeseFlow."}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="text-lg text-ink">
+            No articles yet. Please check back soon.
+          </p>
+        )}
+
+        {blogPosts.length > 9 && (
+          <nav
+            class="mt-16 flex flex-wrap items-center justify-center gap-2"
+            aria-label="Pagination"
+          >
+            <span class="text-lg px-4 py-4 bg-grey-60 text-ink/40 rounded-lg">
+              ←
+            </span>
+            <span class="text-lg px-4 py-4 bg-ink text-white rounded-lg">
+              1
+            </span>
+            <a
+              href="/en/blog/2"
+              class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
+            >
+              2
+            </a>
+            {blogPosts.length > 18 && (
+              <span class="text-lg px-4 py-4 text-ink/60">
+                ...
+              </span>
+            )}
+            <a
+              href="/en/blog/2"
+              class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
+              aria-label="Next page"
+            >
+              →
+            </a>
+          </nav>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,220 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  date: Date;
+  readingTime?: number;
+  tags?: string[];
+  Content?: any;
+}
+
+const {
+  title,
+  description,
+  date,
+  readingTime,
+  tags = [],
+  Content,
+} = Astro.props;
+
+// Format date
+const formattedDate = date.toLocaleDateString("en-GB", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+---
+
+<BaseLayout title={`${title} - CheeseFlow 芝士溪谷`} description={description}>
+  <Header noBorder />
+
+  <main>
+    <!-- Post Header - Full Width Brand Background -->
+    <section class="pt-56 pb-12 px-6 bg-brand">
+      <div class="max-w-2xl mx-auto">
+        <h1 class="text-5xl md:text-6xl font-body font-bold text-ink mb-6">
+          {title}
+        </h1>
+
+        <div class="flex flex-wrap items-center gap-4 text-lg text-ink/80 mb-6">
+          <time datetime={date.toISOString()}>{formattedDate}</time>
+          {readingTime && (
+            <>
+              <span>·</span>
+              <span>{readingTime} min read</span>
+            </>
+          )}
+          {tags.length > 0 && (
+            <>
+              <span>·</span>
+              <div class="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <span
+                    class="px-3 py-1 bg-white text-ink rounded-full text-sm font-medium"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <!-- Content with TOC -->
+    <section class="py-12 px-6 bg-white">
+      <div class="max-w-7xl mx-auto relative">
+        <!-- Post Content - Centered -->
+        <article class="max-w-2xl mx-auto prose prose-lg">
+          {Content ? <Content /> : <slot />}
+        </article>
+
+        <!-- Sticky TOC Sidebar - Positioned to right of centered content -->
+        <aside class="hidden lg:block absolute left-[calc(50%+336px+2rem)] top-0 w-72">
+          <div id="toc" class="bg-grey-30 rounded-2xl p-6" data-toc-sticky>
+            <h2 class="text-xl font-body font-bold text-ink mb-4">
+              Contents
+            </h2>
+            <nav>
+              <ul class="space-y-2 text-sm list-inside list-disc" id="toc-list">
+                <!-- TOC will be populated by client-side script -->
+              </ul>
+            </nav>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script>
+    // Generate TOC from headings
+    function generateTOC() {
+      const article = document.querySelector("article");
+      if (!article) return;
+
+      const headings = article.querySelectorAll("h2, h3, h4");
+      const tocList = document.getElementById("toc-list");
+      if (!tocList) return;
+
+      const tocItems: Array<{ id: string; text: string; level: number }> = [];
+
+      headings.forEach((heading) => {
+        const id =
+          heading.id ||
+          heading.textContent
+            ?.toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-|-$/g, "") || "";
+        heading.id = id;
+
+        const level = parseInt(heading.tagName.charAt(1));
+        tocItems.push({ id, text: heading.textContent || "", level });
+      });
+
+      if (tocItems.length === 0) {
+        const tocSection = document.getElementById("toc");
+        if (tocSection) {
+          tocSection.closest("aside")?.style.setProperty("display", "none");
+        }
+        return;
+      }
+
+      tocList.innerHTML = tocItems
+        .map((item) => {
+          const indent = item.level === 2 ? "" : item.level === 3 ? "ml-4" : "ml-8";
+          return `<li class="${indent}"><a href="#${item.id}" class="text-ink/80 hover:text-ink transition-colors">${item.text}</a></li>`;
+        })
+        .join("");
+    }
+
+    // Make all images in article rounded-2xl and wider
+    function styleImages() {
+      const article = document.querySelector("article");
+      if (!article) return;
+
+      const images = article.querySelectorAll("img");
+      images.forEach((img) => {
+        img.classList.add("rounded-2xl", "w-3/4", "h-auto", "my-8", "mx-auto");
+        img.style.display = "block";
+      });
+    }
+
+    // Make TOC sticky after scrolling past its initial position
+    function initStickyTOC() {
+      const toc = document.getElementById("toc");
+      if (!toc) return;
+
+      const tocAside = toc.parentElement;
+      if (!tocAside) return;
+
+      // Get initial position
+      const initialTop = tocAside.getBoundingClientRect().top + window.scrollY;
+      const headerOffset = 128; // top-32 = 8rem = 128px
+
+      function handleScroll() {
+        const scrollY = window.scrollY;
+        if (!tocAside) return;
+
+        if (scrollY > initialTop - headerOffset) {
+          // Switch to fixed positioning
+          tocAside.style.position = "fixed";
+          tocAside.style.top = `${headerOffset}px`;
+        } else {
+          // Return to absolute positioning
+          tocAside.style.position = "absolute";
+          tocAside.style.top = "0";
+        }
+      }
+
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Initial check
+    }
+
+    // Run on page load
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        generateTOC();
+        styleImages();
+        initStickyTOC();
+      });
+    } else {
+      generateTOC();
+      styleImages();
+      initStickyTOC();
+    }
+  </script>
+
+  <style>
+    /* Additional custom styles */
+    .prose img {
+      border-radius: 1rem;
+      width: 75%;
+      height: auto;
+      margin: 2rem auto;
+      display: block;
+    }
+
+    .prose blockquote {
+      border-left-color: #f3c55e;
+    }
+
+    .prose a {
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+    }
+
+    .prose a:hover {
+      border-bottom-color: #f3c55e;
+    }
+
+  </style>
+</BaseLayout>
+

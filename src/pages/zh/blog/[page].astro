@@ -1,0 +1,229 @@
+---
+import BaseLayout from "../../../layouts/BaseLayoutZh.astro";
+import Header from "../../../components/HeaderZh.astro";
+import Footer from "../../../components/FooterZh.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { PaginateFunction, Page } from "astro";
+import { Image } from "astro:assets";
+
+// Import all blog images
+const blogImages = import.meta.glob<{ default: ImageMetadata }>(
+  "../../../assets/images/blog/**/*.{jpg,jpeg,png,webp}",
+  { eager: true }
+);
+
+// Helper to resolve cover image path
+function getCoverImage(coverPath: string | undefined): ImageMetadata | null {
+  if (!coverPath) return null;
+  
+  // Extract filename from path (e.g., "Secret-of-Brand-Power-Part-2-11.webp")
+  const filename = coverPath.split('/').pop() || '';
+  
+  // Find matching image in glob by filename
+  for (const [path, image] of Object.entries(blogImages)) {
+    if (path.endsWith(filename)) {
+      return image.default;
+    }
+  }
+  
+  return null;
+}
+
+type PageProps = {
+  page: Page<CollectionEntry<"blog">>;
+};
+
+export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
+  const { getLangFromEntry } = await import("../../../content/config");
+  const blogPosts = await getCollection(
+    "blog",
+    (entry) => getLangFromEntry(entry) === "zh"
+  );
+  const sortedPosts = blogPosts.sort(
+    (a, b) =>
+      new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
+
+  return paginate(sortedPosts, { pageSize: 9 });
+}
+
+const { page } = Astro.props as PageProps;
+
+// Generate page numbers to display
+function getPageNumbers(currentPage: number, lastPage: number): (number | string)[] {
+  const pages: (number | string)[] = [];
+  const delta = 2; // Number of pages to show on each side of current page
+  
+  if (lastPage <= 7) {
+    // Show all pages if 7 or fewer
+    for (let i = 1; i <= lastPage; i++) {
+      pages.push(i);
+    }
+  } else {
+    // Always show first page
+    pages.push(1);
+    
+    if (currentPage > delta + 2) {
+      pages.push('...');
+    }
+    
+    // Show pages around current
+    const start = Math.max(2, currentPage - delta);
+    const end = Math.min(lastPage - 1, currentPage + delta);
+    
+    for (let i = start; i <= end; i++) {
+      pages.push(i);
+    }
+    
+    if (currentPage < lastPage - delta - 1) {
+      pages.push('...');
+    }
+    
+    // Always show last page
+    pages.push(lastPage);
+  }
+  
+  return pages;
+}
+
+const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
+---
+
+<BaseLayout title="博客 - CheeseFlow 芝士溪谷">
+  <Header />
+
+  <!-- Blog Content -->
+  <main class="pt-32">
+    <section class="py-48 px-6 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="mb-16">
+          <h1
+            class="max-w-3xl text-6xl md:text-7xl font-body font-black text-ink mb-6"
+          >
+            芝士文章、新闻和观点
+          </h1>
+        </div>
+
+        {page.data.length ? (
+          <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+            {page.data.map((post) => (
+              <article class="flex flex-col">
+                <a
+                  href={`/zh/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
+                  class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
+                >
+                  {(() => {
+                    const coverImage = getCoverImage(post.data.cover);
+                    return coverImage ? (
+                      <Image
+                        src={coverImage}
+                        alt={post.data.coverAlt ?? post.data.title}
+                        class="w-full h-auto"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div class="flex h-full w-full items-center justify-center text-ink/40">
+                        暂无封面
+                      </div>
+                    );
+                  })()}
+                </a>
+                <div class="flex flex-1 flex-col">
+                  <h2 class="text-3xl font-body font-black text-ink mb-3">
+                    <a
+                      href={`/zh/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
+                      class="text-ink hover:text-brand transition-colors"
+                    >
+                      {post.data.title}
+                    </a>
+                  </h2>
+                  <p class="text-xl text-ink/70 mb-6">
+                    {post.data.excerpt ??
+                      post.data.description ??
+                      "敬请期待 CheeseFlow 的最新洞察。"}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p class="text-lg text-ink/70">暂无文章，敬请期待。</p>
+        )}
+
+        {page.lastPage > 1 && (
+          <nav
+            class="mt-16 flex flex-wrap items-center justify-center gap-2"
+            aria-label="分页"
+          >
+            {/* Previous Arrow */}
+            {page.url.prev ? (
+              <a
+                href={page.url.prev}
+                class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
+                aria-label="上一页"
+              >
+                ←
+              </a>
+            ) : (
+              <span class="text-lg px-4 py-4 bg-grey-60 text-ink/40 rounded-lg">
+                ←
+              </span>
+            )}
+
+            {/* Page Numbers */}
+            {pageNumbers.map((pageNum) => {
+              if (pageNum === '...') {
+                return (
+                  <span class="text-lg px-4 py-4 text-ink/60">
+                    ...
+                  </span>
+                );
+              }
+              
+              const pageNumValue = pageNum as number;
+              const isCurrentPage = pageNumValue === page.currentPage;
+              
+              if (isCurrentPage) {
+                return (
+                  <span
+                    class="text-lg px-4 py-4 bg-ink text-white rounded-lg"
+                  >
+                    {pageNumValue}
+                  </span>
+                );
+              }
+              
+              return (
+                <a
+                  href={pageNumValue === 1 ? '/zh/blog' : `/zh/blog/${pageNumValue}`}
+                  class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
+                >
+                  {pageNumValue}
+                </a>
+              );
+            })}
+
+            {/* Next Arrow */}
+            {page.url.next ? (
+              <a
+                href={page.url.next}
+                class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
+                aria-label="下一页"
+              >
+                →
+              </a>
+            ) : (
+              <span class="text-lg px-4 py-4 bg-grey-60 text-ink/40 rounded-lg">
+                →
+              </span>
+            )}
+          </nav>
+        )}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+

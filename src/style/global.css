@@ -1,0 +1,222 @@
+/**
+ * CheeseFlow Global Styles
+ * Colour palette and typography definitions
+ */
+
+/* ========================================
+   COLOUR PALETTE
+   ======================================== */
+:root {
+  /* Primary Colours */
+  --colour-ink: #111111;
+  --colour-brand: #f8d117;
+  --colour-grey: #dadada;
+  --colour-white: #ffffff;
+  --colour-off-white: #fafafa;
+  
+  /* Semantic Colour Variations */
+  --colour-ink-100: var(--colour-ink);
+  --colour-ink-80: rgba(26, 26, 26, 0.8);
+  --colour-ink-70: rgba(26, 26, 26, 0.7);
+  --colour-ink-60: rgba(26, 26, 26, 0.6);
+  
+  --colour-brand-100: var(--colour-brand);
+  --colour-brand-90: rgba(248, 209, 23, 0.9);
+  
+  --colour-grey-100: var(--colour-grey);
+  --colour-grey-60: rgba(218, 218, 218, 0.6);
+  --colour-grey-30: rgba(218, 218, 218, 0.3);
+  
+  --colour-white-100: var(--colour-white);
+  --colour-white-95: rgba(255, 255, 255, 0.95);
+  --colour-white-70: rgba(255, 255, 255, 0.7);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+:root {
+  /* Font Families */
+  --font-heading: 'brandon-grotesque', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'tt-commons-pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-chinese: 'noto-sans-sc', 'PingFang SC', 'Microsoft YaHei', 'SimHei', sans-serif;
+  
+  /* Font Weights */
+  /* TT Commons Pro: 400, 700 */
+  /* Brandon Grotesque: 500, 900 */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+  
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  --font-size-6xl: 3.75rem;     /* 60px */
+  --font-size-7xl: 4.5rem;      /* 72px */
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+}
+
+/* ========================================
+   BASE TYPOGRAPHY STYLES
+   ======================================== */
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: var(--line-height-normal);
+  color: var(--colour-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--colour-white);
+  color: var(--colour-ink);
+  font-weight: 400;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  line-height: var(--line-height-tight);
+  color: var(--colour-ink);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+h4 {
+  font-size: var(--font-size-2xl);
+}
+
+h5 {
+  font-size: var(--font-size-xl);
+}
+
+h6 {
+  font-size: var(--font-size-lg);
+}
+
+/* Paragraphs */
+p {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--colour-ink);
+  margin: 0;
+}
+
+/* Links */
+a {
+  color: var(--colour-ink-80);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--colour-ink);
+}
+
+/* Lists */
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Buttons */
+button {
+  font-weight: normal;
+  padding: 1rem 1.5rem; /* py-4 px-6 */
+}
+
+/* Typography Utility Classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-chinese {
+  font-family: var(--font-chinese);
+}
+
+/* ========================================
+   COLOUR UTILITY CLASSES
+   ======================================== */
+.text-ink {
+  color: var(--colour-ink);
+}
+
+.text-brand {
+  color: var(--colour-brand);
+}
+
+.text-grey {
+  color: var(--colour-grey);
+}
+
+.text-white {
+  color: var(--colour-white);
+}
+
+.bg-ink {
+  background-color: var(--colour-ink);
+}
+
+.bg-brand {
+  background-color: var(--colour-brand);
+}
+
+.bg-grey {
+  background-color: var(--colour-grey);
+}
+
+.bg-grey-30 {
+  background-color: var(--colour-grey-30);
+}
+
+.bg-grey-60 {
+  background-color: var(--colour-grey-60);
+}
+
+.bg-white {
+  background-color: var(--colour-white);
+}
+
