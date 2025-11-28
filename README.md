@@ -88,18 +88,17 @@ back to the originating page with `?contact=success` or `?contact=error` query p
 Deploy to Cloudflare Pages using Wrangler:
 
 ```bash
-# Build the site
-pnpm run build
-
-# Deploy to production
+# Deploy (deploys to current git branch)
 pnpm run deploy
 ```
 
-Or manually:
-```bash
-pnpm run build
-npx wrangler pages deploy dist --project-name=cheeseflow --branch=production
-```
+**Important:** To deploy to production:
+1. Make sure you're on the `master` branch (or the branch configured as production)
+2. Run `pnpm run deploy`
+3. In Cloudflare Pages dashboard → Settings → Production deployments, set `master` as the production branch
+4. Future deployments to `master` will automatically update production
+
+The deploy command deploys to whatever branch you're currently on. Configure which branch is production in the Cloudflare Pages dashboard.
 
 ### Domain-Based Routing
 
