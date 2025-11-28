@@ -10,11 +10,17 @@ import FooterZh from "../components/FooterZh.astro";
 // or fallback to pathname if hostname doesn't indicate language
 const hostname = Astro.url.hostname;
 const pathname = Astro.url.pathname;
-const isChinese = 
-  hostname.includes('.com.cn') || 
-  hostname.includes('cheeseflow.cn') ||
-  pathname.startsWith('/zh/') || 
-  pathname.startsWith('/zh');
+
+// Determine language from domain (matching middleware logic exactly)
+let isChinese = false;
+if (hostname.endsWith('.com.cn')) {
+  isChinese = true;
+} else if (hostname.endsWith('.cn')) {
+  isChinese = true;
+} else if (pathname.startsWith('/zh/') || pathname.startsWith('/zh')) {
+  // Fallback to pathname for internal routes
+  isChinese = true;
+}
 
 // Use appropriate layout and components based on language
 const Layout = isChinese ? BaseLayoutZh : BaseLayout;

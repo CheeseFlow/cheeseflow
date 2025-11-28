@@ -149,9 +149,21 @@ const currentYear = new Date().getFullYear();
         >
         <a
           href="https://cheeseflow.com/"
+          id="locale-switcher"
           class="text-white hover:text-brand transition-colors text-lg"
           >English</a
         >
+        <script>
+          // Client-side locale switcher - preserves current path when switching languages
+          (function() {
+            const switcher = document.getElementById('locale-switcher') as HTMLAnchorElement | null;
+            if (switcher) {
+              const currentPath = window.location.pathname;
+              const targetDomain = 'https://cheeseflow.com';
+              switcher.href = targetDomain + currentPath;
+            }
+          })();
+        </script>
       </div>
     </div>
   </div>

@@ -156,9 +156,21 @@ const currentYear = new Date().getFullYear();
         >
         <a
           href="https://cheeseflow.cn/"
+          id="locale-switcher"
           class="text-white hover:text-brand transition-colors font-chinese text-lg"
           >中文</a
         >
+        <script>
+          // Client-side locale switcher - preserves current path when switching languages
+          (function() {
+            const switcher = document.getElementById('locale-switcher') as HTMLAnchorElement | null;
+            if (switcher) {
+              const currentPath = window.location.pathname;
+              const targetDomain = 'https://cheeseflow.cn';
+              switcher.href = targetDomain + currentPath;
+            }
+          })();
+        </script>
       </div>
     </div>
   </div>
