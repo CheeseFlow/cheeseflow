@@ -10,7 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "clean": "rm -rf .astro dist",
-    "dev:clean": "pnpm run clean && pnpm run dev"
+    "dev:clean": "pnpm run clean && pnpm run dev",
+    "deploy": "pnpm run build && wrangler pages deploy dist --project-name=cheeseflow --branch=production"
   },
   "packageManager": "pnpm@10.20.0",
   "keywords": [
@@ -35,6 +36,7 @@
     "remark-images": "^4.1.0",
     "turndown": "^7.2.2",
     "typescript": "^5.9.3",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "wrangler": "^4.51.0"
   }
 }

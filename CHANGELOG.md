@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 - Blog cover images using Astro's Image component with automatic optimization
 - Image import system using `import.meta.glob` for blog cover images
 - Helper function to resolve cover image paths from frontmatter to imported assets
+- Cloudflare Pages Functions middleware for automatic domain-based routing
+- Wrangler configuration for Cloudflare Pages deployment
+- Automatic redirects: `.com.cn` and `.cn` domains → `/zh`, all others → `/en`
+- Deployment script (`pnpm run deploy`) for Cloudflare Pages production
 - Complete Astro site rebuild from scratch
 - Typing hero animation component with rotating text
 - Service sections: Brand Look, Brand Personality, Brand Influence
@@ -56,6 +60,8 @@ All notable changes to this project will be documented in this file.
 - Cover images in blog indexes now use Astro's Image component for automatic optimization and processing
 - Language detection now derives from file paths (`en/` or `zh/` subdirectories) instead of requiring `lang` in frontmatter
 - Package manager switched from `npm` to `pnpm`
+- Output mode set to `static` for Cloudflare Pages compatibility
+- Domain-based routing now handled automatically via Cloudflare Pages Functions (no manual Transform Rules needed)
 
 ### Removed
 - All Jekyll files and dependencies
@@ -66,4 +72,5 @@ All notable changes to this project will be documented in this file.
 - Rehype/remark plugins for image path transformation - using relative paths in markdown instead
 - `lang` field requirement from blog post frontmatter (now derived from file path)
 - Cover image rendering from individual blog post layouts
+- Astro middleware (replaced with Cloudflare Pages Functions for edge-based routing)
 

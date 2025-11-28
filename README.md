@@ -81,6 +81,37 @@ environment (for both `cheeseflow.com` and `cheeseflow.cn`):
 After setting the variables, restart the Astro server. Form submissions will redirect
 back to the originating page with `?contact=success` or `?contact=error` query params.
 
+## Deployment
+
+### Cloudflare Pages
+
+Deploy to Cloudflare Pages using Wrangler:
+
+```bash
+# Build the site
+pnpm run build
+
+# Deploy to production
+pnpm run deploy
+```
+
+Or manually:
+```bash
+pnpm run build
+npx wrangler pages deploy dist --project-name=cheeseflow --branch=production
+```
+
+### Domain-Based Routing
+
+Domain-based routing is **automatic** via Cloudflare Pages Functions (`functions/_middleware.ts`):
+
+- `cheeseflow.com` → redirects to `/en` (English)
+- `cheeseflow.com.cn` → redirects to `/zh` (Chinese)
+- `cheeseflow.cn` → redirects to `/zh` (Chinese)
+
+**No manual configuration needed!** Just add the custom domains in Cloudflare Pages dashboard and the function will automatically handle the redirects.
+
 ## Website
 
 Live site: https://cheeseflow.com
+Chinese site: https://cheeseflow.com.cn (redirects to `/zh`)

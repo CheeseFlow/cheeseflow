@@ -3,7 +3,6 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { getCollection } from "astro:content";
-import { getLangFromEntry } from "../../../content/config";
 import { Image } from "astro:assets";
 
 // Import all blog images
@@ -31,8 +30,9 @@ function getCoverImage(coverPath: string | undefined): ImageMetadata | null {
 
 // Get all posts and filter for English (same approach as [page].astro)
 const allBlogPosts = await getCollection("blog");
+const { getLangFromEntry: getLang } = await import("../../../content/config");
 const blogPosts = allBlogPosts.filter((entry) => {
-  const lang = getLangFromEntry(entry);
+  const lang = getLang(entry);
   return lang === "en";
 });
 const sortedPosts = blogPosts
@@ -66,21 +66,34 @@ const sortedPosts = blogPosts
                   href={`/en/blog/${post.slug.replace(/^(en|zh)\//, '')}`}
                   class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
                 >
-                  {(() => {
-                    const coverImage = getCoverImage(post.data.cover);
-                    return coverImage ? (
-                      <Image
-                        src={coverImage}
-                        alt={post.data.coverAlt ?? post.data.title}
-                        class="w-full h-auto"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div class="flex h-full w-full items-center justify-center text-ink/40">
-                        No cover image
-                      </div>
-                    );
-                  })()}
+                  {post.data.cover ? (
+                    (() => {
+                      const coverImage = getCoverImage(post.data.cover);
+                      if (coverImage) {
+                        return (
+                          <Image
+                            src={coverImage}
+                            alt={post.data.coverAlt ?? post.data.title}
+                            class="w-full h-auto"
+                            loading="lazy"
+                          />
+                        );
+                      }
+                      // Fallback to regular img if Image component fails
+                      return (
+                        <img
+                          src={post.data.cover}
+                          alt={post.data.coverAlt ?? post.data.title}
+                          class="w-full h-auto"
+                          loading="lazy"
+                        />
+                      );
+                    })()
+                  ) : (
+                    <div class="flex h-full w-full items-center justify-center text-ink/40">
+                      No cover image
+                    </div>
+                  )}
                 </a>
                 <div class="flex flex-1 flex-col">
                   <h2 class="text-2xl font-body font-bold text-ink mb-3">
