@@ -1,25 +1,21 @@
 /**
  * Cloudflare Pages Function to handle domain-based routing
- * Rewrites URLs internally to hide /en and /zh from the URL
- * - cheeseflow.com/* → serves /en/* content (URL stays as /*)
- * - cheeseflow.com.cn/* → serves /zh/* content (URL stays as /*)
- * - cheeseflow.cn/* → serves /zh/* content (URL stays as /*)
+ * Redirects to language-specific paths based on domain
+ * - cheeseflow.com/* → redirects to /en/* (if not already there)
+ * - cheeseflow.com.cn/* → redirects to /zh/* (if not already there)
+ * - cheeseflow.cn/* → redirects to /zh/* (if not already there)
  */
-export async function onRequest({ request, next }: { request: Request; next: () => Promise<Response> }) {
+export async function onRequest(context: { request: Request; next: () => Promise<Response> }) {
+  const { request, next } = context;
   const url = new URL(request.url);
   const hostname = url.hostname;
-  
-  // Skip rewriting if already has language prefix (prevents infinite loops)
-  if (url.pathname.startsWith('/en/') || url.pathname.startsWith('/zh/')) {
-    return next();
-  }
   
   // Determine language from domain
   // Priority: .com.cn > .cn (but not .com.cn) > exact match
   let isChinese = false;
   if (hostname.endsWith('.com.cn')) {
     isChinese = true;
-  } else if (hostname.endsWith('.cn')) {
+  } else if (hostname.endsWith('.cn') && !hostname.endsWith('.com.cn')) {
     isChinese = true;
   } else if (hostname === 'cheeseflow.cn') {
     isChinese = true;
@@ -27,38 +23,30 @@ export async function onRequest({ request, next }: { request: Request; next: () 
   
   const lang = isChinese ? 'zh' : 'en';
   
-  // Rewrite paths to include language prefix internally
-  let rewrittenPath = url.pathname;
-  
-  if (rewrittenPath === '/' || rewrittenPath === '' || rewrittenPath === '/index.html') {
-    rewrittenPath = `/${lang}/`;
-  } else {
-    rewrittenPath = `/${lang}${rewrittenPath}`;
-  }
-  
-  // Create rewritten URL (same origin)
-  const rewrittenUrl = new URL(rewrittenPath + url.search, url.origin);
-  
-  // Fetch the content from the rewritten URL
-  // This will go through the middleware again, but the check above will skip rewriting
-  // and just serve the content directly
-  try {
-    const response = await fetch(rewrittenUrl.toString(), {
-      method: request.method,
-      headers: request.headers,
-      body: request.body,
-    });
-    
-    // Clone the response
-    return new Response(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers: response.headers,
-    });
-  } catch (error) {
-    // If fetch fails, fall back to next()
-    console.error('Middleware fetch error:', error);
+  // If path already has the correct language prefix, serve normally
+  if (url.pathname.startsWith(`/${lang}/`) || url.pathname === `/${lang}`) {
     return next();
   }
+  
+  // If path has wrong language prefix, redirect to correct one
+  if (url.pathname.startsWith('/en/') || url.pathname === '/en') {
+    const newPath = url.pathname.replace(/^\/en/, `/${lang}`);
+    return Response.redirect(new URL(newPath + url.search, url.origin), 302);
+  }
+  if (url.pathname.startsWith('/zh/') || url.pathname === '/zh') {
+    const newPath = url.pathname.replace(/^\/zh/, `/${lang}`);
+    return Response.redirect(new URL(newPath + url.search, url.origin), 302);
+  }
+  
+  // For paths without language prefix, add it and redirect
+  let newPath = url.pathname;
+  if (newPath === '/' || newPath === '' || newPath === '/index.html') {
+    newPath = `/${lang}/`;
+  } else {
+    newPath = `/${lang}${newPath.startsWith('/') ? '' : '/'}${newPath}`;
+  }
+  
+  const redirectUrl = new URL(newPath + url.search, url.origin);
+  return Response.redirect(redirectUrl, 302);
 }
 

@@ -70,7 +70,8 @@ All notable changes to this project will be documented in this file.
 - Blog post URLs now use flat structure at root level (e.g., `/post-slug` instead of `/blog/post-slug`)
 - All internal links updated to use flat URLs without `/en` or `/zh` prefixes
 - Middleware improved to handle `.com.cn`, `.cn`, and exact domain matches correctly
-- Middleware now rewrites URLs internally without visible redirects
+- Middleware now redirects to language-specific paths based on domain (`.com` → `/en`, `.cn`/`.com.cn` → `/zh`)
+- Fixed 404 errors on home and blog pages by ensuring proper language routing
 
 ### Removed
 - All Jekyll files and dependencies
