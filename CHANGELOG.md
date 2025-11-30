@@ -72,6 +72,11 @@ All notable changes to this project will be documented in this file.
 - Middleware improved to handle `.com.cn`, `.cn`, and exact domain matches correctly
 - Middleware now redirects to language-specific paths based on domain (`.com` → `/en`, `.cn`/`.com.cn` → `/zh`)
 - Fixed 404 errors on home and blog pages by ensuring proper language routing
+- Implemented clean URL routing with hidden language prefixes - users see `cheeseflow.com/blog` instead of `cheeseflow.com/en/blog`
+- Middleware now uses `env.ASSETS.fetch()` for proper static file serving in Cloudflare Pages
+- Added URL rewriting to internally serve `/en/*` and `/zh/*` content while displaying clean URLs
+- Domain enforcement: accessing wrong language on wrong domain automatically redirects to correct domain (`.com/zh` → `.cn`, `.cn/en` → `.com`)
+- Added skip logic for static assets (CSS, JS, images) to prevent unnecessary rewrites
 
 ### Removed
 - All Jekyll files and dependencies
