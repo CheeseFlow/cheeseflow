@@ -1,52 +1,70 @@
 /**
- * Cloudflare Pages Function to handle domain-based routing
- * Redirects to language-specific paths based on domain
- * - cheeseflow.com/* → redirects to /en/* (if not already there)
- * - cheeseflow.com.cn/* → redirects to /zh/* (if not already there)
- * - cheeseflow.cn/* → redirects to /zh/* (if not already there)
+ * Cloudflare Pages Function to handle domain-based routing with hidden language prefixes
+ * - cheeseflow.com/* → internally serves /en/* (prefix hidden from users)
+ * - cheeseflow.com.cn/* → internally serves /zh/* (prefix hidden from users)
+ * - cheeseflow.cn/* → internally serves /zh/* (prefix hidden from users)
+ * - Wrong language on wrong domain → redirects to correct domain
  */
 export async function onRequest(context: { request: Request; next: () => Promise<Response> }) {
   const { request, next } = context;
   const url = new URL(request.url);
   const hostname = url.hostname;
-  
+
   // Determine language from domain
-  // Priority: .com.cn > .cn (but not .com.cn) > exact match
-  let isChinese = false;
-  if (hostname.endsWith('.com.cn')) {
-    isChinese = true;
-  } else if (hostname.endsWith('.cn') && !hostname.endsWith('.com.cn')) {
-    isChinese = true;
-  } else if (hostname === 'cheeseflow.cn') {
-    isChinese = true;
-  }
-  
+  const isChinese =
+    hostname.endsWith('.com.cn') ||
+    hostname.endsWith('.cn') ||
+    hostname === 'cheeseflow.cn';
+
   const lang = isChinese ? 'zh' : 'en';
-  
-  // If path already has the correct language prefix, serve normally
+  const correctDomain = isChinese ? 'cheeseflow.cn' : 'cheeseflow.com';
+
+  // Check if user is trying to access wrong language on this domain
+  if (url.pathname.startsWith('/zh/') || url.pathname === '/zh') {
+    if (!isChinese) {
+      // Redirect .com/zh to .cn
+      const newUrl = new URL(url.pathname.replace(/^\/zh/, '') || '/', `https://${correctDomain}`);
+      newUrl.search = url.search;
+      return Response.redirect(newUrl, 301);
+    }
+  }
+  if (url.pathname.startsWith('/en/') || url.pathname === '/en') {
+    if (isChinese) {
+      // Redirect .cn/en to .com
+      const newUrl = new URL(url.pathname.replace(/^\/en/, '') || '/', `https://${correctDomain}`);
+      newUrl.search = url.search;
+      return Response.redirect(newUrl, 301);
+    }
+  }
+
+  // If path already has the correct language prefix, serve it (this handles internal routing)
   if (url.pathname.startsWith(`/${lang}/`) || url.pathname === `/${lang}`) {
     return next();
   }
-  
-  // If path has wrong language prefix, redirect to correct one
-  if (url.pathname.startsWith('/en/') || url.pathname === '/en') {
-    const newPath = url.pathname.replace(/^\/en/, `/${lang}`);
-    return Response.redirect(new URL(newPath + url.search, url.origin), 302);
-  }
-  if (url.pathname.startsWith('/zh/') || url.pathname === '/zh') {
-    const newPath = url.pathname.replace(/^\/zh/, `/${lang}`);
-    return Response.redirect(new URL(newPath + url.search, url.origin), 302);
-  }
-  
-  // For paths without language prefix, add it and redirect
-  let newPath = url.pathname;
-  if (newPath === '/' || newPath === '' || newPath === '/index.html') {
-    newPath = `/${lang}/`;
+
+  // Rewrite path to include language prefix internally
+  // This keeps the URL clean for users but routes correctly internally
+  let internalPath = url.pathname;
+  if (internalPath === '/' || internalPath === '' || internalPath === '/index.html') {
+    internalPath = `/${lang}/`;
   } else {
-    newPath = `/${lang}${newPath.startsWith('/') ? '' : '/'}${newPath}`;
+    // Add language prefix for internal routing
+    internalPath = `/${lang}${internalPath.startsWith('/') ? '' : '/'}${internalPath}`;
   }
-  
-  const redirectUrl = new URL(newPath + url.search, url.origin);
-  return Response.redirect(redirectUrl, 302);
+
+  // Fetch the content internally with the language-prefixed path
+  const internalUrl = new URL(internalPath + url.search, url.origin);
+  const internalRequest = new Request(internalUrl, {
+    method: request.method,
+    headers: request.headers,
+    body: request.body,
+    redirect: 'manual',
+  });
+
+  // Get the response from the internal route
+  const response = await fetch(internalRequest);
+
+  // Return the response without exposing the internal path
+  return response;
 }
 
