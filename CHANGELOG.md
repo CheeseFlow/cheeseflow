@@ -77,6 +77,7 @@ All notable changes to this project will be documented in this file.
 - Added URL rewriting to internally serve `/en/*` and `/zh/*` content while displaying clean URLs
 - Domain enforcement: accessing wrong language on wrong domain automatically redirects to correct domain (`.com/zh` → `.cn`, `.cn/en` → `.com`)
 - Added skip logic for static assets (CSS, JS, images) to prevent unnecessary rewrites
+- Fixed directory path routing by automatically adding trailing slashes for paths like `/blog` to properly serve `/blog/index.html`
 
 ### Removed
 - All Jekyll files and dependencies
