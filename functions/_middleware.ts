@@ -5,8 +5,12 @@
  * - cheeseflow.cn/* → internally serves /zh/* (prefix hidden from users)
  * - Wrong language on wrong domain → redirects to correct domain
  */
-export async function onRequest(context: { request: Request; next: () => Promise<Response> }) {
-  const { request, next } = context;
+export async function onRequest(context: {
+  request: Request;
+  next: () => Promise<Response>;
+  env: { ASSETS: { fetch: (request: Request) => Promise<Response> } };
+}) {
+  const { request, next, env } = context;
   const url = new URL(request.url);
   const hostname = url.hostname;
 
@@ -37,34 +41,33 @@ export async function onRequest(context: { request: Request; next: () => Promise
     }
   }
 
-  // If path already has the correct language prefix, serve it (this handles internal routing)
+  // If path already has the correct language prefix, serve it
   if (url.pathname.startsWith(`/${lang}/`) || url.pathname === `/${lang}`) {
     return next();
   }
 
+  // Skip rewriting for static assets
+  if (url.pathname.startsWith('/_astro/') ||
+      url.pathname.startsWith('/favicon.') ||
+      url.pathname.startsWith('/images/') ||
+      url.pathname.includes('.')) {
+    return next();
+  }
+
   // Rewrite path to include language prefix internally
-  // This keeps the URL clean for users but routes correctly internally
   let internalPath = url.pathname;
-  if (internalPath === '/' || internalPath === '' || internalPath === '/index.html') {
+  if (internalPath === '/' || internalPath === '') {
     internalPath = `/${lang}/`;
   } else {
     // Add language prefix for internal routing
     internalPath = `/${lang}${internalPath.startsWith('/') ? '' : '/'}${internalPath}`;
   }
 
-  // Fetch the content internally with the language-prefixed path
+  // Create a new request with the rewritten path for static assets
   const internalUrl = new URL(internalPath + url.search, url.origin);
-  const internalRequest = new Request(internalUrl, {
-    method: request.method,
-    headers: request.headers,
-    body: request.body,
-    redirect: 'manual',
-  });
+  const internalRequest = new Request(internalUrl, request);
 
-  // Get the response from the internal route
-  const response = await fetch(internalRequest);
-
-  // Return the response without exposing the internal path
-  return response;
+  // Fetch from static assets using env.ASSETS
+  return env.ASSETS.fetch(internalRequest);
 }
 
