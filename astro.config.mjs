@@ -5,7 +5,7 @@ import cloudflare from '@astrojs/cloudflare';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  output: 'static',
+  output: 'server',
   adapter: cloudflare(),
   site: 'https://cheeseflow.com',
   // Improve content collection cache handling and file watching
