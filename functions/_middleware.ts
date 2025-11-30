@@ -61,6 +61,10 @@ export async function onRequest(context: {
   } else {
     // Add language prefix for internal routing
     internalPath = `/${lang}${internalPath.startsWith('/') ? '' : '/'}${internalPath}`;
+    // Ensure trailing slash for directory paths to match index.html files
+    if (!internalPath.endsWith('/') && !internalPath.includes('.')) {
+      internalPath += '/';
+    }
   }
 
   // Create a new request with the rewritten path for static assets
