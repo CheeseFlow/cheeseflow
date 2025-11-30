@@ -78,6 +78,10 @@ All notable changes to this project will be documented in this file.
 - Domain enforcement: accessing wrong language on wrong domain automatically redirects to correct domain (`.com/zh` → `.cn`, `.cn/en` → `.com`)
 - Added skip logic for static assets (CSS, JS, images) to prevent unnecessary rewrites
 - Fixed directory path routing by automatically adding trailing slashes for paths like `/blog` to properly serve `/blog/index.html`
+- Switched from Cloudflare Functions middleware to Astro middleware for more reliable URL rewriting (same architecture as rubycoded)
+- Changed output mode from `static` to `server` to enable Astro middleware
+- Middleware now modifies `context.url.pathname` before routing, allowing clean URLs without visible language prefixes
+- Added fallback `index.astro` and `[...slug].astro` routes for SSR mode
 
 ### Removed
 - All Jekyll files and dependencies
