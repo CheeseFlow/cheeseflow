@@ -69,25 +69,19 @@ All notable changes to this project will be documented in this file.
 - Middleware now intercepts all root path requests before static files are served
 - Blog post URLs now use flat structure at root level (e.g., `/post-slug` instead of `/blog/post-slug`)
 - All internal links updated to use flat URLs without `/en` or `/zh` prefixes
-- Middleware improved to handle `.com.cn`, `.cn`, and exact domain matches correctly
-- Middleware now redirects to language-specific paths based on domain (`.com` → `/en`, `.cn`/`.com.cn` → `/zh`)
-- Fixed 404 errors on home and blog pages by ensuring proper language routing
-- Implemented clean URL routing with hidden language prefixes - users see `cheeseflow.com/blog` instead of `cheeseflow.com/en/blog`
-- Middleware now uses `env.ASSETS.fetch()` for proper static file serving in Cloudflare Pages
-- Added URL rewriting to internally serve `/en/*` and `/zh/*` content while displaying clean URLs
-- Domain enforcement: accessing wrong language on wrong domain automatically redirects to correct domain (`.com/zh` → `.cn`, `.cn/en` → `.com`)
-- Added skip logic for static assets (CSS, JS, images) to prevent unnecessary rewrites
-- Fixed directory path routing by automatically adding trailing slashes for paths like `/blog` to properly serve `/blog/index.html`
-- Switched from Cloudflare Functions middleware to Astro middleware for more reliable URL rewriting (same architecture as rubycoded)
-- Changed output mode from `static` to `server` to enable Astro middleware
-- Middleware now modifies `context.url.pathname` before routing, allowing clean URLs without visible language prefixes
-- Added fallback `index.astro` and `[...slug].astro` routes for SSR mode
+- Middleware simplified to show language prefixes in URLs (`/en/blog`, `/zh/blog`) for better maintainability
+- All internal links updated to include language prefixes (`/en/`, `/zh/`)
+- Blog post links now use format `/en/post-slug` and `/zh/post-slug` instead of flat `/post-slug`
+- Middleware enforces domain-language pairing: `.com/zh/*` redirects to `.cn/zh/*`, `.cn/en/*` redirects to `.com/en/*`
+- Root path (`/`) redirects to appropriate language home (`/en/` or `/zh/`) based on domain
+- Header and Footer components updated with language-prefixed links
+- Blog pagination links updated to include language prefixes
 
 ### Fixed
-- Fixed redirect loop in middleware by removing the redirect that was hiding locale prefixes from URLs
-- Middleware now uses `context.rewrite()` properly without causing infinite redirect loops
-- Clean URLs (e.g., `/blog`, `/post-slug`) now work correctly on both `.com` and `.cn` domains
-- Improved `stripLocaleFromPath()` to preserve trailing slashes for proper routing
+- Fixed English blog posts not loading due to Astro content collection cache issues
+- Restored all 12 English blog posts by checking them out from git after cache clear
+- Removed debug console.log statements from blog index pages
+- Fixed blog post URLs to consistently use language prefixes across all pages
 
 ### Removed
 - All Jekyll files and dependencies

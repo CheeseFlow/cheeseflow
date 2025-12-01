@@ -1,34 +1,17 @@
 import { defineMiddleware } from "astro:middleware";
 
-function getLocaleFromDomain(url: URL): string {
+function getDefaultLocaleFromDomain(url: URL): string {
   const hostname = url.hostname;
-
   if (hostname.endsWith('.com.cn') || hostname.endsWith('.cn') || hostname === 'cheeseflow.cn') {
     return 'zh';
   }
-
   return 'en';
-}
-
-function stripLocaleFromPath(pathname: string): string {
-  const hasTrailingSlash = pathname.endsWith('/') && pathname !== '/';
-  const segments = pathname.split('/').filter(Boolean);
-
-  if (segments.length === 0) {
-    return '/';
-  }
-
-  if (segments[0] === 'en' || segments[0] === 'zh') {
-    segments.shift();
-  }
-
-  const path = segments.length ? `/${segments.join('/')}` : '/';
-  return hasTrailingSlash && path !== '/' ? `${path}/` : path;
 }
 
 export const onRequest = defineMiddleware(async (context, next) => {
   const url = context.url;
   const pathname = url.pathname;
+  const hostname = url.hostname;
 
   // Skip middleware for static assets
   if (pathname.startsWith('/_astro/') ||
@@ -38,40 +21,45 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return next();
   }
 
-  // Get locale from domain
-  // .com → en, .cn/.com.cn → zh
-  const locale = getLocaleFromDomain(url);
+  // Get default locale for this domain
+  const defaultLocale = getDefaultLocaleFromDomain(url);
 
-  // Check if path already has a locale prefix
-  const pathLocale = pathname.split('/').filter(Boolean)[0];
-  const hasLocalePrefix = pathLocale === 'en' || pathLocale === 'zh';
+  // Check if path has a locale prefix
+  const pathSegments = pathname.split('/').filter(Boolean);
+  const pathLocale = (pathSegments[0] === 'en' || pathSegments[0] === 'zh') ? pathSegments[0] : null;
 
-  // SCENARIO 1: Path already has correct locale prefix (e.g., cheeseflow.com/en/blog)
-  // Just serve it - no redirect needed
-  if (hasLocalePrefix && pathLocale === locale) {
-    return next();
+  // CASE 1: Root path (/) - redirect to default locale
+  if (pathname === '/') {
+    return context.redirect(`/${defaultLocale}/`, 302);
   }
 
-  // SCENARIO 2: User accesses wrong locale on wrong domain (e.g., cheeseflow.com/zh/blog)
-  // Redirect to correct domain with clean URL
-  if (hasLocalePrefix && pathLocale !== locale) {
-    const cleanPath = stripLocaleFromPath(pathname);
-    const correctDomain = locale === 'zh' ? 'cheeseflow.cn' : 'cheeseflow.com';
-    const cleanUrl = new URL(cleanPath, `https://${correctDomain}`);
-    cleanUrl.search = url.search;
-    return context.redirect(cleanUrl.toString(), 301);
+  // CASE 2: Wrong locale on wrong domain - redirect to correct domain
+  // .com/zh/* → .cn/zh/*
+  // .cn/en/* or .com.cn/en/* → .com/en/*
+  if (pathLocale) {
+    const isCnDomain = hostname.endsWith('.cn') || hostname.endsWith('.com.cn');
+    const isComDomain = !isCnDomain;
+
+    if (isComDomain && pathLocale === 'zh') {
+      // Redirect .com/zh to .cn/zh
+      const newUrl = new URL(pathname, 'https://cheeseflow.cn');
+      newUrl.search = url.search;
+      return context.redirect(newUrl.toString(), 301);
+    }
+
+    if (isCnDomain && pathLocale === 'en') {
+      // Redirect .cn/en to .com/en
+      const newUrl = new URL(pathname, 'https://cheeseflow.com');
+      newUrl.search = url.search;
+      return context.redirect(newUrl.toString(), 301);
+    }
   }
 
-  // SCENARIO 3: User accesses clean URL without locale prefix (e.g., cheeseflow.com/blog)
-  // Rewrite internally to localized path (/en/blog) for routing, but URL stays clean
-  if (!hasLocalePrefix) {
-    const localisedPath = pathname === '/' ? `/${locale}/` : `/${locale}${pathname}`;
-    // Add query string if present
-    const fullPath = url.search ? `${localisedPath}${url.search}` : localisedPath;
-    // Use Astro's rewrite - this will trigger middleware again,
-    // but Scenario 1 will just call next() and serve the page
-    return context.rewrite(fullPath);
+  // CASE 3: No locale prefix - redirect to default locale
+  if (!pathLocale) {
+    return context.redirect(`/${defaultLocale}${pathname}`, 302);
   }
 
+  // CASE 4: Correct locale on correct domain - serve the page
   return next();
 });

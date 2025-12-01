@@ -16,12 +16,12 @@ export function getLangFromEntry(entry: {
     // Check if id starts with language code
     if (entry.id.startsWith('en/')) return 'en';
     if (entry.id.startsWith('zh/')) return 'zh';
-    
+
     // Check if id contains language directory anywhere
     if (entry.id.includes('/en/')) return 'en';
     if (entry.id.includes('/zh/')) return 'zh';
   }
-  
+
   // Fallback: check slug (file-based slug, not frontmatter slug)
   // Slug format: "en/filename" or "zh/filename" for files in subdirectories
   if (entry.slug) {

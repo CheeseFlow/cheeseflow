@@ -120,7 +120,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
             {page.data.map((post) => (
               <article class="flex flex-col">
                 <a
-                  href={`/${post.slug.replace(/^(en|zh)\//, '')}`}
+                  href={`/en/${post.slug.replace(/^(en|zh)\//, '')}`}
                   class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
                 >
                   {(() => {
@@ -142,7 +142,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
                 <div class="flex flex-1 flex-col">
                   <h2 class="text-2xl font-body font-bold text-ink mb-3">
                     <a
-                      href={`/${post.slug.replace(/^(en|zh)\//, '')}`}
+                      href={`/en/${post.slug.replace(/^(en|zh)\//, '')}`}
                       class="text-ink hover:text-brand transition-colors"
                     >
                       {post.data.title}
