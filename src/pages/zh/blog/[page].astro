@@ -6,6 +6,8 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import type { PaginateFunction, Page } from "astro";
 import { Image } from "astro:assets";
 
+export const prerender = true;
+
 // Import all blog images
 const blogImages = import.meta.glob<{ default: ImageMetadata }>(
   "../../../assets/images/blog/**/*.{jpg,jpeg,png,webp}",

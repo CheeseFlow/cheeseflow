@@ -83,6 +83,12 @@ All notable changes to this project will be documented in this file.
 - Middleware now modifies `context.url.pathname` before routing, allowing clean URLs without visible language prefixes
 - Added fallback `index.astro` and `[...slug].astro` routes for SSR mode
 
+### Fixed
+- Fixed redirect loop in middleware by removing the redirect that was hiding locale prefixes from URLs
+- Middleware now uses `context.rewrite()` properly without causing infinite redirect loops
+- Clean URLs (e.g., `/blog`, `/post-slug`) now work correctly on both `.com` and `.cn` domains
+- Improved `stripLocaleFromPath()` to preserve trailing slashes for proper routing
+
 ### Removed
 - All Jekyll files and dependencies
 - Old WordPress/Jekyll content and layouts

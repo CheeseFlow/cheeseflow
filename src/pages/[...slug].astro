@@ -1,7 +1,0 @@
----
-// This page is handled by middleware which rewrites to /en/... or /zh/...
-// This file exists as a fallback but should not be reached in normal operation
-const slugParam = Astro.params.slug as string | string[] | undefined;
-const slugPath = Array.isArray(slugParam) ? `/${slugParam.join("/")}` : `/${slugParam ?? ""}`;
-return Astro.redirect(slugPath, 302);
----
