@@ -7,14 +7,14 @@ categories: ["Branding"]
 tags: ["brand creation", "brand tagline"]
 author: "Jenxi Seow"
 excerpt: "A brand tagline is more than just a concise way of describe what your brand does."
-cover: "../../../assets/images/blog/en/Brand-tagline-misconceptions.001.png"
+cover: "../../assets/images/blog/en/Brand-tagline-misconceptions.001.png"
 coverAlt: "Why a good brand tagline is so important"
 ---
 A brand tagline is more than just a concise way of describe what your brand does. It is the essence of what your brand stands for, both to your customers and employees, aka internal customers.
 
 We often see new brands that try to use their brand tagline to describe the brand in a smart and witty way. That helps to make it memorable, but does that make it meaningful enough?
 
-![Brand Tagline Misconceptions 002](../../../assets/images/blog/en/Brand-tagline-misconceptions.002.png)
+![Brand Tagline Misconceptions 002](../../assets/images/blog/en/Brand-tagline-misconceptions.002.png)
 
 ## What’s the first brand tagline you can think of?
 
@@ -24,7 +24,7 @@ Nike’s tagline is simple, and has become so iconic and memorable. But there is
 
 You might think that creating a brand tagline is as simple as just doing it, but it is actually a complex process. Brands don’t just come up with taglines that have layers of meaning hidden within or even visible for all to see. It takes a lot of work to distil what you want to express into a few words.
 
-![Brand Tagline Misconceptions 003](../../../assets/images/blog/en/Brand-tagline-misconceptions.003.png)
+![Brand Tagline Misconceptions 003](../../assets/images/blog/en/Brand-tagline-misconceptions.003.png)
 
 ## What is a brand tagline?
 
@@ -38,7 +38,7 @@ Brand taglines also sets brand apart from competitors. Nike wants you to do it. 
 
 Taglines don’t just tell customers about the brand. It tells the employees about the organisation. Apple’s tagline is “Think different”, a constant reminder to employees that the company’s wants to bring the best user experience through innovative products.
 
-![Brand Tagline Misconceptions 007](../../../assets/images/blog/en/Brand-tagline-misconceptions.007.png)
+![Brand Tagline Misconceptions 007](../../assets/images/blog/en/Brand-tagline-misconceptions.007.png)
 
 ## What makes a good brand tagline?
 
@@ -54,7 +54,7 @@ For a brand tagline to be considered good, it should have the following features
 *   Evoke an emotional response
 *   Have no negative connotations
 
-![Brand Tagline Misconceptions 009](../../../assets/images/blog/en/Brand-tagline-misconceptions.009.png)
+![Brand Tagline Misconceptions 009](../../assets/images/blog/en/Brand-tagline-misconceptions.009.png)
 
 ## It is an in-depth process involving creativity and strategy
 

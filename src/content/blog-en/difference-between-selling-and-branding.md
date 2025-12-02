@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["branding"]
 author: "Jenxi Seow"
 excerpt: "Many brands think that they are branding, when in reality they are selling."
-cover: "../../../assets/images/blog/en/Brand-vs-sales.001.jpeg"
+cover: "../../assets/images/blog/en/Brand-vs-sales.001.jpeg"
 coverAlt: "Difference between selling and branding"
 ---
 Many brands think that they are branding, when in reality they are selling. How do selling and branding differ?
@@ -18,7 +18,7 @@ But when a cheaper competitor appears, it will kill your brand. Unless you go ch
 
 There’s not cheapest, only cheaper. We all know this.
 
-![Brand Vs Sales 002](../../../assets/images/blog/en/Brand-vs-sales.002.jpeg)
+![Brand Vs Sales 002](../../assets/images/blog/en/Brand-vs-sales.002.jpeg)
 
 ## Selling and marketing
 
@@ -26,7 +26,7 @@ We often encounter brands who think they are doing branding. They create a brand
 
 Many brands confuse brand expression with branding. They have the brand visuals on the products to differentiate it visually from the competitors.
 
-![Brand Vs Sales 006](../../../assets/images/blog/en/Brand-vs-sales.006.jpeg)
+![Brand Vs Sales 006](../../assets/images/blog/en/Brand-vs-sales.006.jpeg)
 
 They focus on telling consumers their brand’s features, advantages, benefits, and show evidence. The FABE sales technique. This is selling.
 
@@ -40,7 +40,7 @@ Put yourself in their shoes. You’re shopping online and you come across a prod
 
 If that’s the case, then why do people believe Apple’s claims of its product features and benefits? Branding creates trust and builds credibility.
 
-![Brand Vs Sales 005](../../../assets/images/blog/en/Brand-vs-sales.005.jpeg)
+![Brand Vs Sales 005](../../assets/images/blog/en/Brand-vs-sales.005.jpeg)
 
 ## Consumers buy products
 
@@ -52,7 +52,7 @@ Branding does the pre-selling. So instead of brands having to sell the product, 
 
 Branding is how the brand is perceived. Branding is what news and consumers say about the brand.
 
-![Brand Vs Sales 007](../../../assets/images/blog/en/Brand-vs-sales.007.jpeg)
+![Brand Vs Sales 007](../../assets/images/blog/en/Brand-vs-sales.007.jpeg)
 
 Brands are built in the minds of consumers. When Apple puts a marketing spin to their product claims, some consumers lap it up, while others see it as a reality distortion sphere.
 
@@ -64,7 +64,7 @@ Good branding doesn’t require you to sell because pre-selling is already done 
 
 ## How do you know if you’re selling or branding?
 
-![Brand Vs Sales 011](../../../assets/images/blog/en/Brand-vs-sales.011.jpeg)
+![Brand Vs Sales 011](../../assets/images/blog/en/Brand-vs-sales.011.jpeg)
 
 Consider the category your brand sells in. When consumers think of this category, what’s the first brand that comes to their mind? Why isn’t it your brand?
 
@@ -74,7 +74,7 @@ If you’re talking about your brand, you’re selling. If others are talking ab
 
 Having a good brand name makes it easier for others to talk about your brand.
 
-![Brand Vs Sales 012](../../../assets/images/blog/en/Brand-vs-sales.012.jpeg)
+![Brand Vs Sales 012](../../assets/images/blog/en/Brand-vs-sales.012.jpeg)
 
 Are you selling or branding? Learn how to differentiate selling and branding.
 

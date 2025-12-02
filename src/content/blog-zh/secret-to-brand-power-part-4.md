@@ -7,13 +7,13 @@ categories: ["Branding"]
 tags: ["brand creation", "brand power", "branding"]
 author: "jenxi@rubycoded.com"
 excerpt: "当媒体曝光的效果开始淡化时，进行广告宣传"
-cover: "../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-11.webp"
+cover: "../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-11.webp"
 coverAlt: "Secret-of-Brand-Power-Part-4-11"
 ---
 
 我们在之前三篇文章中了解到，缩小品牌范围和聚焦一个细分领域是增加品牌力的秘诀。我们也探讨里品牌力为何是通过媒体报道提高关注度，而不是通过广告宣传。
 
-![Secret Of Brand Power Part 4 – 13](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-13.webp)
+![Secret Of Brand Power Part 4 – 13](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-13.webp)
 
 ## 当媒体曝光的效果开始淡化时，进行广告宣传
 
@@ -25,7 +25,7 @@ coverAlt: "Secret-of-Brand-Power-Part-4-11"
 
 既然成熟的品牌通过广告宣传来引起消费者的注意，不打广告的品牌就会少经常出现在消费者的脑海里，甚至有被渐渐被遗忘掉的风险。
 
-![Secret Of Brand Power Part 4 – 15](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-15.webp)
+![Secret Of Brand Power Part 4 – 15](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-15.webp)
 
 ## 广告宣传是个门槛
 
@@ -33,7 +33,7 @@ coverAlt: "Secret-of-Brand-Power-Part-4-11"
 
 虽然这看起来是给品牌增加了压力，但品牌需要通过广告宣传来开拓市场份额，这其实对品牌是有益的。
 
-![Secret Of Brand Power Part 4 – 16](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-16.webp)
+![Secret Of Brand Power Part 4 – 16](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-16.webp)
 
 新品牌必须和成熟品牌竞争来得到市场份额，这意味着广告宣传对新品牌来说是个门槛。
 
@@ -49,7 +49,7 @@ coverAlt: "Secret-of-Brand-Power-Part-4-11"
 
 但是，其实是有个方法让你有说服力的去自卖自夸。好的广告战略关键在于把成熟品牌定位为领先品牌。
 
-![Secret Of Brand Power Part 4 – 17](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-17.webp)
+![Secret Of Brand Power Part 4 – 17](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-17.webp)
 
 ## 领先品牌的力量
 
@@ -63,7 +63,7 @@ coverAlt: "Secret-of-Brand-Power-Part-4-11"
 
 当消费者把你的品牌认定为领先品牌时，那新品牌要和你竞争的时候就需要在广告宣传上投入更多。如果它们没能力和你 PK 对决，消费者就会把他们视为小品牌。
 
-![Secret Of Brand Power Part 4 – 18](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-18.webp)
+![Secret Of Brand Power Part 4 – 18](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-18.webp)
 
 ## 提升您的品牌影响力
 
@@ -71,10 +71,10 @@ coverAlt: "Secret-of-Brand-Power-Part-4-11"
 
 但是，就算苹果当时是和市场龙头竞争时，它是把自己定位为在用户体验方面的领先品牌。换句话说，在拿自己和市场龙头对比时，苹果品牌找到自己的广告宣传策略如何把自己打造成领先品牌。
 
-![Secret Of Brand Power Part 4 – 9](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-9.jpg)
+![Secret Of Brand Power Part 4 – 9](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-4-9.jpg)
 
 想挖掘更多的品牌力的秘诀吗？
 
 如果您有兴趣了解我们能如何帮助您提升品牌影响力，请联系我们。
 
-![Secret Of Brand Power Part 5 – 21](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-5-21.webp)
+![Secret Of Brand Power Part 5 – 21](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-5-21.webp)

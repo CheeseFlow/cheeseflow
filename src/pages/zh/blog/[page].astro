@@ -32,15 +32,11 @@ function getCoverImage(coverPath: string | undefined): ImageMetadata | null {
 }
 
 type PageProps = {
-  page: Page<CollectionEntry<"blog">>;
+  page: Page<CollectionEntry<"blog-zh">>;
 };
 
 export async function getStaticPaths({ paginate }: { paginate: PaginateFunction }) {
-  const { getLangFromEntry } = await import("../../../content/config");
-  const blogPosts = await getCollection(
-    "blog",
-    (entry) => getLangFromEntry(entry) === "zh"
-  );
+  const blogPosts = await getCollection("blog-zh");
   const sortedPosts = blogPosts.sort(
     (a, b) =>
       new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
@@ -117,7 +113,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
             {page.data.map((post) => (
               <article class="flex flex-col">
                 <a
-                  href={`/zh/${post.slug.replace(/^(en|zh)\//, '')}`}
+                  href={`/zh/${post.data.slug || post.slug}`}
                   class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
                 >
                   {(() => {
@@ -139,7 +135,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
                 <div class="flex flex-1 flex-col">
                   <h2 class="text-3xl font-body font-black text-ink mb-3">
                     <a
-                      href={`/zh/${post.slug.replace(/^(en|zh)\//, '')}`}
+                      href={`/zh/${post.data.slug || post.slug}`}
                       class="text-ink hover:text-brand transition-colors"
                     >
                       {post.data.title}
@@ -203,7 +199,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
               
               return (
                 <a
-                  href={pageNumValue === 1 ? '/blog' : `/blog/${pageNumValue}`}
+                  href={pageNumValue === 1 ? '/zh/blog' : `/zh/blog/${pageNumValue}`}
                   class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
                 >
                   {pageNumValue}

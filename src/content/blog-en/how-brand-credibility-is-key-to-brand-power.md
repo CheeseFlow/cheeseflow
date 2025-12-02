@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["brand credibility", "brand power"]
 author: "Jenxi Seow"
 excerpt: "Brand credibility gives brand power."
-cover: "../../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-1.jpg"
+cover: "../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-1.jpg"
 coverAlt: "Credibility is key to brand power"
 ---
 Consumer don’t believe most of the claims products make. We are used to seeing marketing spin.
@@ -18,7 +18,7 @@ How do we convince consumers of the claims we make?
 
 The brand that can claim to be the first or the real thing puts itself ahead of the competition. The other brands become imitations. The most famous example being Coca-Cola.
 
-![Secret Of Brand Power Part 6 -- 5](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-5.jpg)
+![Secret Of Brand Power Part 6 -- 5](../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-5.jpg)
 
 ## Having credibility
 
@@ -28,7 +28,7 @@ Would you walk into the most popular Italian restaurant in the neighbourhood to 
 
 Being the leader in the category gives the brand credibility. If your brand is unable to be the leader in the category, narrow the scope and be the leader in a niche category.
 
-![Secret Of Brand Power Part 6 -- 6](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-6.jpg)
+![Secret Of Brand Power Part 6 -- 6](../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-6.jpg)
 
 ## Mistake #1: Trying to do everything
 
@@ -36,7 +36,7 @@ We often see brands making the mistake of trying to do everything. If the produc
 
 People don’t go to KFC for burgers, even though KFC sells burger. KFC focuses on fried chicken. They have their credentials in making good fried chicken. They also happen to serve burgers for people who want to.
 
-![Secret Of Brand Power Part 6 -- 6 1](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-6-1.jpg)
+![Secret Of Brand Power Part 6 -- 6 1](../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-6-1.jpg)
 
 ## Mistake #2: Just listing the benefits
 
@@ -44,7 +44,7 @@ Many brands just go through a list of meaningless benefits. The brand is cheaper
 
 Claims built upon the brand’s credibility hold more weight. When brands are the market leaders, they have the credentials to make claims in their niche.
 
-![Secret Of Brand Power Part 6 -- 7 1](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-7-1.jpg)
+![Secret Of Brand Power Part 6 -- 7 1](../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-7-1.jpg)
 
 ## Mistake #3: Holding on to customers
 
@@ -52,7 +52,7 @@ Of course, there are some users who are more adventurous and would consider a br
 
 They are a small group and we can’t appeal to everyone. If this group is valuable in leading the rest of the market, then it might make sense to come up with products that cater to these sophisticated consumers. However, that is secondary. A brand’s priority is still to be the leader of their target niche.
 
-![Secret Of Brand Power Part 6 -- 8](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-8.jpg)
+![Secret Of Brand Power Part 6 -- 8](../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-8.jpg)
 
 ## Grow your brand power
 
@@ -60,7 +60,7 @@ Being credible gives a brand power, and being the market leader in the product�
 
 Explore ways to make your brand a market leader if it isn’t already one.
 
-![Secret Of Brand Power Part 6 -- 9](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-9.jpg)
+![Secret Of Brand Power Part 6 -- 9](../../assets/images/blog/en/Secret-of-Brand-Power-Part-6-9.jpg)
 
 Do you want to tap on the secrets of brand power?
 

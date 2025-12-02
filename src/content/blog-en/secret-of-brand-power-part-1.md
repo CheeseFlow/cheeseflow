@@ -7,12 +7,12 @@ categories: ["Branding"]
 tags: ["brand creation", "brand power", "branding"]
 author: "Jenxi Seow"
 excerpt: "Brand power is inversely proportional to its scope."
-cover: "../../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-1.jpg"
+cover: "../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-1.jpg"
 coverAlt: "Secret Of Brand Power Part 1 1"
 ---
 The secret of brand power is actually not much of a secret. Many people know it but they fail to act in a rationale way. They believe that their brand is special and thus immune to the principles of branding.
 
-![Secret Of Brand Power Part 1 2](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-2.jpg)
+![Secret Of Brand Power Part 1 2](../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-2.jpg)
 
 Brand power is inversely proportional to its scope. This means that when your brand has a wider scope, its power weakens. This happens when you put your brand on every product.
 
@@ -22,7 +22,7 @@ Brand often make three mistakes when it comes to brand power.
 
 ## Mistake #1: Increasing product line
 
-![Secret Of Brand Power Part 1 5](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-5.jpg)
+![Secret Of Brand Power Part 1 5](../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-5.jpg)
 
 We often come across companies that chase short term benefits. They add a lot of products to the same brand to grow sales in the short term.
 
@@ -30,7 +30,7 @@ However, this dilutes the brand name in the long term, and weakens the brand pow
 
 Samsung had the largest worldwide smartphone market share in 2012 at 23.7%. Its latest market share in 2021 is 20.1%. Apple had a worldwide market share of 8% in 2012 and 17.4% in 2021.
 
-![Secret Of Brand Power Part 1 6](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-6.jpg)
+![Secret Of Brand Power Part 1 6](../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-6.jpg)
 
 To cater do the mid and low end market, Samsung has many phone models in its product line with confusing naming. Meanwhile, Apple sticks to the iPhone with the use of Plus, Pro, and Pro Max to differentiate the models.
 
@@ -38,7 +38,7 @@ Consumers remember the iPhone brand, whereas Samsung users refer to their phones
 
 ## Mistake #2: Parent and child brands
 
-![Secret Of Brand Power Part 1 7](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-7.jpg)
+![Secret Of Brand Power Part 1 7](../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-7.jpg)
 
 Some companies try to relate the parent brands with the child brands.
 
@@ -56,7 +56,7 @@ Likewise, the iPad is simply called the pad or tablet in China. This goes to sho
 
 People want names that are easy to distinguish and easy to call.
 
-![Secret Of Brand Power Part 1 8 1](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-8-1.jpg)
+![Secret Of Brand Power Part 1 8 1](../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-8-1.jpg)
 
 Kellogg’s have many child brands. However, consumers remember each child brand and generally don’t think of Kellogg’s when they think of the child brands. They attach only one name to each product category, and in this case it’s the product’s name.
 
@@ -68,13 +68,13 @@ When there is no competition, new product lines will just cannibalise the brand�
 
 ## Grow your brand power
 
-![Secret Of Brand Power Part 1 9](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-9.jpg)
+![Secret Of Brand Power Part 1 9](../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-9.jpg)
 
 Keep your brand’s scope narrow to build the brand in consumers’ minds. This will increase sales in the future and grow the brand power in the long term.
 
 Do you want to tap on the secrets of brand power? Are you making one of the mistakes?
 
-![Secret Of Brand Power Part 1 10](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-10.jpg)
+![Secret Of Brand Power Part 1 10](../../assets/images/blog/en/Secret-of-Brand-Power-Part-1-10.jpg)
 
 [Speak to us](https://cheeseflow.com/contact/) if you are interested to understand how we can help you to grow your brand power.
 

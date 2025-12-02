@@ -78,20 +78,16 @@ All notable changes to this project will be documented in this file.
 - Blog pagination links updated to include language prefixes
 
 ### Fixed
+- **CRITICAL FIX**: Restructured content collections to use separate `blog-en` and `blog-zh` collections instead of subdirectories
+  - Moved `src/content/blog/en/` → `src/content/blog-en/`
+  - Moved `src/content/blog/zh/` → `src/content/blog-zh/`
+  - All 12 EN posts and 12 ZH posts now correctly detected and prerendered
 - Fixed Sharp image processing warning by configuring `imageService: 'compile'` in astro.config.mjs for Cloudflare compatibility
-- ZH blog images now render correctly with proper optimization
+- Fixed image paths in markdown files after directory restructure (3 levels to 2 levels up)
+- Both EN and ZH blog images now render correctly with proper optimization
 - Removed debug console.log statements from blog index pages
 - Fixed blog post URLs to consistently use language prefixes across all pages
-
-### Known Issues
-- **CRITICAL**: Astro content collection (`getCollection('blog')`) only detects posts in `src/content/blog/zh/` directory
-- EN blog posts in `src/content/blog/en/` are not being indexed despite:
-  - Files physically existing with valid frontmatter
-  - Being tracked in git (12 files)
-  - Having identical permissions and structure to ZH directory
-  - Multiple cache clears and fresh builds
-  - Directory renaming attempts
-  - This appears to be an Astro v5 bug with subdirectory detection in content collections
+- Installed Sharp as dependency for image processing during build
 
 ### Removed
 - All Jekyll files and dependencies

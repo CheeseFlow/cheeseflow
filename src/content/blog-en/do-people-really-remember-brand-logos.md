@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["brand colors", "brand logo"]
 author: "Jenxi Seow"
 excerpt: "Do consumers need to be able remember brand logos and to draw them from memory for them to be good logos?"
-cover: "../../../assets/images/blog/en/Brand-logo-recall.001.jpeg"
+cover: "../../assets/images/blog/en/Brand-logo-recall.001.jpeg"
 coverAlt: "Do people really remember brand logos?"
 ---
 We came across an interesting branding myth recently. It claims that consumers should be able to draw remember brand logos and draw them from memory. Is this true? Let’s find out.
@@ -18,7 +18,7 @@ The team at [Signs.com](https://www.signs.com/branded-in-memory) did a study to 
 
 ## Apple
 
-![Brand Logo Recall 003](../../../assets/images/blog/en/Brand-logo-recall.003.jpeg)
+![Brand Logo Recall 003](../../assets/images/blog/en/Brand-logo-recall.003.jpeg)
 
 Apple brand recall
 
@@ -36,7 +36,7 @@ The results show that most people (77%) remember Apple’s colours. Even if they
 
 ## Adidas
 
-![Brand Logo Recall 006](../../../assets/images/blog/en/Brand-logo-recall.006.jpeg)
+![Brand Logo Recall 006](../../assets/images/blog/en/Brand-logo-recall.006.jpeg)
 
 Adidas brand recall
 
@@ -54,7 +54,7 @@ Even though Adidas is an iconic logo, people still have a hard time recalling th
 
 ## Burger King
 
-![Brand Logo Recall 007](../../../assets/images/blog/en/Brand-logo-recall.007.jpeg)
+![Brand Logo Recall 007](../../assets/images/blog/en/Brand-logo-recall.007.jpeg)
 
 Burger King brand recall
 
@@ -68,7 +68,7 @@ The people recalled the logo’s colour pretty well even though it is three colo
 
 ## Domino’s
 
-![Brand Logo Recall 008](../../../assets/images/blog/en/Brand-logo-recall.008.jpeg)
+![Brand Logo Recall 008](../../assets/images/blog/en/Brand-logo-recall.008.jpeg)
 
 Domino’s brand recall
 
@@ -84,7 +84,7 @@ The people recalled the logo’s colour pretty well, with a minority drawing the
 
 ## 7-Eleven
 
-![Brand Logo Recall 009](../../../assets/images/blog/en/Brand-logo-recall.009.jpeg)
+![Brand Logo Recall 009](../../assets/images/blog/en/Brand-logo-recall.009.jpeg)
 
 7-Eleven brand recall
 
@@ -98,7 +98,7 @@ The people recalled the logo’s colour pretty well, with a minority drawing the
 
 ## Foot Locker
 
-![Brand Logo Recall 011](../../../assets/images/blog/en/Brand-logo-recall-011.jpeg)
+![Brand Logo Recall 011](../../assets/images/blog/en/Brand-logo-recall-011.jpeg)
 
 Foot Locker brand recall
 
@@ -110,7 +110,7 @@ Of the people who drew the referee, only 50% remembered that his hands are on hi
 
 ## Starbucks
 
-![Brand Logo Recall 012](../../../assets/images/blog/en/Brand-logo-recall-012.jpeg)
+![Brand Logo Recall 012](../../assets/images/blog/en/Brand-logo-recall-012.jpeg)
 
 Starbucks brand recall
 
@@ -122,7 +122,7 @@ Out of the people who drew the crown, only 16% remembered the the star in the cr
 
 ## Walmart
 
-![Brand Logo Recall 004](../../../assets/images/blog/en/Brand-logo-recall.004.jpeg)
+![Brand Logo Recall 004](../../assets/images/blog/en/Brand-logo-recall.004.jpeg)
 
 Walmart brand recall
 
@@ -136,7 +136,7 @@ Walmart brand recall
 
 ## Target
 
-![Brand Logo Recall 005](../../../assets/images/blog/en/Brand-logo-recall.005.jpeg)
+![Brand Logo Recall 005](../../assets/images/blog/en/Brand-logo-recall.005.jpeg)
 
 Target brand recall
 
@@ -148,7 +148,7 @@ Target brand recall
 
 ## IKEA
 
-![Brand Logo Recall 010](../../../assets/images/blog/en/Brand-logo-recall.010.jpeg)
+![Brand Logo Recall 010](../../assets/images/blog/en/Brand-logo-recall.010.jpeg)
 
 IKEA brand recall
 
@@ -162,13 +162,13 @@ IKEA brand recall
 
 ## People don’t remember brand logos
 
-![Brand Logo Recall 013](../../../assets/images/blog/en/Brand-logo-recall-013.jpeg)
+![Brand Logo Recall 013](../../assets/images/blog/en/Brand-logo-recall-013.jpeg)
 
 We can see from the survey that even though these are famous brands, most consumers are unable to recall the brand logos. They associate the visual image to the brand but they don’t remember it fully.
 
 When it comes to brand, the visuals play some part but many other factors contribute to how consumers perceive brands, such as emotions and the brand experience itself. Brand logos and colours, despite their importance in branding, make up only a fraction of the brand visual.
 
-![Brand Logo Recall 014](../../../assets/images/blog/en/Brand-logo-recall-014.jpeg)
+![Brand Logo Recall 014](../../assets/images/blog/en/Brand-logo-recall-014.jpeg)
 
 [Speak to us](https://cheeseflow.com/contact/) if you are interested to understand how we can help you improve your brand.
 

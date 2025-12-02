@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["branding"]
 author: "jenxi@rubycoded.com"
 excerpt: "很多品牌觉得它们是在做品牌营销，实际上它们是在做品牌推销。"
-cover: "../../../assets/images/blog/zh/Brand-vs-sales.013.webp"
+cover: "../../assets/images/blog/zh/Brand-vs-sales.013.webp"
 coverAlt: "Brand Vs Sales 013"
 ---
 
@@ -19,7 +19,7 @@ coverAlt: "Brand Vs Sales 013"
 
 我们都知道没有最便宜，只有更便宜。
 
-![Brand Vs Sales 014](../../../assets/images/blog/zh/Brand-vs-sales.014.webp)
+![Brand Vs Sales 014](../../assets/images/blog/zh/Brand-vs-sales.014.webp)
 
 ## 推销和市场营销
 
@@ -27,7 +27,7 @@ coverAlt: "Brand Vs Sales 013"
 
 很多品牌把品牌表现当作品牌营销。它们只不过是把品牌视觉元素放在品牌上，让它们的产品容易和竞争对手辨别出来。
 
-![Brand Vs Sales 018](../../../assets/images/blog/zh/Brand-vs-sales.018.webp)
+![Brand Vs Sales 018](../../assets/images/blog/zh/Brand-vs-sales.018.webp)
 
 它们执着于告诉消费者它们品牌的特点、优势、效益，并用证据证明。这是经典的 FABE 销售术。这是品牌推销。
 
@@ -41,7 +41,7 @@ coverAlt: "Brand Vs Sales 013"
 
 那你就会想，如果是那样的话，那为什么很多人还是相信苹果自称的产品特征和优点呢？品牌营销建立信任和信誉。
 
-![Brand Vs Sales 017](../../../assets/images/blog/zh/Brand-vs-sales.017.webp)
+![Brand Vs Sales 017](../../assets/images/blog/zh/Brand-vs-sales.017.webp)
 
 ## 消费者是在买产品
 
@@ -53,7 +53,7 @@ coverAlt: "Brand Vs Sales 013"
 
 品牌营销是他人如何感知你的品牌。品牌营销是媒体和消费者对你品牌的评价。
 
-![Brand Vs Sales 019](../../../assets/images/blog/zh/Brand-vs-sales.019.webp)
+![Brand Vs Sales 019](../../assets/images/blog/zh/Brand-vs-sales.019.webp)
 
 品牌是消费者在脑海里建立的认知。当苹果在产品声称里用营销手段，有些消费者完全接受，但是有些人会觉得是在忽悠人。
 
@@ -65,7 +65,7 @@ coverAlt: "Brand Vs Sales 013"
 
 ## 你是在做品牌推销还是品牌营销呢？
 
-![Brand Vs Sales 023](../../../assets/images/blog/zh/Brand-vs-sales.023.webp)
+![Brand Vs Sales 023](../../assets/images/blog/zh/Brand-vs-sales.023.webp)
 
 想一想你品牌所在的产品分类。当消费者想到这个产品类时第一个想到的是哪个品牌？为什么不是你的品牌？
 
@@ -75,6 +75,6 @@ coverAlt: "Brand Vs Sales 013"
 
 有个好的品牌名称也能让其他人更容易了解讲述你的品牌。
 
-![Brand Vs Sales 024](../../../assets/images/blog/zh/Brand-vs-sales.024.webp)
+![Brand Vs Sales 024](../../assets/images/blog/zh/Brand-vs-sales.024.webp)
 
 你究竟是在做品牌推销还是品牌营销？了解如何区分品牌销售和品牌营销不要浪费时间和金钱在错误的策略。

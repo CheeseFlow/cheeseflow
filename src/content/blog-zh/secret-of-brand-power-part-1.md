@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["brand creation", "brand power", "branding"]
 author: "jenxi@rubycoded.com"
 excerpt: "品牌力与其范围成反比，很多人都知道，但不遵守品牌法则"
-cover: "../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-11.webp"
+cover: "../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-11.webp"
 coverAlt: "Secret Of Brand Power Part 1 11"
 ---
 
@@ -15,7 +15,7 @@ coverAlt: "Secret Of Brand Power Part 1 11"
 
 品牌力与其范围成反比。这就意味着当你的品牌范围变得越广时，品牌力就会变得越弱。当你将品牌用在每种产品上时，这个情况就会出现。
 
-![Secret Of Brand Power Part 1 12](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-12.webp)
+![Secret Of Brand Power Part 1 12](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-12.webp)
 
 同样，你能通过限制使用你的品牌的产品来增强你的品牌力。
 
@@ -23,7 +23,7 @@ coverAlt: "Secret Of Brand Power Part 1 11"
 
 ## 错误（一）：增加产品线
 
-![Secret Of Brand Power Part 1 15](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-15.webp)
+![Secret Of Brand Power Part 1 15](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-15.webp)
 
 我们经常遇到一些追求短期利益的企业，为了在短期内增加销售量，他们不断在同个品牌下扩展产品线。
 
@@ -33,13 +33,13 @@ coverAlt: "Secret Of Brand Power Part 1 11"
 
 为了迎合中低端市场，三星的产品线中有许多命名混淆的名称。与此同时，苹果一直坚持使用 iPhone 名称，同个 Plus、Pro 和 Pro Max 来区分型号。
 
-![Secret Of Brand Power Part 1 16](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-16.webp)
+![Secret Of Brand Power Part 1 16](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-16.webp)
 
 消费者记得 iPhone 品牌，而三星用户则经常把手机以 S22、Filp/Fold 或 Note（已停产）称乎，而不是 Galaxy 手机品牌。
 
 ## 错误（二）：母品牌和子品牌
 
-![Secret Of Brand Power Part 1 17](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-17.webp)
+![Secret Of Brand Power Part 1 17](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-17.webp)
 
 有些公司试图将母品牌与子品牌关联起来。
 
@@ -57,7 +57,7 @@ coverAlt: "Secret Of Brand Power Part 1 11"
 
 人们其实是想要易于区分且易与称呼的名称。
 
-![Secret Of Brand Power Part 1 18](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-18.webp)
+![Secret Of Brand Power Part 1 18](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-18.webp)
 
 家乐氏有很多子品牌，但是消费者通常会记得子品牌，而不会通过字品牌联想到家乐氏这母品牌。他们只为每个产品类目附上一个名称，在这种情况下，它就是产品的名称。
 
@@ -69,12 +69,12 @@ coverAlt: "Secret Of Brand Power Part 1 11"
 
 ## 提升您的品牌影响力
 
-![Secret Of Brand Power Part 1 19](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-19.webp)
+![Secret Of Brand Power Part 1 19](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-19.webp)
 
 通过缩小品牌范围在消费者心目中建立品牌力，将有助于增加未来的销售额，并会在长期时间内增强品牌力。
 
 想挖掘更多的品牌力的秘诀吗？是否也犯了以上的错误呢？
 
-![Secret Of Brand Power Part 1 20 1](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-20-1.webp)
+![Secret Of Brand Power Part 1 20 1](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-1-20-1.webp)
 
 如果您有兴趣了解我们能如何帮助您提升品牌影响力，请联系我们。

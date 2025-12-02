@@ -7,20 +7,20 @@ categories: ["Branding"]
 tags: ["brand creation", "brand power", "branding"]
 author: "Jenxi Seow"
 excerpt: "Brand power is proportional to its focus."
-cover: "../../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-1.jpg"
+cover: "../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-1.jpg"
 coverAlt: "Secret of Brand Power Part 2"
 ---
 We learnt in the previous article that the secret of brand power lies in having a narrow brand scope. In other words, brand power is stronger when the brand has greater focus.
 
 ## Brand power is proportional to its focus
 
-![Secret Of Brand Power Part 2 3](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-3.jpg)
+![Secret Of Brand Power Part 2 3](../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-3.jpg)
 
 When a brand focuses on a niche, it is more powerful. When a brand tries to appeal to everyone, its power is diluted. Focusing on a niche makes the brand powerful, especially in the category it occupies.
 
 But if this is the case, then why are successful brands expanding their product lines? Why are they trying to create new products to cater to different customer segments in a product category. Why are they creating new products to enter new product categories?
 
-![Secret Of Brand Power Part 2 4](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-4.jpg)
+![Secret Of Brand Power Part 2 4](../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-4.jpg)
 
 Look at Coca-Cola. There’s Diet Coke, Coca-Cola Zero, Coca-Cola Vanilla, and other special versions with different tastes.
 
@@ -30,7 +30,7 @@ It is not surprising that people make the common mistake of thinking that big br
 
 ## Instead of successful brands, think of successful people
 
-![Secret Of Brand Power Part 2 5](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-5.jpg)
+![Secret Of Brand Power Part 2 5](../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-5.jpg)
 
 If you want to become successful like them, do you do what they do? Do you buy fancy cars, expensive houses, eat expensive meals, and buy luxury products? Of course, not every successful person would splurge their wealth but even if they don’t, they have the financial ability to if they want to.
 
@@ -42,7 +42,7 @@ Likewise, brands chasing success should be doing what successful brands did befo
 
 So what did successful brands do before they became successful? No prizes for guessing the answer -- they narrow their focus.
 
-![Secret Of Brand Power Part 2 8](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-8.jpg)
+![Secret Of Brand Power Part 2 8](../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-8.jpg)
 
 When coffee shops were selling all kinds of food and drinks, Starbucks chose to focus on only coffee. It was only after they became a successful and recognisable brand that they started to offer other products like other coffee shops.
 
@@ -56,7 +56,7 @@ In fact, most of Coca-Cola’s products use different brand names that many peop
 
 The other important benefit of narrowing your focus is that you target a niche audience. When your target customers belong to a niche, it is easier for you to understand what them and what they value in the products they buy. This allows you to build a brand that appeals to them.
 
-![Secret Of Brand Power Part 2 9](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-9.jpg)
+![Secret Of Brand Power Part 2 9](../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-9.jpg)
 
 Most delicatessens in the US serve all kinds of food. Subway decided to be a deli that sold only submarine sandwiches. Yes, they were that specific with their focus. They did not just focus no sandwiches, but a particular type of sandwich.
 
@@ -70,7 +70,7 @@ Narrow your brand’s focus to magnify your brand power. Look at what successful
 
 Do you want to tap on the secrets of brand power? Are you making one of the mistakes?
 
-![Secret Of Brand Power Part 2 10 1](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-10-1.jpg)
+![Secret Of Brand Power Part 2 10 1](../../assets/images/blog/en/Secret-of-Brand-Power-Part-2-10-1.jpg)
 
 [Speak to us](https://cheeseflow.com/contact/) if you are interested to understand how we can help you to grow your brand power.
 

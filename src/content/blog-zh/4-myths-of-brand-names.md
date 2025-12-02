@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["brand creation", "brand naming"]
 author: "jenxi@rubycoded.com"
 excerpt: "品牌命名不是找个听起来或者感觉不错的名字就好了那么简单"
-cover: "../../../assets/images/blog/zh/Myth-of-brands-CN-1.webp"
+cover: "../../assets/images/blog/zh/Myth-of-brands-CN-1.webp"
 coverAlt: "Myth Of Brands CN 1"
 ---
 
@@ -15,7 +15,7 @@ coverAlt: "Myth Of Brands CN 1"
 很多中小型企业甚至一些大企业会误以为品牌命名是个很直截了当的过程。  
 尤其是当创建品牌的人（包括商标所有者和参与创作品牌的人们）认为他们决定的品牌名字是最好的，只因为品牌是他们创建的。
 
-![Myth Of Brands CN 2](../../../assets/images/blog/zh/Myth-of-brands-CN-2.webp)
+![Myth Of Brands CN 2](../../assets/images/blog/zh/Myth-of-brands-CN-2.webp)
 
 ## 1\. 品牌命名很简单
 
@@ -31,7 +31,7 @@ coverAlt: "Myth Of Brands CN 1"
 
 行业内有很成熟、经过深入研究的方法来帮助你去了解目标市场会对你的品牌名字会有的反应。
 
-![Myth Of Brands CN 5](../../../assets/images/blog/zh/Myth-of-brands-CN-5.webp)
+![Myth Of Brands CN 5](../../assets/images/blog/zh/Myth-of-brands-CN-5.webp)
 
 ## 3\. 品牌命名是摸索出来的
 
@@ -51,7 +51,7 @@ coverAlt: "Myth Of Brands CN 1"
 
 你也许会非常幸运想到一个很完美的名字，但是往往会因为某种原因无法注册商标。
 
-![Myth Of Brands CN 10](../../../assets/images/blog/zh/Myth-of-brands-CN-10.webp)
+![Myth Of Brands CN 10](../../assets/images/blog/zh/Myth-of-brands-CN-10.webp)
 
 ## 品牌命名很艰难但具有强大作用
 
@@ -59,4 +59,4 @@ coverAlt: "Myth Of Brands CN 1"
 
 想看到更多关于品牌的内容，请关注我们的微信公众号。
 
-![CheeseFlow WeChat QR Code](../../../assets/images/blog/zh/CheeseFlow-WeChat-QR-code.jpg)
+![CheeseFlow WeChat QR Code](../../assets/images/blog/zh/CheeseFlow-WeChat-QR-code.jpg)

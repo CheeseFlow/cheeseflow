@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["brand credibility", "brand power"]
 author: "jenxi@rubycoded.com"
 excerpt: "品牌信誉是品牌力的关键"
-cover: "../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-11.webp"
+cover: "../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-11.webp"
 coverAlt: "Secret-of-Brand-Power-Part-6-11"
 ---
 
@@ -27,7 +27,7 @@ coverAlt: "Secret-of-Brand-Power-Part-6-11"
 
 成为产品分类里的领先品牌给予品牌可信度。如果品牌不能成为分类里的龙头，那就要缩小品牌的焦点，成为细分类的领先品牌。
 
-![Secret Of Brand Power Part 6 – 15](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-15.webp)
+![Secret Of Brand Power Part 6 – 15](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-15.webp)
 
 ## 误解（一）：什么都想做
 
@@ -35,7 +35,7 @@ coverAlt: "Secret-of-Brand-Power-Part-6-11"
 
 人们去肯德基不是为了吃汉堡，即使肯德基也卖汉堡。肯德基专注于做炸鸡，肯德基的品牌信誉是建于炸鸡上，只不过他们刚好同时也卖汉堡。
 
-![Secret Of Brand Power Part 6 – 16 1](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-16-1.webp)
+![Secret Of Brand Power Part 6 – 16 1](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-16-1.webp)
 
 ## 误解（二）：只顾着列出功能
 
@@ -43,7 +43,7 @@ coverAlt: "Secret-of-Brand-Power-Part-6-11"
 
 建立于品牌信誉的优势会更有说服力。当品牌是行业龙头，它们有这个可信度在它们的细分领域里去声称自己的优势。
 
-![Secret Of Brand Power Part 6 – 17](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-17.webp)
+![Secret Of Brand Power Part 6 – 17](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-17.webp)
 
 ## 误解（三）：只顾着流着客户
 
@@ -51,7 +51,7 @@ coverAlt: "Secret-of-Brand-Power-Part-6-11"
 
 这些客户属于小群体，正所谓众口难调，如果这部分的用户能带动整个行业，那设法推出能专门针对这些精明客户的产品是个合理的选择。但是，这是次要。品牌的重点还是成为目标细分领域的领先品牌。
 
-![Secret Of Brand Power Part 6 – 18](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-18.webp)
+![Secret Of Brand Power Part 6 – 18](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-18.webp)
 
 ## 提升您的品牌力
 
@@ -59,7 +59,7 @@ coverAlt: "Secret-of-Brand-Power-Part-6-11"
 
 如果你的品牌还未成为行业龙头，探讨如何把它打造成领先品牌。
 
-![Secret Of Brand Power Part 6 – 19](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-19.webp)
+![Secret Of Brand Power Part 6 – 19](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-6-19.webp)
 
 想挖掘更多的品牌力的秘诀吗？
 

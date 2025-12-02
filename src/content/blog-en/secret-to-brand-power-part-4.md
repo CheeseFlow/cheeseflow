@@ -7,12 +7,12 @@ categories: ["Branding"]
 tags: ["brand creation", "brand power", "branding"]
 author: "Jenxi Seow"
 excerpt: "Brand power needs advertising to maintain when publicity fades."
-cover: "../../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-1.jpg"
+cover: "../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-1.jpg"
 coverAlt: "Secret of Brand Power Part 4"
 ---
 We learnt in the previous articles that having a narrow brand scope and narrow focus are the secrets of brand power. We also discussed how a brand grows with publicity, not advertising.
 
-![Secret Of Brand Power Part 4 -- 2](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-2.jpg)
+![Secret Of Brand Power Part 4 -- 2](../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-2.jpg)
 
 ## Advertise when publicity fades
 
@@ -24,7 +24,7 @@ There are thousands of brands in the market and consumers are likely to come acr
 
 Since established brands are advertising to get the attention of consumers, brands that do not advertise would not appear in consumers’ minds that often and risk being forgotten.
 
-![Secret Of Brand Power Part 4 -- 4](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-4.jpg)
+![Secret Of Brand Power Part 4 -- 4](../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-4.jpg)
 
 ## Advertising is a barrier to entry
 
@@ -32,7 +32,7 @@ The need to advertise requires brands to set aside budget for ads and the creati
 
 While this might seem like a burden on a brand, the need for advertising to carve out market share is also beneficial.
 
-![Secret Of Brand Power Part 4 -- 5](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-5.jpg)
+![Secret Of Brand Power Part 4 -- 5](../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-5.jpg)
 
 New brands need to compete with established brands to get a slice of market share. This means that advertising creates the barrier of entry for newcomers.
 
@@ -48,7 +48,7 @@ We talked about how publicity is more power than advertising because publicity i
 
 However, there is a way to talk about yourself in a convincing way. The key to a good advertising strategy is to position an established brand as the leading brand.
 
-![Secret Of Brand Power Part 4 -- 6](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-6.jpg)
+![Secret Of Brand Power Part 4 -- 6](../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-6.jpg)
 
 ## Power of the leading brand
 
@@ -62,7 +62,7 @@ Being a market leader gives the brand more authority in the industry and product
 
 When consumers consider your brand the leading brand, new brands will have to pay even more in order when they advertise to compete against you. If they are unable to go head on with you, consumers will view them as the smaller brand.
 
-![Secret Of Brand Power Part 4 -- 7](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-7.jpg)
+![Secret Of Brand Power Part 4 -- 7](../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-7.jpg)
 
 ## Grow your brand power
 
@@ -70,7 +70,7 @@ We see this transition with Apple. When Apple was competing with market leader M
 
 However, even when Apple was competing against the market leader, it positioned itself as the leader in user experience. Apple found ways to advertise in such a way that it was a leading brand even when compared to the market leader.
 
-![Secret Of Brand Power Part 4 -- 9](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-9.jpg)
+![Secret Of Brand Power Part 4 -- 9](../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-9.jpg)
 
 Having the right advertising strategy will give you better returns on the money you invest in ads.
 
@@ -80,5 +80,5 @@ Do you want to tap on the secrets of brand power?
 
 Follow us on [Instagram @thecheeseflow](https://instagram.com/thecheeseflow/) to learn more about branding or subscribe to get the latest articles in your inbox.
 
-![Secret Of Brand Power Part 4 -- 10](../../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-10.jpg)
+![Secret Of Brand Power Part 4 -- 10](../../assets/images/blog/en/Secret-of-Brand-Power-Part-4-10.jpg)
 

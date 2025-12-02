@@ -1,15 +1,13 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { getLangFromEntry } from '../../content/config';
 import PostLayout from '../../layouts/PostLayoutZh.astro';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const blogPosts = await getCollection('blog', (entry) => getLangFromEntry(entry) === 'zh');
+  const blogPosts = await getCollection('blog-zh');
   return blogPosts.map((post) => {
-    // Use frontmatter slug if available, otherwise strip directory prefix from file-based slug
-    const slug = post.data.slug || post.slug.replace(/^(en|zh)\//, '');
+    const slug = post.data.slug || post.slug;
     return {
       params: { slug },
       props: { post },
@@ -17,7 +15,7 @@ export async function getStaticPaths() {
   });
 }
 
-const { post } = Astro.props as { post: CollectionEntry<'blog'> };
+const { post } = Astro.props as { post: CollectionEntry<'blog-zh'> };
 const { Content } = await post.render();
 const { title, description, date, readingTime: frontmatterReadingTime, tags } = post.data;
 

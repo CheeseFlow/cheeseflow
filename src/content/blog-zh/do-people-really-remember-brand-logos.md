@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["brand colors", "brand logo"]
 author: "jenxi@rubycoded.com"
 excerpt: "消费者必须能从记忆中把品牌标志画出来，才算是个好 logo 吗？"
-cover: "../../../assets/images/blog/zh/Brand-logo-recall-015.webp"
+cover: "../../assets/images/blog/zh/Brand-logo-recall-015.webp"
 coverAlt: "Brand Logo Recall 015"
 ---
 
@@ -19,7 +19,7 @@ coverAlt: "Brand Logo Recall 015"
 
 ## Apple 苹果
 
-![Brand Logo Recall 017](../../../assets/images/blog/zh/Brand-logo-recall-017.webp)
+![Brand Logo Recall 017](../../assets/images/blog/zh/Brand-logo-recall-017.webp)
 
 Apple brand recall
 
@@ -37,7 +37,7 @@ Apple brand recall
 
 ## Adidas 阿迪达斯
 
-![Brand Logo Recall 020](../../../assets/images/blog/zh/Brand-logo-recall-020.webp)
+![Brand Logo Recall 020](../../assets/images/blog/zh/Brand-logo-recall-020.webp)
 
 Adidas brand recall
 
@@ -55,7 +55,7 @@ Adidas brand recall
 
 ## Burger King 汉堡王
 
-![Brand Logo Recall 021](../../../assets/images/blog/zh/Brand-logo-recall-021.webp)
+![Brand Logo Recall 021](../../assets/images/blog/zh/Brand-logo-recall-021.webp)
 
 Burger King brand recall
 
@@ -69,7 +69,7 @@ Burger King brand recall
 
 ## Domino’s 达美乐
 
-![Brand Logo Recall 022](../../../assets/images/blog/zh/Brand-logo-recall-022.webp)
+![Brand Logo Recall 022](../../assets/images/blog/zh/Brand-logo-recall-022.webp)
 
 Domino’s brand recall
 
@@ -85,7 +85,7 @@ Domino’s brand recall
 
 ## 7-Eleven 七十一
 
-![Brand Logo Recall 023](../../../assets/images/blog/zh/Brand-logo-recall-023.webp)
+![Brand Logo Recall 023](../../assets/images/blog/zh/Brand-logo-recall-023.webp)
 
 7-Eleven brand recall
 
@@ -99,7 +99,7 @@ Domino’s brand recall
 
 ## Foot Locker 富乐客
 
-![Brand Logo Recall 025](../../../assets/images/blog/zh/Brand-logo-recall-025.webp)
+![Brand Logo Recall 025](../../assets/images/blog/zh/Brand-logo-recall-025.webp)
 
 Foot Locker brand recall
 
@@ -111,7 +111,7 @@ Foot Locker brand recall
 
 ## Starbucks 星巴克
 
-![Brand Logo Recall 026](../../../assets/images/blog/zh/Brand-logo-recall-026.webp)
+![Brand Logo Recall 026](../../assets/images/blog/zh/Brand-logo-recall-026.webp)
 
 Starbucks brand recall
 
@@ -123,7 +123,7 @@ Starbucks brand recall
 
 ## Walmart 沃尔玛
 
-![Brand Logo Recall 018](../../../assets/images/blog/zh/Brand-logo-recall-018.webp)
+![Brand Logo Recall 018](../../assets/images/blog/zh/Brand-logo-recall-018.webp)
 
 Walmart brand recall
 
@@ -137,7 +137,7 @@ Walmart brand recall
 
 ## Target 塔吉特
 
-![Brand Logo Recall 019](../../../assets/images/blog/zh/Brand-logo-recall-019.webp)
+![Brand Logo Recall 019](../../assets/images/blog/zh/Brand-logo-recall-019.webp)
 
 Target brand recall
 
@@ -151,7 +151,7 @@ Target brand recall
 
 ## IKEA 宜家
 
-![Brand Logo Recall 024](../../../assets/images/blog/zh/Brand-logo-recall-024.webp)
+![Brand Logo Recall 024](../../assets/images/blog/zh/Brand-logo-recall-024.webp)
 
 30% 的受访者画了几乎完美的宜家 logo，在本次调查中的十个品牌当中排名第一。
 
@@ -163,12 +163,12 @@ Target brand recall
 
 ## 消费者不记得品牌 logo
 
-![Brand Logo Recall 027](../../../assets/images/blog/zh/Brand-logo-recall-027.webp)
+![Brand Logo Recall 027](../../assets/images/blog/zh/Brand-logo-recall-027.webp)
 
 通过这个调查结果我们可以看到尽管很多知名的品牌，许多消费者仍然记不住这些品牌的 logo。人们通常只会通过视觉联想到品牌，但他们不会全面的记住这些 logo。
 
 视觉虽然对品牌化会有一定的影响，但是还有很多其他因素也会影响消费者怎么看待品牌，比如情感方面、品牌体验等。品牌 logo 和品牌颜色虽然对品牌化很重要，但是它们只是塑造品牌视觉的一部分。
 
-![Brand Logo Recall 028](../../../assets/images/blog/zh/Brand-logo-recall-028.webp)
+![Brand Logo Recall 028](../../assets/images/blog/zh/Brand-logo-recall-028.webp)
 
 如果有兴趣了解如何优化你的品牌，非常欢迎联系我们。

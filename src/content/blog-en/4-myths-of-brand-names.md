@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["brand creation", "brand naming"]
 author: "Jenxi Seow"
 excerpt: "Creating a brand name is more than just finding a name that sounds or feels right."
-cover: "../../../assets/images/blog/en/Myth-of-brands.001.png"
+cover: "../../assets/images/blog/en/Myth-of-brands.001.png"
 coverAlt: "Myth Of Brands 001"
 ---
 Creating a brand name is more than just finding a name that sounds or feels right. Let’s break down the myths of brand names people have.
@@ -16,7 +16,7 @@ Many small and medium enterprises, and even some large corporations make the mis
 
 This is especially so when the brand owners, including the actual owner and the people involved in creating the brand, make the mistake of thinking that they can decide on the best brand name since they are the ones who came up with the brand.
 
-![Myth Of Brands 002](../../../assets/images/blog/en/Myth-of-brands.002.png)
+![Myth Of Brands 002](../../assets/images/blog/en/Myth-of-brands.002.png)
 
 ## 1\. It is easy.
 
@@ -34,7 +34,7 @@ Good names require vigorous testing.
 
 There are mature and well-researched methods in the industry to help you understand how the market take to your brand name.
 
-![Myth Of Brands 006](../../../assets/images/blog/en/Myth-of-brands.006.png)
+![Myth Of Brands 006](../../assets/images/blog/en/Myth-of-brands.006.png)
 
 ## 3\. I’ll figure it out.
 
@@ -54,7 +54,7 @@ Every option comes with a compromise. The key is to find the one that has the id
 
 You might be extremely lucky and think of the perfect name, only to realise that you are unable to register as a trademark for one reason or another.
 
-![Myth Of Brands 010](../../../assets/images/blog/en/Myth-of-brands.010.png)
+![Myth Of Brands 010](../../assets/images/blog/en/Myth-of-brands.010.png)
 
 ## Naming is hard, but powerful when done right.
 

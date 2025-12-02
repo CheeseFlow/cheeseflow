@@ -7,7 +7,7 @@ categories: ["Branding"]
 tags: ["brand creation", "brand power", "branding"]
 author: "jenxi@rubycoded.com"
 excerpt: "品牌力与其焦点成正比"
-cover: "../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-11.webp"
+cover: "../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-11.webp"
 coverAlt: "Secret Of Brand Power Part 2 11"
 ---
 
@@ -15,13 +15,13 @@ coverAlt: "Secret Of Brand Power Part 2 11"
 
 ## 品牌力与其焦点成正比
 
-![Secret Of Brand Power Part 2 13](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-13.webp)
+![Secret Of Brand Power Part 2 13](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-13.webp)
 
 当一个品牌聚焦一个细分领域，品牌力就变得越强。当一个品牌试图吸引所有人时，品牌力就会变得摊薄。专注于一个细分领域会使品牌力变得强大，尤其是在它所占据的类别中。
 
 但如果是这样的话，那么成功的品牌为什么要扩展它们的产品线呢？为什么它们要尝试创造新品来迎合产品类别中的不同客户群呢？为什么它们要创造新品进入新的产品类别呢？
 
-![Secret Of Brand Power Part 2 14](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-14.webp)
+![Secret Of Brand Power Part 2 14](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-14.webp)
 
 看看可口可乐。它旗下有健怡可乐、零度可口可乐、可口可乐香草和其他不同口味的特殊版本。
 
@@ -31,7 +31,7 @@ coverAlt: "Secret Of Brand Power Part 2 11"
 
 ## 让我们​用成功人士来代替成功品牌来思考
 
-![Secret Of Brand Power Part 2 15](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-15.webp)
+![Secret Of Brand Power Part 2 15](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-15.webp)
 
 如果你想像他们一样成功，你会做他们做的事吗？你会买豪车、豪宅、吃好的、住好的、买昂贵的奢侈品吗？当然，并不是每个成功的人都会挥霍他们的财富，但即使他们不这样做，如果他们愿意的话，他们也有这个经济能力。
 
@@ -43,7 +43,7 @@ coverAlt: "Secret Of Brand Power Part 2 11"
 
 那么成功的品牌在成功之前都做了些什么呢？猜测答案没有奖品哈——他们缩小了焦点。
 
-![Secret Of Brand Power Part 2 18](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-18.webp)
+![Secret Of Brand Power Part 2 18](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-18.webp)
 
 当咖啡店都出售各种食品和饮料时，星巴克选择只专注于咖啡。直到他们成为一个成功且知名的品牌之后，他们才开始像其他咖啡店一样去提供其他产品。
 
@@ -57,7 +57,7 @@ coverAlt: "Secret Of Brand Power Part 2 11"
 
 缩小焦点的另一个重要好处是，您可以聚焦细分受众。当您的目标客户属于某个细分领域时，您就更容易了解他们以及他们购买产品中看重的是什么。这可以让您建立一个吸引他们的品牌。
 
-![Secret Of Brand Power Part 2 19](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-19.webp)
+![Secret Of Brand Power Part 2 19](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-19.webp)
 
 美国的大多数熟食店供应各种食物。赛百味决定成为一家只卖潜艇三明治的熟食店。是的，他们的焦点非常具体。他们不仅只专注于三明治，而且专注于一种特殊类型的三明治。
 
@@ -71,6 +71,6 @@ coverAlt: "Secret Of Brand Power Part 2 11"
 
 想挖掘更多的品牌力的秘诀吗？是否也犯了以上的错误呢？
 
-![Secret Of Brand Power Part 2 20](../../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-20.webp)
+![Secret Of Brand Power Part 2 20](../../assets/images/blog/zh/Secret-of-Brand-Power-Part-2-20.webp)
 
 如果您有兴趣了解我们能如何帮助您提升品牌影响力，请联系我们。

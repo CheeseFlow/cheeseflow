@@ -28,13 +28,8 @@ function getCoverImage(coverPath: string | undefined): ImageMetadata | null {
   return null;
 }
 
-// Get all posts and filter for English (same approach as [page].astro)
-const allBlogPosts = await getCollection("blog");
-const { getLangFromEntry: getLang } = await import("../../../content/config");
-const blogPosts = allBlogPosts.filter((entry) => {
-  const lang = getLang(entry);
-  return lang === "en";
-});
+// Get all English posts
+const blogPosts = await getCollection("blog-en");
 const sortedPosts = blogPosts
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 9); // First 9 posts for page 1
@@ -63,7 +58,7 @@ const sortedPosts = blogPosts
             {sortedPosts.map((post) => (
               <article class="flex flex-col">
                 <a
-                  href={`/en/${post.slug.replace(/^(en|zh)\//, '')}`}
+                  href={`/en/${post.data.slug || post.slug}`}
                   class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
                 >
                   {post.data.cover ? (
@@ -98,7 +93,7 @@ const sortedPosts = blogPosts
                 <div class="flex flex-1 flex-col">
                   <h2 class="text-2xl font-body font-bold text-ink mb-3">
                     <a
-                      href={`/en/${post.slug.replace(/^(en|zh)\//, '')}`}
+                      href={`/en/${post.data.slug || post.slug}`}
                       class="text-ink hover:text-brand transition-colors"
                     >
                       {post.data.title}

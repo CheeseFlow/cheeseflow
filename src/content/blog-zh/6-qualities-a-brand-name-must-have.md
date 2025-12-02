@@ -7,19 +7,19 @@ categories: ["Branding"]
 tags: ["brand creation", "brand naming"]
 author: "jenxi@rubycoded.com"
 excerpt: "品牌名称应该有哪些特征呢？品牌名称该怎么取？"
-cover: "../../../assets/images/blog/zh/How-to-create-a-good-brand-name.011.webp"
+cover: "../../assets/images/blog/zh/How-to-create-a-good-brand-name.011.webp"
 coverAlt: "How To Create A Good Brand Name 011"
 ---
 
 我们在之前的文章里聊过[品牌命名的错误观念](https://web.archive.org/web/20240423233732/https://cheeseflow.cn/importance-of-brand-taglines/)，那品牌名称应该有哪些特征呢？品牌名称该怎么取？
 
-![How To Create A Good Brand Name 012](../../../assets/images/blog/zh/How-to-create-a-good-brand-name.012.webp)
+![How To Create A Good Brand Name 012](../../assets/images/blog/zh/How-to-create-a-good-brand-name.012.webp)
 
 ## 品牌名称要意味深长
 
 品牌名字必须能沟通品牌的本质，同时也要能提高品牌的形象。
 
-![How To Create A Good Brand Name 013](../../../assets/images/blog/zh/How-to-create-a-good-brand-name.013.webp)
+![How To Create A Good Brand Name 013](../../assets/images/blog/zh/How-to-create-a-good-brand-name.013.webp)
 
 ## 品牌名称要有辨别性
 
@@ -27,7 +27,7 @@ coverAlt: "How To Create A Good Brand Name 011"
 
 索尼（Sony）和柯达（Kodak）是两个我们喜爱的独特品牌名字，这两个名字本身没什么意思，但是现在已经包含各自品牌所代表的意义。
 
-![How To Create A Good Brand Name 014](../../../assets/images/blog/zh/How-to-create-a-good-brand-name.014.webp)
+![How To Create A Good Brand Name 014](../../assets/images/blog/zh/How-to-create-a-good-brand-name.014.webp)
 
 ## 品牌名称应该不会过时
 
@@ -35,7 +35,7 @@ coverAlt: "How To Create A Good Brand Name 011"
 
 唐恩都乐（Dunkin’ Donuts）把它英文名字里的 “donuts” 去掉，采用 Dunkin’ 的新名称，因为它不想只做食物，而像转型以饮料为主，我们也怀疑它是想摆脱甜甜圈关联的不健康形象。
 
-![How To Create A Good Brand Name 015](../../../assets/images/blog/zh/How-to-create-a-good-brand-name.015.webp)
+![How To Create A Good Brand Name 015](../../assets/images/blog/zh/How-to-create-a-good-brand-name.015.webp)
 
 ## 品牌名称应该是积极的
 
@@ -43,7 +43,7 @@ coverAlt: "How To Create A Good Brand Name 011"
 
 我们或许不想要在工作提到懒散（slack），但是 Slack 却想那么做，这个选择效果非常棒，因为它的软件效果好到让使用者能在懒散中提升工作效率。
 
-![How To Create A Good Brand Name 016](../../../assets/images/blog/zh/How-to-create-a-good-brand-name.016.webp)
+![How To Create A Good Brand Name 016](../../assets/images/blog/zh/How-to-create-a-good-brand-name.016.webp)
 
 ## 品牌名称应该是模块化的
 
@@ -53,7 +53,7 @@ coverAlt: "How To Create A Good Brand Name 011"
 
 那你对 MacBook、Mac Studio、Mac Pro 和 iMac 有什么看法？
 
-![How To Create A Good Brand Name 017](../../../assets/images/blog/zh/How-to-create-a-good-brand-name.017.webp)
+![How To Create A Good Brand Name 017](../../assets/images/blog/zh/How-to-create-a-good-brand-name.017.webp)
 
 ## 品牌名称应该受保护
 
@@ -61,10 +61,10 @@ coverAlt: "How To Create A Good Brand Name 011"
 
 当域名和社交媒体账号也能注册时，这代表品牌名字是独特的，那你也能在多个平台上保持统一的品牌名称。
 
-![How To Create A Good Brand Name 019](../../../assets/images/blog/zh/How-to-create-a-good-brand-name.019.webp)
+![How To Create A Good Brand Name 019](../../assets/images/blog/zh/How-to-create-a-good-brand-name.019.webp)
 
 你的品牌有以上多少个品牌名称特征呢？好的品牌应该具有所有的特征。
 
 ⭐️ 我们知道品牌命名的过程有多艰难，第一个关键步骤就是先接受取品牌名字不容易，然后咨询能协助你寻找品牌名字的专家。非常欢迎联系我们。
 
-![How To Create A Good Brand Name 020](../../../assets/images/blog/zh/How-to-create-a-good-brand-name.020.webp)
+![How To Create A Good Brand Name 020](../../assets/images/blog/zh/How-to-create-a-good-brand-name.020.webp)
