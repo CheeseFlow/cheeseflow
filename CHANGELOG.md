@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Prefetch configuration with hover strategy for instant page navigation
+  - Enabled `prefetchAll: true` to prefetch all internal links
+  - Uses `hover` strategy to prefetch on link hover for faster perceived performance
 - 404 error page (`src/pages/404.astro`) with bilingual support (English/Chinese)
 - Automatic language detection for 404 page based on hostname and pathname
 - 404 page with consistent design matching site aesthetic and navigation links

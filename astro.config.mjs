@@ -6,6 +6,11 @@ export default defineConfig({
   integrations: [tailwind()],
   output: 'static',
   site: 'https://cheeseflow.com',
+  // Enable prefetching for faster navigation
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'hover'
+  },
   // Improve content collection cache handling and file watching
   vite: {
     server: {
