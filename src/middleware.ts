@@ -13,8 +13,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
   const pathname = url.pathname;
   const hostname = url.hostname;
 
-  // Skip middleware for static assets
+  // Skip middleware for static assets and dev server endpoints
   if (pathname.startsWith('/_astro/') ||
+      pathname.startsWith('/_image') ||
       pathname.startsWith('/favicon.') ||
       pathname.startsWith('/images/') ||
       pathname.match(/\.(jpg|jpeg|png|gif|svg|webp|ico|css|js|woff|woff2|ttf|eot)$/)) {

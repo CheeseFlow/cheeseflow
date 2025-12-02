@@ -86,6 +86,9 @@ All notable changes to this project will be documented in this file.
   - Images now use simple static URLs (`/_astro/filename.hash.webp`) instead of complex dynamic URLs (`/_image?href=...`)
   - Matches jenxi.com implementation with clean, cacheable image URLs
   - Proper static site generation for Cloudflare Pages deployment
+- Fixed middleware blocking `/_image` endpoint in dev mode
+  - Added `pathname.startsWith('/_image')` to middleware skip list
+  - Dev server now properly serves image transformations during development
 - Fixed Sharp image processing warning by configuring `imageService: 'compile'` in astro.config.mjs for Cloudflare compatibility
 - Fixed image paths in markdown files after directory restructure (3 levels to 2 levels up)
 - Both EN and ZH blog images now render correctly with proper optimization
