@@ -78,6 +78,12 @@ All notable changes to this project will be documented in this file.
 - Blog pagination links updated to include language prefixes
 
 ### Fixed
+- **CRITICAL FIX**: Fixed production redirect loop by converting to pure static build
+  - Removed Cloudflare adapter (not needed for static output)
+  - Moved Astro middleware to Cloudflare Pages Function (`functions/_middleware.ts`)
+  - Moved API route to Cloudflare Pages Function (`functions/api/contact.ts`)
+  - ZH index.html now properly generates as full page (31KB) instead of redirect HTML (363 bytes)
+  - All routing logic runs as Cloudflare Pages Functions compatible with static builds
 - **CRITICAL FIX**: Restructured content collections to use separate `blog-en` and `blog-zh` collections instead of subdirectories
   - Moved `src/content/blog/en/` → `src/content/blog-en/`
   - Moved `src/content/blog/zh/` → `src/content/blog-zh/`
