@@ -5,7 +5,7 @@ import cloudflare from '@astrojs/cloudflare';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  output: 'server',
+  output: 'static',
   adapter: cloudflare(),
   site: 'https://cheeseflow.com',
   // Configure image service to compile at build time for Cloudflare compatibility

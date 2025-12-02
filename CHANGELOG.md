@@ -82,6 +82,10 @@ All notable changes to this project will be documented in this file.
   - Moved `src/content/blog/en/` → `src/content/blog-en/`
   - Moved `src/content/blog/zh/` → `src/content/blog-zh/`
   - All 12 EN posts and 12 ZH posts now correctly detected and prerendered
+- **CRITICAL FIX**: Corrected `output: 'server'` to `output: 'static'` in astro.config.mjs
+  - Images now use simple static URLs (`/_astro/filename.hash.webp`) instead of complex dynamic URLs (`/_image?href=...`)
+  - Matches jenxi.com implementation with clean, cacheable image URLs
+  - Proper static site generation for Cloudflare Pages deployment
 - Fixed Sharp image processing warning by configuring `imageService: 'compile'` in astro.config.mjs for Cloudflare compatibility
 - Fixed image paths in markdown files after directory restructure (3 levels to 2 levels up)
 - Both EN and ZH blog images now render correctly with proper optimization
