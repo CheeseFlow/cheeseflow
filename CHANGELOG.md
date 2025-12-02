@@ -114,4 +114,6 @@ All notable changes to this project will be documented in this file.
 - Astro middleware (replaced with Cloudflare Pages Functions for edge-based routing)
 - Static root `index.astro` file (replaced with Cloudflare Pages Function middleware for domain-based routing)
 - Blog post routes moved from `/en/blog/[slug].astro` and `/zh/blog/[slug].astro` to root-level `/en/[slug].astro` and `/zh/[slug].astro` for flat URLs
+- WordPress conversion script (`convert-wordpress.js`) and temporary build artifacts
+- Cloudflare adapter dependency (not needed for pure static builds)
 
