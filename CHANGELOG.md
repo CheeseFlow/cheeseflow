@@ -78,10 +78,20 @@ All notable changes to this project will be documented in this file.
 - Blog pagination links updated to include language prefixes
 
 ### Fixed
-- Fixed English blog posts not loading due to Astro content collection cache issues
-- Restored all 12 English blog posts by checking them out from git after cache clear
+- Fixed Sharp image processing warning by configuring `imageService: 'compile'` in astro.config.mjs for Cloudflare compatibility
+- ZH blog images now render correctly with proper optimization
 - Removed debug console.log statements from blog index pages
 - Fixed blog post URLs to consistently use language prefixes across all pages
+
+### Known Issues
+- **CRITICAL**: Astro content collection (`getCollection('blog')`) only detects posts in `src/content/blog/zh/` directory
+- EN blog posts in `src/content/blog/en/` are not being indexed despite:
+  - Files physically existing with valid frontmatter
+  - Being tracked in git (12 files)
+  - Having identical permissions and structure to ZH directory
+  - Multiple cache clears and fresh builds
+  - Directory renaming attempts
+  - This appears to be an Astro v5 bug with subdirectory detection in content collections
 
 ### Removed
 - All Jekyll files and dependencies

@@ -8,6 +8,12 @@ export default defineConfig({
   output: 'server',
   adapter: cloudflare(),
   site: 'https://cheeseflow.com',
+  // Configure image service to compile at build time for Cloudflare compatibility
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/compile'
+    }
+  },
   // Improve content collection cache handling and file watching
   vite: {
     server: {
