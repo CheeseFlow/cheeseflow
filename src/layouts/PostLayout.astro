@@ -142,7 +142,7 @@ const formattedDate = date.toLocaleDateString("en-GB", {
 
       const images = article.querySelectorAll("img");
       images.forEach((img) => {
-        img.classList.add("rounded-2xl", "w-3/4", "h-auto", "my-8", "mx-auto");
+        img.classList.add("blog-image");
         img.style.display = "block";
       });
     }
@@ -194,12 +194,22 @@ const formattedDate = date.toLocaleDateString("en-GB", {
 
   <style>
     /* Additional custom styles */
-    .prose img {
+    .prose .blog-image {
       border-radius: 1rem;
-      width: 75%;
+      width: 100vw;
+      max-width: 100vw;
       height: auto;
-      margin: 2rem auto;
+      margin: 2rem calc(50% - 50vw + 1.5rem);
       display: block;
+    }
+
+    @media (min-width: 768px) {
+      .prose .blog-image {
+        border-radius: 1rem;
+        width: 75%;
+        max-width: 75%;
+        margin: 2rem auto;
+      }
     }
 
     .prose blockquote {

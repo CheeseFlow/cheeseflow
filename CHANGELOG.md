@@ -72,6 +72,10 @@ All notable changes to this project will be documented in this file.
   - Changed section padding from `py-48` to `pt-12 pb-24 md:py-48`
   - Applied same adjustments to paginated blog pages and post layouts
   - Reduced post header padding on mobile: `pt-24 md:pt-56`
+  - Made blog post images full viewport width on mobile while maintaining rounded corners
+- **Mobile Layout Consistency Fixes**
+  - Fixed Neumeier quote section horizontal margins to match other sections on mobile: `px-6 md:px-16`
+  - Fixed Boton case study section width to match other case study sections on mobile using negative margins
 - Migrated from Jekyll to Astro
 - Removed all Jekyll-related files and configurations
 - Updated all case studies to use consistent layout and styling
