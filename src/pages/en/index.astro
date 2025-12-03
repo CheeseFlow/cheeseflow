@@ -27,7 +27,7 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
 
   <!-- Hero Section -->
   <section
-    class="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-12 relative bg-white overflow-hidden"
+    class="h-[50vh] md:min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-12 relative bg-white overflow-hidden"
   >
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
@@ -37,30 +37,30 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
     <div class="absolute inset-0 bg-white/70"></div>
     <div class="max-w-4xl mx-auto text-center relative z-10">
       <TypingHero client:load />
-      <p class="text-5xl md:text-6xl text-ink mt-8">
+      <p class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-ink mt-8">
         Creativity + Strategy = Brand
       </p>
     </div>
   </section>
 
   <!-- Creativity + Strategy Section -->
-  <section class="py-48 px-12 md:px-16 bg-brand">
+  <section class="py-24 md:py-48 px-12 md:px-16 bg-brand">
     <div class="max-w-7xl mx-auto text-center">
-      <p class="text-6xl md:text-7xl text-ink font-bold mb-8 !leading-tight">
-        “Your brand isn't what you say it is.<wbr />It's what they say it is.”
+      <p class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-ink font-bold mb-8 leading-tight md:!leading-tight">
+        "Your brand isn't what you say it is.<wbr />It's what they say it is."
       </p>
-      <p class="text-2xl text-ink font-bold mt-4">—Marty Neumeier</p>
-      <p class="text-2xl text-ink font-bold mt-16">
+      <p class="text-lg md:text-2xl text-ink font-bold mt-4">—Marty Neumeier</p>
+      <p class="text-lg md:text-2xl text-ink font-bold mt-16">
         Good brands delight them so they would say good things.
       </p>
     </div>
   </section>
 
   <!-- Delight with your brand Section -->
-  <section class="py-48 px-6 bg-white">
+  <section class="py-24 md:py-48 px-6 bg-white">
     <div class="max-w-4xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12 items-end">
-        <div class="text-right">
+        <div class="text-left md:text-right">
           <h2 class="text-7xl md:text-8xl font-body font-bold text-ink">
             Delight<br />with your<br />brand.
           </h2>
@@ -95,7 +95,7 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Client Logo Showcase Section -->
-  <section class="py-48 px-6 bg-grey">
+  <section class="py-24 md:py-48 px-6 bg-grey">
     <div class="max-w-5xl mx-auto">
       <div class="flex items-center justify-center">
         <img src={clientsImage.src} alt="Our Clients" class="w-full h-auto" />
@@ -104,10 +104,10 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Our Services Section -->
-  <section id="services" class="pt-60 pb-24 px-6 bg-brand">
+  <section id="services" class="pt-24 md:pt-60 pb-12 md:pb-24 px-6 md:px-6 bg-brand">
     <div class="max-w-7xl mx-auto">
-      <header class="text-center mb-32">
-        <h2 class="text-xl md:text-7xl font-heading font-bold text-ink uppercase mb-4">
+      <header class="text-center mb-16 md:mb-32">
+        <h2 class="text-4xl sm:text-5xl md:text-7xl font-heading font-bold text-ink uppercase mb-4">
           Our Services
         </h2>
         <p class="text-xl text-ink/70 mt-12">
@@ -116,32 +116,32 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
       </header>
 
       <!-- Service Categories -->
-      <div class="grid md:grid-cols-3 gap-8 mx-6 mb-48">
-        <a href="#brand-look" class="group">
+      <div class="grid md:grid-cols-3 gap-12 md:gap-8 mx-6 mb-24 md:mb-48">
+        <a href="#brand-look" class="group mb-0">
           <img
             src={brandLookImage.src}
             alt="Look"
-            class="w-full aspect-square mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
+            class="w-full aspect-square mb-8 md:mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
           />
-          <h3 class="text-4xl font-body font-bold text-ink mt-12 mb-2 group-hover:text-ink transition-colors">Look</h3>
+          <h3 class="text-4xl font-body font-bold text-ink mb-0 md:mb-2 text-center md:text-left group-hover:text-ink transition-colors">Look</h3>
         </a>
-        <a href="#brand-personality" class="group">
+        <a href="#brand-personality" class="group mb-0">
           <img
             src={brandPersonalityImage.src}
             alt="Personality"
-            class="w-full aspect-square mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
+            class="w-full aspect-square mb-8 md:mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
           />
-          <h3 class="text-4xl font-body font-bold text-ink mt-12 mb-2 group-hover:text-ink transition-colors">
+          <h3 class="text-4xl font-body font-bold text-ink mb-0 md:mb-2 text-center md:text-left group-hover:text-ink transition-colors">
             Personality
           </h3>
         </a>
-        <a href="#brand-influence" class="group">
+        <a href="#brand-influence" class="group mb-0">
           <img
             src={brandInfluenceImage.src}
             alt="Influence"
-            class="w-full aspect-square mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
+            class="w-full aspect-square mb-8 md:mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
           />
-          <h3 class="text-4xl font-body font-bold text-ink mt-12 mb-2 group-hover:text-ink transition-colors">
+          <h3 class="text-4xl font-body font-bold text-ink mb-0 md:mb-2 text-center md:text-left group-hover:text-ink transition-colors">
             Influence
           </h3>
         </a>
@@ -150,7 +150,7 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
 
     <!-- Brand Look Details -->
     <div id="brand-look" class="mb-20 scroll-mt-32">
-      <div class="bg-white rounded-2xl mb-8 mx-6 overflow-hidden">
+      <div class="bg-white rounded-none md:rounded-2xl mb-8 overflow-hidden -mx-6 md:mx-6 md:max-w-7xl md:mx-auto">
         <div class="grid md:grid-cols-3 gap-0">
           <div class="md:col-span-1">
             <img
@@ -160,8 +160,8 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
             />
           </div>
           <div class="md:col-span-2 p-8 md:p-12">
-            <h3 class="text-4xl font-body font-bold text-ink mb-2">Brand Look</h3>
-            <p class="text-xl text-ink mb-8">What people see.</p>
+            <h3 class="text-4xl font-body font-bold text-ink mb-2 text-center md:text-left">Brand Look</h3>
+            <p class="text-xl text-ink mb-8 text-center md:text-left">What people see.</p>
 
             <div class="grid md:grid-cols-2 gap-6">
               <div class="border border-ink rounded-2xl overflow-hidden">
@@ -198,9 +198,10 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
           </div>
         </div>
       </div>
+    </div>
 
       <!-- Boton Case Study -->
-      <div class="max-w-7xl mx-auto pt-48 px-6">
+      <div class="max-w-7xl mx-auto pt-24 md:pt-48 px-6 md:px-12 lg:px-16">
         <div class="grid md:grid-cols-2 gap-16 mb-8">
           <div class="md:col-span-1">
             <img
@@ -210,11 +211,11 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
             />
           </div>
           <div class="md:col-span-1">
-            <div class="mb-6">
+            <div class="mb-6 flex justify-center md:justify-start">
               <img
                 src={botonLogo.src}
                 alt="Boton"
-                class="h-20 w-auto mb-6"
+                class="h-12 md:h-20 w-auto mb-6"
               />
             </div>
             <h4 class="text-3xl font-body font-bold text-ink uppercase mb-6">
@@ -256,7 +257,7 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Yadea Case Study -->
-  <section class="bg-white py-48">
+  <section class="bg-white py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div class="md:col-span-1">
             <img
@@ -266,11 +267,11 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
             />
           </div>
           <div class="md:col-span-1">
-            <div class="mb-6">
+            <div class="mb-6 flex justify-center md:justify-start">
               <img
                 src={yadeaLogo.src}
                 alt="Yadea"
-                class="h-20 w-auto mb-6"
+                class="h-12 md:h-20 w-auto mb-6"
               />
             </div>
             <h4 class="text-3xl font-body font-bold text-ink uppercase mb-6">
@@ -302,10 +303,10 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Brand Personality Details -->
-  <section id="services" class="pt-60 pb-24 px-6 bg-brand">
+  <section id="services" class="pt-60 pb-24 px-6 md:px-6 bg-brand">
     <div class="max-w-7xl mx-auto">
       <div id="brand-personality" class="mb-20 scroll-mt-32">
-        <div class="bg-white rounded-2xl mb-8 mx-6 overflow-hidden">
+        <div class="bg-white rounded-none md:rounded-2xl mb-8 overflow-hidden -mx-6 md:mx-6 md:max-w-7xl md:mx-auto">
         <div class="grid md:grid-cols-3 gap-0">
           <div class="md:col-span-1">
             <img
@@ -315,10 +316,10 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
             />
           </div>
           <div class="md:col-span-2 p-8 md:p-12">
-            <h3 class="text-4xl font-body font-bold text-ink mb-2">
+            <h3 class="text-4xl font-body font-bold text-ink mb-2 text-center md:text-left">
               Brand Personality
             </h3>
-            <p class="text-xl text-ink mb-8">What people feel.</p>
+            <p class="text-xl text-ink mb-8 text-center md:text-left">What people feel.</p>
 
             <div class="grid md:grid-cols-2 gap-6">
               <div class="border border-ink rounded-2xl overflow-hidden">
@@ -357,7 +358,7 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Muzen Audio Case Study -->
-  <section class="bg-white py-48">
+  <section class="bg-white py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="md:col-span-1">
         <img
@@ -367,11 +368,11 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
         />
       </div>
       <div class="md:col-span-1">
-        <div class="mb-6">
+        <div class="mb-6 flex justify-center md:justify-start">
           <img
             src={muzenLogo.src}
             alt="Muzen Audio"
-            class="h-20 w-auto mb-6"
+            class="h-12 md:h-20 w-auto mb-6"
           />
         </div>
         <h4 class="text-3xl font-body font-bold text-ink uppercase mb-6">
@@ -405,7 +406,7 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Mead Johnson Case Study -->
-  <section class="bg-brand py-48">
+  <section class="bg-brand py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="md:col-span-1">
         <img
@@ -415,11 +416,11 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
         />
       </div>
       <div class="md:col-span-1">
-        <div class="mb-6">
+        <div class="mb-6 flex justify-center md:justify-start">
           <img
             src={meadjohnsonLogo.src}
             alt="Mead Johnson"
-            class="h-20 w-auto mb-6"
+            class="h-12 md:h-20 w-auto mb-6"
           />
         </div>
         <h4 class="text-3xl font-body font-bold text-ink uppercase mb-6">
@@ -448,10 +449,10 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
     <!-- Brand Influence Details -->
-    <section id="services" class="pt-60 pb-24 px-6 bg-brand">
+    <section id="services" class="pt-60 pb-24 px-6 md:px-6 bg-brand">
       <div class="max-w-7xl mx-auto">
         <div id="brand-influence" class="mb-20 scroll-mt-32">
-          <div class="bg-white rounded-2xl mb-8 mx-6 overflow-hidden">
+          <div class="bg-white rounded-none md:rounded-2xl mb-8 overflow-hidden -mx-6 md:mx-6 md:max-w-7xl md:mx-auto">
         <div class="grid md:grid-cols-3 gap-0">
           <div class="md:col-span-1">
             <img
@@ -461,10 +462,10 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
             />
           </div>
           <div class="md:col-span-2 p-8 md:p-12">
-            <h3 class="text-4xl font-body font-bold text-ink mb-2">
+            <h3 class="text-4xl font-body font-bold text-ink mb-2 text-center md:text-left">
               Brand Influence
             </h3>
-            <p class="text-xl text-ink mb-8">What people say.</p>
+            <p class="text-xl text-ink mb-8 text-center md:text-left">What people say.</p>
 
             <div class="grid md:grid-cols-2 gap-6">
               <div class="border border-ink rounded-2xl overflow-hidden">
@@ -503,7 +504,7 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Yeelight Case Study -->
-  <section class="bg-brand py-48">
+  <section class="bg-brand py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="md:col-span-1">
         <img
@@ -513,11 +514,11 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
         />
       </div>
       <div class="md:col-span-1">
-        <div class="mb-6">
+        <div class="mb-6 flex justify-center md:justify-start">
           <img
             src={yeelightLogo.src}
             alt="Yeelight"
-            class="h-20 w-auto mb-6"
+            class="h-12 md:h-20 w-auto mb-6"
           />
         </div>
         <h4 class="text-3xl font-body font-bold text-ink uppercase mb-6">
@@ -548,7 +549,7 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Kranio Case Study -->
-  <section class="bg-white py-48">
+  <section class="bg-white py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="md:col-span-1">
         <img
@@ -597,10 +598,10 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Team Section -->
-  <section class="py-48 px-6 bg-ink">
+  <section class="py-24 md:py-48 px-6 bg-ink">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div class="text-right">
+        <div class="text-left md:text-right">
           <h2 class="text-7xl md:text-8xl font-body font-bold text-brand">
             Cheese to<br />Delight You.
           </h2>

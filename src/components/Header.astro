@@ -9,9 +9,9 @@ const { noBorder = false } = Astro.props;
 ---
 
 <header
-  class={`fixed top-0 left-0 right-0 z-50 bg-brand ${noBorder ? '' : 'border-b border-ink/10'}`}
+  class={`fixed top-0 left-0 right-0 z-50 bg-brand ${noBorder ? '' : 'border-b border-ink/10'} relative`}
 >
-  <nav class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+  <nav class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between" aria-label="Main navigation">
     <div class="flex items-center">
       <a
         href="/en/"
@@ -25,7 +25,9 @@ const { noBorder = false } = Astro.props;
         />
       </a>
     </div>
-    <div class="flex items-center gap-10">
+    
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center gap-10">
       <a
         href="/en/blog"
         class="text-lg text-ink px-4 py-4 rounded-lg hover:bg-white/20 transition-colors"
@@ -37,6 +39,124 @@ const { noBorder = false } = Astro.props;
         >Contact us</a
       >
     </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/20 transition-colors"
+      aria-label="Toggle mobile menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="w-6 h-0.5 bg-ink transition-all"></span>
+      <span class="w-6 h-0.5 bg-ink transition-all"></span>
+      <span class="w-6 h-0.5 bg-ink transition-all"></span>
+    </button>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden fixed left-0 right-0 bg-brand border-b border-ink/10 shadow-lg"
+    aria-labelledby="mobile-menu-button"
+  >
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
+      <a
+        href="/en/blog"
+        class="text-lg text-ink px-4 py-3 rounded-lg hover:bg-white/20 transition-colors"
+        >Improve your brand</a
+      >
+      <a
+        href="#contact"
+        class="text-lg !px-6 !py-3 bg-ink text-white rounded-lg hover:bg-white hover:text-ink transition-colors text-center"
+        >Contact us</a
+      >
+    </div>
+  </div>
 </header>
+
+<script>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const header = document.querySelector('header');
+  const menuSpans = menuButton?.querySelectorAll('span');
+
+  if (menuButton && mobileMenu && header && menuSpans) {
+    // Position mobile menu below header
+    function positionMenu() {
+      if (mobileMenu && header && !mobileMenu.classList.contains('hidden')) {
+        const headerRect = header.getBoundingClientRect();
+        mobileMenu.style.top = `${headerRect.bottom}px`;
+      }
+    }
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('hidden');
+      
+      if (isOpen) {
+        mobileMenu.classList.remove('hidden');
+        menuButton.setAttribute('aria-expanded', 'true');
+        positionMenu();
+        
+        // Animate hamburger to X
+        menuSpans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        menuSpans[1].style.opacity = '0';
+        menuSpans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+        
+        // Reset hamburger icon
+        menuSpans[0].style.transform = '';
+        menuSpans[1].style.opacity = '1';
+        menuSpans[2].style.transform = '';
+      }
+    });
+
+    // Close menu when clicking on a link
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuSpans[0].style.transform = '';
+        menuSpans[1].style.opacity = '1';
+        menuSpans[2].style.transform = '';
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (
+        !mobileMenu.contains(target) &&
+        !menuButton.contains(target) &&
+        !mobileMenu.classList.contains('hidden')
+      ) {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuSpans[0].style.transform = '';
+        menuSpans[1].style.opacity = '1';
+        menuSpans[2].style.transform = '';
+      }
+    });
+
+    // Handle window resize - close menu if switching to desktop, reposition if staying on mobile
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        // Desktop size - close menu
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuSpans[0].style.transform = '';
+          menuSpans[1].style.opacity = '1';
+          menuSpans[2].style.transform = '';
+        }
+      } else {
+        // Mobile size - reposition if open
+        positionMenu();
+      }
+    });
+  }
+</script>
 

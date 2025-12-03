@@ -44,6 +44,34 @@ All notable changes to this project will be documented in this file.
 - Full Chinese (zh) blog content set imported from the 2025‑11‑28 WordPress export, including localized markdown and `/images/blog/zh/` assets
 
 ### Changed
+- **Mobile Header Improvements**
+  - Implemented responsive hamburger menu for mobile navigation
+  - Added animated hamburger-to-X icon transition on menu open/close
+  - Mobile menu now closes automatically on window resize to desktop size
+  - Mobile menu closes when clicking outside or on menu links
+  - Improved mobile menu positioning with dynamic header height calculation
+  - Added ARIA attributes for better accessibility (aria-label, aria-expanded, aria-controls)
+- **Mobile Home Page Adjustments**
+  - Reduced hero section height to half viewport height (50vh) on mobile
+  - Adjusted hero subtitle font size: `text-2xl sm:text-3xl md:text-5xl lg:text-6xl`
+  - Reduced Neumeier quote font size and line height on mobile: `text-3xl sm:text-4xl md:text-6xl lg:text-7xl` with `leading-tight`
+  - Reduced vertical margins for all sections: `py-24 md:py-48` (from `py-48`)
+  - Made "Brand Look", "Brand Personality", and "Brand Influence" sections full-width without rounded corners on mobile
+  - Left-aligned "Delight with your brand", "Cheese to Delight You", and form heading texts on mobile: `text-left md:text-right`
+  - Centered case study client logos on mobile with reduced size: `h-12 md:h-20` with `flex justify-center md:justify-start`
+  - Increased "Our Services" heading size on mobile: `text-4xl sm:text-5xl md:text-7xl`
+  - Centered service category names ("Look", "Personality", "Influence") on mobile: `text-center md:text-left`
+  - Centered Brand Look/Personality/Influence section descriptions on mobile: `text-center md:text-left`
+  - Improved service card spacing: increased gap between cards to `gap-12` on mobile with proper image/title spacing
+- **Mobile Contact Form Adjustments**
+  - Reduced "Let's create delight with your brand" heading size on mobile: `text-4xl sm:text-5xl md:text-8xl`
+  - Applied same adjustment to Chinese version heading
+- **Mobile Blog Page Adjustments**
+  - Reduced white space above blog index title on mobile
+  - Changed main padding from `pt-32` to `pt-16 md:pt-32`
+  - Changed section padding from `py-48` to `pt-12 pb-24 md:py-48`
+  - Applied same adjustments to paginated blog pages and post layouts
+  - Reduced post header padding on mobile: `pt-24 md:pt-56`
 - Migrated from Jekyll to Astro
 - Removed all Jekyll-related files and configurations
 - Updated all case studies to use consistent layout and styling
@@ -81,6 +109,8 @@ All notable changes to this project will be documented in this file.
 - Blog pagination links updated to include language prefixes
 
 ### Fixed
+- Fixed Boton case study horizontal margin inconsistency - now matches other case studies with `px-6 md:px-12 lg:px-16`
+- Removed middot separator after reading time in blog posts (tags now appear directly after reading time without separator)
 - **CRITICAL FIX**: Fixed production redirect loop by converting to pure static build
   - Removed Cloudflare adapter (not needed for static output)
   - Moved Astro middleware to Cloudflare Pages Function (`functions/_middleware.ts`)

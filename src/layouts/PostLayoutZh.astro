@@ -38,7 +38,7 @@ const translatedTags = translateTags(tags, "zh");
 
   <main>
     <!-- Post Header - Full Width Brand Background -->
-    <section class="pt-56 pb-12 px-6 bg-brand">
+    <section class="pt-24 md:pt-56 pb-12 px-6 bg-brand">
       <div class="max-w-2xl mx-auto">
         <h1 class="text-6xl md:text-7xl font-body font-black text-ink mb-8">
           {title}
@@ -57,7 +57,7 @@ const translatedTags = translateTags(tags, "zh");
           {
             translatedTags.length > 0 && (
               <>
-                <span class="text-ink font-black">·</span>
+                {!readingTime && <span class="text-ink font-black">·</span>}
                 <div class="flex flex-wrap gap-2">
                   {translatedTags.map((tag) => (
                     <span class="px-3 py-1 bg-white text-ink rounded-full text-base font-medium">
