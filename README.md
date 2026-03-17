@@ -110,6 +110,19 @@ Domain-based routing is **automatic** via Cloudflare Pages Functions (`functions
 
 **No manual configuration needed!** Just add the custom domains in Cloudflare Pages dashboard and the function will automatically handle the redirects.
 
+## SEO
+
+- **Sitemap:** Built at `/sitemap-index.xml` (references `sitemap-0.xml`). Includes all static routes for `/en/` and `/zh/`.
+- **RSS:** English blog at `/feed.xml`, Chinese blog at `/feed-zh.xml`. Linked from layout for auto-discovery.
+- **Structured data:** Organization, WebSite, Service, and Person JSON-LD on the homepage; Article schema on each blog post.
+- **Hreflang:** Alternate `en` / `zh` links in `<head>` for `/en/*` and `/zh/*` pages.
+
+### Submitting to Google Search Console
+
+1. Add the property for `https://cheeseflow.com` (and optionally `https://cheeseflow.cn` if used).
+2. Open **Sitemaps** and submit: `https://cheeseflow.com/sitemap-index.xml`.
+3. Request indexing for key URLs (e.g. `https://cheeseflow.com/en/`, `https://cheeseflow.com/zh/`) if needed.
+
 ## Website
 
 Live site: https://cheeseflow.com

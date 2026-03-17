@@ -23,6 +23,122 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
 ---
 
 <BaseLayout>
+  <script
+    slot="head"
+    type="application/ld+json"
+  >
+    {JSON.stringify(
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://cheeseflow.com/#website",
+            url: "https://cheeseflow.com",
+            name: "CheeseFlow 芝士溪谷",
+            description: "Brand strategy, design, and marketing services. Improve your brand with creative ideas.",
+            publisher: { "@id": "https://cheeseflow.com/#organization" },
+            inLanguage: ["en", "zh"],
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://cheeseflow.com/#organization",
+            name: "CheeseFlow",
+            url: "https://cheeseflow.com",
+            logo: "https://cheeseflow.com/images/cheeseflow-logo.svg",
+            description: "Brand strategy, design, and marketing services.",
+            founder: [
+              {
+                "@type": "Person",
+                name: "Jenxi Seow",
+                description:
+                  "Malaysian brand strategist, writer, and co-founder of CheeseFlow based in Shenzhen, China.",
+              },
+              {
+                "@type": "Person",
+                name: "Giovanni",
+                description:
+                  "Italian creative director and co-founder of CheeseFlow based in Shenzhen, China.",
+              },
+            ],
+            sameAs: [
+              "https://www.twitter.com/theCheeseFlow/",
+              "https://www.linkedin.com/company/cheeseflow/",
+              "https://www.instagram.com/thecheeseflow/",
+              "https://cheeseflow.cn/",
+            ],
+            areaServed: "International",
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cheeseflow.com/#brand-strategy-service",
+            serviceType: "Brand Strategy",
+            provider: {
+              "@id": "https://cheeseflow.com/#organization",
+            },
+            areaServed: "International",
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cheeseflow.com/#graphic-design-service",
+            serviceType: "Graphic Design",
+            provider: {
+              "@id": "https://cheeseflow.com/#organization",
+            },
+            areaServed: "International",
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cheeseflow.com/#marketing-service",
+            serviceType: "Marketing",
+            provider: {
+              "@id": "https://cheeseflow.com/#organization",
+            },
+            areaServed: "International",
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cheeseflow.com/#video-production-service",
+            serviceType: "Video Production",
+            provider: {
+              "@id": "https://cheeseflow.com/#organization",
+            },
+            areaServed: "International",
+          },
+          {
+            "@type": "Person",
+            "@id": "https://cheeseflow.com/#person-jenxi-seow",
+            name: "Jenxi Seow",
+            jobTitle: "Co-founder, Brand Strategist, Writer",
+            worksFor: {
+              "@id": "https://cheeseflow.com/#organization",
+            },
+            nationality: "Malaysian",
+            homeLocation: {
+              "@type": "Place",
+              name: "Shenzhen, China",
+            },
+          },
+          {
+            "@type": "Person",
+            "@id": "https://cheeseflow.com/#person-giovanni",
+            name: "Giovanni",
+            jobTitle: "Co-founder, Creative Director",
+            worksFor: {
+              "@id": "https://cheeseflow.com/#organization",
+            },
+            nationality: "Italian",
+            homeLocation: {
+              "@type": "Place",
+              name: "Shenzhen, China",
+            },
+          },
+        ],
+      },
+      null,
+      2
+    )}
+  </script>
   <Header />
 
   <!-- Hero Section -->

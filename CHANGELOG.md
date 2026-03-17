@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- SEO: Open Graph + Twitter Card meta via reusable `SEO` component
+- SEO: Canonical URLs site-wide (with override support)
+- SEO: Hreflang alternate links for `/en/*` and `/zh/*`
+- SEO: Sitemap generation via `@astrojs/sitemap` (`/sitemap-index.xml`)
+- SEO: RSS feeds via `@astrojs/rss` (`/feed.xml`, `/feed-zh.xml`)
+- Structured data (JSON-LD): WebSite + Organization + Service + Person on homepage
+- Structured data (JSON-LD): Article schema on blog posts (EN/ZH)
 - Prefetch configuration with hover strategy for instant page navigation
   - Enabled `prefetchAll: true` to prefetch all internal links
   - Uses `hover` strategy to prefetch on link hover for faster perceived performance

@@ -1,14 +1,17 @@
 ---
+import SEO from "../components/SEO.astro";
 import '../style/global.css';
 
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
 }
 
 const {
   title = "CheeseFlow 芝士溪谷 - Improve Your Brand",
   description = "Cinematic commercials. Captivating content. Creative copywriting. Cheese community. Choose CheeseFlow.",
+  canonical,
 } = Astro.props;
 ---
 
@@ -18,15 +21,10 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta
-      property="og:image"
-      content="https://cheeseflow.com/images/cheeseflow-cover.jpg"
-    />
+    <SEO title={title} description={description} canonical={canonical} />
+
+    <link rel="alternate" type="application/rss+xml" title="CheeseFlow Blog (English)" href="/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="CheeseFlow 博客" href="/feed-zh.xml" />
 
     <meta name="baidu-site-verification" content="code-dR69D2yODd" />
 
@@ -43,6 +41,7 @@ const {
       })(document);
     </script>
     <script is:inline defer src="https://analytics.rubycoded.com/script.js" data-website-id="7ed75f9a-2ee3-4b13-8bbf-775f35aa8f52"></script>
+    <slot name="head" />
   </head>
   <body class="font-body">
     <main aria-label="Content">

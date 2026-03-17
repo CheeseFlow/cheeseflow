@@ -11,6 +11,9 @@ interface Props {
   readingTime?: number;
   tags?: string[];
   Content?: any;
+  canonical?: string;
+  author?: string;
+  image?: string;
 }
 
 const {
@@ -20,6 +23,9 @@ const {
   readingTime,
   tags = [],
   Content,
+  canonical,
+  author = "Jenxi Seow",
+  image,
 } = Astro.props;
 
 // Format date
@@ -31,9 +37,45 @@ const formattedDate = date.toLocaleDateString("zh-CN", {
 
 // Translate tags to Chinese
 const translatedTags = translateTags(tags, "zh");
+
+const siteUrl = Astro.url?.origin || "https://cheeseflow.cn";
+const articleUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.url.pathname}`;
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description: description ?? undefined,
+  datePublished: date.toISOString(),
+  dateModified: date.toISOString(),
+  author: {
+    "@type": "Person",
+    name: author,
+  },
+  publisher: {
+    "@type": "Organization",
+    "@id": "https://cheeseflow.com/#organization",
+    name: "CheeseFlow 芝士溪谷",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://cheeseflow.com/images/cheeseflow-logo.svg",
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": articleUrl,
+  },
+  ...(image && { image: image.startsWith("http") ? image : `${siteUrl}${image}` }),
+};
 ---
 
-<BaseLayout title={`${title} - CheeseFlow 芝士溪谷`} description={description}>
+<BaseLayout
+  title={`${title} - CheeseFlow 芝士溪谷`}
+  description={description}
+  canonical={canonical}
+>
+  <script slot="head" type="application/ld+json">
+    {JSON.stringify(articleSchema)}
+  </script>
   <Header noBorder />
 
   <main>
