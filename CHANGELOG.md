@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Default Open Graph image (`public/og-default.jpg`) and organisation logo (`public/images/cheeseflow-logo.svg`) for social shares and JSON-LD
+- Contact form success/error feedback banners (reads `?contact=success|error` client-side)
+- `robots.txt` with sitemap entries for both `cheeseflow.com` and `cheeseflow.cn`
+- Middleware 301 from `/en/blog/1` and `/zh/blog/1` to the canonical blog index
+- Homepage case studies and hero media now use `astro:assets` `<Image>` with responsive `srcset`
+- `prefers-reduced-motion` support for the TypingHero animation
 - SEO: Open Graph + Twitter Card meta via reusable `SEO` component
 - SEO: Canonical URLs site-wide (with override support)
 - SEO: Hreflang alternate links for `/en/*` and `/zh/*`
@@ -51,6 +57,13 @@ All notable changes to this project will be documented in this file.
 - Full Chinese (zh) blog content set imported from the 2025‑11‑28 WordPress export, including localized markdown and `/images/blog/zh/` assets
 
 ### Changed
+- Hreflang and sitemap now emit English URLs on `cheeseflow.com` and Chinese URLs on `cheeseflow.cn` (aligned with domain routing)
+- Prefetch narrowed: `prefetchAll` disabled; primary nav/blog links opt in via `data-astro-prefetch`
+- Typekit loading reduced to a single CSS kit (removed redundant JS kit loader)
+- Base layouts no longer wrap the page in `<main>` (landmark lives in page content only)
+- Blog pagination keeps locale prefixes and maps page 1 to `/en/blog` / `/zh/blog`
+- Content collections config moved to Astro 7 root `src/content.config.ts`
+- README updated for `EMAIL_API_*` contact setup, dual-domain SEO, and pnpm
 - **Mobile Header Improvements**
   - Implemented responsive hamburger menu for mobile navigation
   - Added animated hamburger-to-X icon transition on menu open/close
@@ -120,6 +133,15 @@ All notable changes to this project will be documented in this file.
 - Blog pagination links updated to include language prefixes
 
 ### Fixed
+- Fixed missing default OG image and schema logo URLs (were 404s)
+- Fixed hreflang/sitemap pointing Chinese alternates at `.com` while middleware serves zh on `.cn`
+- Fixed TypingHero typo (`COMMERICALS` → `COMMERCIALS`)
+- Fixed duplicate `id="services"` on EN/ZH homepages
+- Fixed Chinese TOC anchors stripping CJK characters (Unicode-aware slugify + fallback IDs)
+- Fixed contact API redirects with no visible UI feedback
+- Fixed blog pagination prev/next stripping locale prefixes
+- Fixed nested `<main>` landmarks and conflicting header `fixed`/`relative` classes
+- Fixed locale-less `/blog` links in footer and 404 page
 - Fixed Boton case study horizontal margin inconsistency - now matches other case studies with `px-6 md:px-12 lg:px-16`
 - Removed middot separator after reading time in blog posts (tags now appear directly after reading time without separator)
 - **CRITICAL FIX**: Fixed production redirect loop by converting to pure static build
@@ -147,6 +169,9 @@ All notable changes to this project will be documented in this file.
 - Installed Sharp as dependency for image processing during build
 
 ### Removed
+- Duplicate `/en/blog/1` and `/zh/blog/1` static routes (page 1 is only `/blog/`)
+- Unused `@astrojs/cloudflare` dependency
+- Stale GitHub Pages workflow (`.github/workflows/github-pages.yml`)
 - All Jekyll files and dependencies
 - Old WordPress/Jekyll content and layouts
 - Legacy asset files

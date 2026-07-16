@@ -12,18 +12,18 @@ The CheeseFlow website built with Astro and Tailwind CSS.
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
+- pnpm
 
 ### Installation
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Development
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 The site will be available at `http://localhost:4321`
@@ -31,55 +31,53 @@ The site will be available at `http://localhost:4321`
 ### Build
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 ### Preview Production Build
 
 ```bash
-npm run preview
+pnpm run preview
 ```
 
 ## Project Structure
 
 ```
 /
-├── public/
-│   └── images/         # Static images and assets
+├── public/             # Static assets (favicon, OG image, robots.txt)
+├── functions/          # Cloudflare Pages Functions (locale middleware, contact API)
 ├── src/
-│   ├── layouts/        # Page layouts
-│   │   └── BaseLayout.astro
-│   └── pages/          # Pages (file-based routing)
-│       └── index.astro
-├── astro.config.mjs    # Astro configuration
-├── tailwind.config.mjs # Tailwind configuration
+│   ├── assets/         # Images processed by Astro
+│   ├── components/
+│   ├── content/        # Blog collections (en / zh)
+│   ├── layouts/
+│   └── pages/          # File-based routes under /en and /zh
+├── astro.config.mjs
+├── tailwind.config.mjs
 └── package.json
 ```
 
 ## Features
 
-- Single-page design with smooth sections
+- Bilingual marketing site (`/en`, `/zh`) with domain-based routing
 - Responsive design with Tailwind CSS
-- Serverless contact form via Astro API + Cranemail SMTP relay
-- Team member showcase
-- Portfolio/work showcase
-- Modern performance optimizations
+- Contact form via Cloudflare Pages Function + HTTP email API
+- Blog with content collections, RSS, and sitemap
+- Image optimisation via `astro:assets`
 
-## Contact Form SMTP Setup
+## Contact Form Setup
 
-The `/api/contact` endpoint delivers submissions through Cranemail (or any SMTP server)
-using Nodemailer. Configure the following environment variables in your deployment
-environment (for both `cheeseflow.com` and `cheeseflow.cn`):
+The `/api/contact` endpoint (`functions/api/contact.ts`) sends mail through an HTTP
+email API. Configure these environment variables in Cloudflare Pages (for both
+`cheeseflow.com` and `cheeseflow.cn`):
 
-- `CRANEMAIL_SMTP_HOST` – SMTP host provided by Cranemail
-- `CRANEMAIL_SMTP_PORT` – SMTP port (587 for STARTTLS or 465 for SSL)
-- `CRANEMAIL_SMTP_USER` – SMTP username
-- `CRANEMAIL_SMTP_PASS` – SMTP password
-- `CONTACT_FROM_EMAIL` – Optional “from” address (defaults to `CRANEMAIL_SMTP_USER`)
-- `CONTACT_RECIPIENT_EMAIL` – Optional destination mailbox (defaults to `CRANEMAIL_SMTP_USER`)
+- `EMAIL_API_URL` – Email API endpoint
+- `EMAIL_API_KEY` – Bearer token for the email API
+- `CONTACT_FROM_EMAIL` – Optional “from” address
+- `CONTACT_RECIPIENT_EMAIL` – Optional destination mailbox
 
-After setting the variables, restart the Astro server. Form submissions will redirect
-back to the originating page with `?contact=success` or `?contact=error` query params.
+Form submissions redirect back to the originating page with `?contact=success` or
+`?contact=error`. The footer shows a success or error message from those params.
 
 ## Deployment
 
@@ -112,16 +110,17 @@ Domain-based routing is **automatic** via Cloudflare Pages Functions (`functions
 
 ## SEO
 
-- **Sitemap:** Built at `/sitemap-index.xml` (references `sitemap-0.xml`). Includes all static routes for `/en/` and `/zh/`.
-- **RSS:** English blog at `/feed.xml`, Chinese blog at `/feed-zh.xml`. Linked from layout for auto-discovery.
+- **Sitemap:** Built at `/sitemap-index.xml` (and copied to `/sitemap.xml`). English URLs use `cheeseflow.com`; Chinese URLs use `cheeseflow.cn`, with matching hreflang alternates.
+- **RSS:** English blog at `/feed.xml`, Chinese blog at `/feed-zh.xml`. Linked from both layouts for auto-discovery.
 - **Structured data:** Organization, WebSite, Service, and Person JSON-LD on the homepage; Article schema on each blog post.
-- **Hreflang:** Alternate `en` / `zh` links in `<head>` for `/en/*` and `/zh/*` pages.
+- **Hreflang:** `en` → `https://cheeseflow.com/...`, `zh` → `https://cheeseflow.cn/...`.
+- **Open Graph:** Default image at `/og-default.jpg`; organisation logo at `/images/cheeseflow-logo.svg`.
 
 ### Submitting to Google Search Console
 
-1. Add the property for `https://cheeseflow.com` (and optionally `https://cheeseflow.cn` if used).
-2. Open **Sitemaps** and submit: `https://cheeseflow.com/sitemap-index.xml`.
-3. Request indexing for key URLs (e.g. `https://cheeseflow.com/en/`, `https://cheeseflow.com/zh/`) if needed.
+1. Add properties for `https://cheeseflow.com` and `https://cheeseflow.cn`.
+2. Open **Sitemaps** and submit: `https://cheeseflow.com/sitemap-index.xml` (and the same path on `.cn` if the property is separate).
+3. Request indexing for key URLs (e.g. `https://cheeseflow.com/en/`, `https://cheeseflow.cn/zh/`) if needed.
 
 ## Website
 

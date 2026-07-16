@@ -12,6 +12,21 @@ const currentYear = new Date().getFullYear();
         </h2>
       </div>
       <div>
+        <p
+          id="contact-success"
+          class="mb-6 hidden rounded-lg bg-white px-4 py-3 text-ink"
+          role="status"
+        >
+          Thanks — your message has been sent. We will be in touch soon.
+        </p>
+        <p
+          id="contact-error"
+          class="mb-6 hidden rounded-lg border border-ink bg-white px-4 py-3 text-ink"
+          role="alert"
+        >
+          Sorry — we could not send your message. Please try again or email us
+          directly.
+        </p>
         <form
           action="/api/contact"
           method="POST"
@@ -151,7 +166,8 @@ const currentYear = new Date().getFullYear();
           </a>
         </div>
         <a
-          href="/blog"
+          href="/en/blog"
+          data-astro-prefetch
           class="text-white hover:text-brand transition-colors text-lg">Blog</a
         >
         <a
@@ -163,3 +179,15 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get("contact");
+  if (status === "success") {
+    document.getElementById("contact-success")?.classList.remove("hidden");
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  } else if (status === "error") {
+    document.getElementById("contact-error")?.classList.remove("hidden");
+    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+  }
+</script>

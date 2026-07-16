@@ -17,14 +17,35 @@ const {
   publishedTime,
 } = Astro.props;
 
-const siteUrl = Astro.url?.origin || 'https://cheeseflow.com';
-const imageUrl = image || '/og-default.jpg';
-const pathname = Astro.url?.pathname || '/';
-const canonicalUrl = canonical || `${siteUrl}${pathname}`;
+const EN_ORIGIN = 'https://cheeseflow.com';
+const ZH_ORIGIN = 'https://cheeseflow.cn';
 
-// Hreflang: alternate en/zh for bilingual pages
-const enPath = pathname.startsWith('/zh') ? pathname.replace(/^\/zh/, '/en') : pathname.startsWith('/en') ? pathname : '/en/';
-const zhPath = pathname.startsWith('/en') ? pathname.replace(/^\/en/, '/zh') : pathname.startsWith('/zh') ? pathname : '/zh/';
+const pathname = Astro.url?.pathname || '/';
+const isZh = pathname.startsWith('/zh');
+const siteOrigin = isZh ? ZH_ORIGIN : EN_ORIGIN;
+
+const imagePath = image || '/og-default.jpg';
+const imageUrl = imagePath.startsWith('http')
+  ? imagePath
+  : `${siteOrigin}${imagePath.startsWith('/') ? imagePath : `/${imagePath}`}`;
+
+const canonicalUrl = canonical
+  ? canonical.startsWith('http')
+    ? canonical
+    : `${siteOrigin}${canonical}`
+  : `${siteOrigin}${pathname}`;
+
+// Hreflang: en on .com, zh on .cn
+const enPath = pathname.startsWith('/zh')
+  ? pathname.replace(/^\/zh/, '/en')
+  : pathname.startsWith('/en')
+    ? pathname
+    : '/en/';
+const zhPath = pathname.startsWith('/en')
+  ? pathname.replace(/^\/en/, '/zh')
+  : pathname.startsWith('/zh')
+    ? pathname
+    : '/zh/';
 const showHreflang = pathname.startsWith('/en') || pathname.startsWith('/zh');
 ---
 
@@ -37,29 +58,28 @@ const showHreflang = pathname.startsWith('/en') || pathname.startsWith('/zh');
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
-<meta property="og:url" content={`${siteUrl}${pathname}`} />
+<meta property="og:url" content={canonicalUrl} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={`${siteUrl}${imageUrl}`} />
+<meta property="og:image" content={imageUrl} />
 {publishedTime && (
   <meta property="article:published_time" content={publishedTime} />
 )}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content={`${siteUrl}${pathname}`} />
+<meta name="twitter:url" content={canonicalUrl} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={`${siteUrl}${imageUrl}`} />
+<meta name="twitter:image" content={imageUrl} />
 <meta name="twitter:creator" content="@jenxi" />
 <meta name="twitter:site" content="@jenxi" />
 
-<!-- Hreflang for language variants (en/zh) -->
+<!-- Hreflang for language variants (en on .com, zh on .cn) -->
 {showHreflang && (
   <>
-    <link rel="alternate" hreflang="en" href={`${siteUrl}${enPath}`} />
-    <link rel="alternate" hreflang="zh" href={`${siteUrl}${zhPath}`} />
-    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${enPath}`} />
+    <link rel="alternate" hreflang="en" href={`${EN_ORIGIN}${enPath}`} />
+    <link rel="alternate" hreflang="zh" href={`${ZH_ORIGIN}${zhPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${EN_ORIGIN}${enPath}`} />
   </>
 )}
-

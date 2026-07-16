@@ -42,15 +42,18 @@ export async function getStaticPaths({ paginate }: { paginate: PaginateFunction 
       new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
 
-  return paginate(sortedPosts, { pageSize: 9 });
+  // Page 1 is served by /zh/blog/ — avoid duplicate /zh/blog/1/
+  return paginate(sortedPosts, { pageSize: 9 }).filter(
+    ({ params }) => String(params.page) !== "1"
+  );
 }
 
 const { page } = Astro.props as PageProps;
 
-// Helper to strip language prefix from URLs
-function stripLangPrefix(url: string | undefined): string | undefined {
+/** Keep locale prefix; map /zh/blog/1 → /zh/blog */
+function blogPageHref(url: string | undefined): string | undefined {
   if (!url) return url;
-  return url.replace(/^\/(en|zh)\//, '/');
+  return url.replace(/^\/zh\/blog\/1\/?$/, "/zh/blog");
 }
 
 // Generate page numbers to display
@@ -113,7 +116,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
             {page.data.map((post) => (
               <article class="flex flex-col">
                 <a
-                  href={`/zh/${post.data.slug || post.slug}`}
+                  href={`/zh/${post.data.slug || post.id}`}
                   class="mb-6 block overflow-hidden rounded-3xl bg-ink/5"
                 >
                   {(() => {
@@ -135,7 +138,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
                 <div class="flex flex-1 flex-col">
                   <h2 class="text-3xl font-body font-black text-ink mb-3">
                     <a
-                      href={`/zh/${post.data.slug || post.slug}`}
+                      href={`/zh/${post.data.slug || post.id}`}
                       class="text-ink hover:text-brand transition-colors"
                     >
                       {post.data.title}
@@ -162,7 +165,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
             {/* Previous Arrow */}
             {page.url.prev ? (
               <a
-                href={stripLangPrefix(page.url.prev)}
+                href={blogPageHref(page.url.prev)}
                 class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
                 aria-label="上一页"
               >
@@ -210,7 +213,7 @@ const pageNumbers = page ? getPageNumbers(page.currentPage, page.lastPage) : [];
             {/* Next Arrow */}
             {page.url.next ? (
               <a
-                href={stripLangPrefix(page.url.next)}
+                href={blogPageHref(page.url.next)}
                 class="text-lg px-4 py-4 bg-grey-60 text-ink rounded-lg hover:bg-ink hover:text-white transition-colors"
                 aria-label="下一页"
               >

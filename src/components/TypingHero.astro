@@ -10,7 +10,7 @@
 <script>
   const lines = [
     "INEMATIC",
-    "OMMERICALS.",
+    "OMMERCIALS.",
     "APTIVATING",
     "ONTENT.",
     "REATIVE",
@@ -29,9 +29,18 @@
   const pauseBeforeType = 500;
   let timeoutId: number | null = null;
 
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
   function type() {
     const typingElement = document.getElementById("typing-text");
     if (!typingElement) return;
+
+    if (prefersReducedMotion()) {
+      typingElement.textContent = "HEESEFLOW.";
+      return;
+    }
 
     const currentLine = lines[currentLineIndex];
     
@@ -41,18 +50,15 @@
         typingElement.textContent = currentText;
         timeoutId = window.setTimeout(type, typingSpeed);
       } else {
-        // Finished typing, wait then start deleting
         isTyping = false;
         timeoutId = window.setTimeout(type, pauseBeforeDelete);
       }
     } else {
-      // Deleting
       if (currentText.length > 0) {
         currentText = currentText.substring(0, currentText.length - 1);
         typingElement.textContent = currentText;
         timeoutId = window.setTimeout(type, deletingSpeed);
       } else {
-        // Finished deleting, move to next line
         currentLineIndex = (currentLineIndex + 1) % lines.length;
         isTyping = true;
         timeoutId = window.setTimeout(type, pauseBeforeType);
@@ -60,7 +66,6 @@
     }
   }
 
-  // Set cursor width to half of "I" width
   function setCursorWidth() {
     const widthRef = document.querySelector('.cursor-width-ref') as HTMLElement;
     const cursorBlock = document.getElementById('cursor-block');
@@ -70,7 +75,6 @@
     }
   }
 
-  // Start the animation when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       setCursorWidth();
@@ -81,7 +85,6 @@
     type();
   }
 
-  // Cleanup on page unload
   window.addEventListener("beforeunload", () => {
     if (timeoutId !== null) {
       clearTimeout(timeoutId);
@@ -113,6 +116,13 @@
     animation: blink 1s infinite;
     vertical-align: 0;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-block {
+      animation: none;
+      opacity: 1;
+    }
+  }
   
   @keyframes blink {
     0%, 50% {
@@ -123,4 +133,3 @@
     }
   }
 </style>
-

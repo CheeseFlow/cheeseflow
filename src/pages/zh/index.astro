@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayoutZh.astro";
 import TypingHero from "../../components/TypingHero.astro";
 import Header from "../../components/HeaderZh.astro";
@@ -12,7 +13,6 @@ import botonCaseImage from "../../assets/images/boton-case.png";
 import botonLogo from "../../assets/clients/boton.svg";
 import yadeaCaseImage from "../../assets/images/yadea-case.png";
 import yadeaLogo from "../../assets/clients/yadea.svg";
-import muzenCaseImage from "../../assets/images/muzen-case.webp";
 import muzenLogo from "../../assets/clients/muzen.svg";
 import meadjohnsonCaseImage from "../../assets/images/meadjohnson-case.png";
 import meadjohnsonLogo from "../../assets/clients/meadjohnson.svg";
@@ -25,18 +25,23 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
 <BaseLayout>
   <Header />
 
+  <main>
   <!-- Hero Section -->
-  <section
-    class="h-[50vh] md:min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-12 relative bg-white overflow-hidden"
+  <section class="h-[50vh] md:min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-12 relative bg-white overflow-hidden"
   >
-    <div
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
-      style={`background-image: url(${muzenImage.src})`}
-    >
-    </div>
+    <Image
+      src={muzenImage}
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover grayscale"
+      widths={[640, 960, 1280, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      aria-hidden="true"
+    />
     <div class="absolute inset-0 bg-white/70"></div>
     <div class="max-w-4xl mx-auto text-center relative z-10">
-      <TypingHero client:load />
+      <TypingHero />
       <p class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-ink font-black mt-8">
         通过国际视角带来优质品牌出海
       </p>
@@ -99,7 +104,14 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   <section class="py-24 md:py-48 px-6 bg-grey">
     <div class="max-w-5xl mx-auto">
       <div class="flex items-center justify-center">
-        <img src={clientsImage.src} alt="Our Clients" class="w-full h-auto" />
+        <Image
+          src={clientsImage}
+          alt="Our Clients"
+          class="w-full h-auto"
+          widths={[640, 960, 1280]}
+          sizes="(max-width: 1024px) 100vw, 1024px"
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
@@ -119,29 +131,38 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
       <!-- Service Categories -->
       <div class="grid md:grid-cols-3 gap-12 md:gap-8 mx-6 mb-24 md:mb-48">
         <a href="#brand-look" class="group mb-0">
-          <img
-            src={brandLookImage.src}
+          <Image
+            src={brandLookImage}
             alt="Look"
             class="w-full aspect-square mb-8 md:mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
-          />
+            widths={[320, 480, 640]}
+            sizes="(max-width: 768px) 100vw, 33vw"
+            loading="lazy"
+            />
           <h3 class="text-4xl font-black text-ink mb-0 md:mb-2 text-center md:text-left group-hover:text-ink transition-colors">品牌外观</h3>
         </a>
         <a href="#brand-personality" class="group mb-0">
-          <img
-            src={brandPersonalityImage.src}
+          <Image
+            src={brandPersonalityImage}
             alt="Personality"
             class="w-full aspect-square mb-8 md:mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
-          />
+            widths={[320, 480, 640]}
+            sizes="(max-width: 768px) 100vw, 33vw"
+            loading="lazy"
+            />
           <h3 class="text-4xl font-black text-ink mb-0 md:mb-2 text-center md:text-left group-hover:text-ink transition-colors">
             品牌个性
           </h3>
         </a>
         <a href="#brand-influence" class="group mb-0">
-          <img
-            src={brandInfluenceImage.src}
+          <Image
+            src={brandInfluenceImage}
             alt="Influence"
             class="w-full aspect-square mb-8 md:mb-6 rounded-xl grayscale group-hover:grayscale-0 transition-all object-cover"
-          />
+            widths={[320, 480, 640]}
+            sizes="(max-width: 768px) 100vw, 33vw"
+            loading="lazy"
+            />
           <h3 class="text-4xl font-black text-ink mb-0 md:mb-2 text-center md:text-left group-hover:text-ink transition-colors">
             品牌影响力
           </h3>
@@ -154,11 +175,14 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
       <div class="bg-white rounded-none md:rounded-2xl mb-8 overflow-hidden -mx-6 md:mx-6 md:max-w-7xl md:mx-auto">
         <div class="grid md:grid-cols-3 gap-0">
           <div class="md:col-span-1">
-            <img
-              src={brandLookImage.src}
+            <Image
+              src={brandLookImage}
               alt="Brand Look"
               class="w-full h-full object-cover"
-            />
+              widths={[400, 640, 800]}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              loading="lazy"
+              />
           </div>
           <div class="md:col-span-2 p-8 md:p-12">
             <h3 class="text-4xl font-black text-ink mb-2 text-center md:text-left">品牌外观</h3>
@@ -204,19 +228,23 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
       <div class="pt-24 md:pt-48 -mx-6 md:mx-auto">
         <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div class="md:col-span-1">
-            <img
-              src={botonCaseImage.src}
+            <Image
+              src={botonCaseImage}
               alt="Boton Case Study"
               class="w-full h-auto rounded-2xl"
-            />
+              widths={[400, 800, 1200]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
+              />
           </div>
           <div class="md:col-span-1">
             <div class="mb-6 flex justify-center md:justify-start">
-              <img
-                src={botonLogo.src}
+              <Image
+                src={botonLogo}
                 alt="Boton"
                 class="h-12 md:h-20 w-auto mb-6"
-              />
+                loading="lazy"
+                />
             </div>
             <h4 class="text-3xl font-black text-ink uppercase mb-6">
               品牌名字、LOGO和 VI 设计
@@ -248,7 +276,6 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -257,19 +284,23 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   <section class="bg-white py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
           <div class="md:col-span-1">
-            <img
-              src={yadeaCaseImage.src}
+            <Image
+              src={yadeaCaseImage}
               alt="Yadea Case Study"
               class="w-full h-auto rounded-2xl"
-            />
+              widths={[400, 800, 1200]}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              loading="lazy"
+              />
           </div>
           <div class="md:col-span-1">
             <div class="mb-6 flex justify-center md:justify-start">
-              <img
-                src={yadeaLogo.src}
+              <Image
+                src={yadeaLogo}
                 alt="Yadea"
                 class="h-12 md:h-20 w-auto mb-6"
-              />
+                loading="lazy"
+                />
             </div>
             <h4 class="text-3xl font-black text-ink uppercase mb-6">
               视频制作和照片拍摄
@@ -298,17 +329,20 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
   <!-- Brand Personality Details -->
-  <section id="services" class="pt-60 pb-24 px-6 md:px-6 bg-brand">
+  <section class="pt-60 pb-24 px-6 md:px-6 bg-brand">
     <div class="max-w-7xl mx-auto">
       <div id="brand-personality" class="mb-20 scroll-mt-32">
         <div class="bg-white rounded-none md:rounded-2xl mb-8 overflow-hidden -mx-6 md:mx-6 md:max-w-7xl md:mx-auto">
         <div class="grid md:grid-cols-3 gap-0">
           <div class="md:col-span-1">
-            <img
-              src={brandPersonalityImage.src}
+            <Image
+              src={brandPersonalityImage}
               alt="Brand Personality"
               class="w-full h-full object-cover"
-            />
+              widths={[400, 640, 800]}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              loading="lazy"
+              />
           </div>
           <div class="md:col-span-2 p-8 md:p-12">
             <h3 class="text-4xl font-black text-ink mb-2 text-center md:text-left">
@@ -350,25 +384,30 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- Muzen Audio Case Study -->
   <section class="bg-white py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="md:col-span-1">
-        <img
-          src={muzenCaseImage.src}
+        <Image
+          src={muzenImage}
           alt="Muzen Audio Case Study"
           class="w-full h-auto rounded-2xl"
-        />
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
+          />
       </div>
       <div class="md:col-span-1">
         <div class="mb-6 flex justify-center md:justify-start">
-          <img
-            src={muzenLogo.src}
+          <Image
+            src={muzenLogo}
             alt="Muzen Audio"
             class="h-12 md:h-20 w-auto mb-6"
-          />
+            loading="lazy"
+            />
         </div>
         <h4 class="text-3xl font-black text-ink uppercase mb-6">
           微缩景视频制作和照片拍摄
@@ -398,19 +437,23 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   <section class="bg-brand py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="md:col-span-1">
-        <img
-          src={meadjohnsonCaseImage.src}
+        <Image
+          src={meadjohnsonCaseImage}
           alt="Mead Johnson Case Study"
           class="w-full h-auto rounded-2xl"
-        />
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
+          />
       </div>
       <div class="md:col-span-1">
         <div class="mb-6 flex justify-center md:justify-start">
-          <img
-            src={meadjohnsonLogo.src}
+          <Image
+            src={meadjohnsonLogo}
             alt="Mead Johnson"
             class="h-12 md:h-20 w-auto mb-6"
-          />
+            loading="lazy"
+            />
         </div>
         <h4 class="text-3xl font-black text-ink uppercase mb-6">
           品牌照片拍摄
@@ -436,17 +479,20 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   </section>
 
     <!-- Brand Influence Details -->
-    <section id="services" class="pt-60 pb-24 px-6 md:px-6 bg-brand">
+    <section class="pt-60 pb-24 px-6 md:px-6 bg-brand">
       <div class="max-w-7xl mx-auto">
         <div id="brand-influence" class="mb-20 scroll-mt-32">
           <div class="bg-white rounded-none md:rounded-2xl mb-8 overflow-hidden -mx-6 md:mx-6 md:max-w-7xl md:mx-auto">
         <div class="grid md:grid-cols-3 gap-0">
           <div class="md:col-span-1">
-            <img
-              src={brandInfluenceImage.src}
+            <Image
+              src={brandInfluenceImage}
               alt="Brand Influence"
               class="w-full h-full object-cover"
-            />
+              widths={[400, 640, 800]}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              loading="lazy"
+              />
           </div>
           <div class="md:col-span-2 p-8 md:p-12">
             <h3 class="text-4xl font-black text-ink mb-2 text-center md:text-left">
@@ -488,25 +534,30 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
         </div>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- Yeelight Case Study -->
   <section class="bg-brand py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="md:col-span-1">
-        <img
-          src={yeelightCaseImage.src}
+        <Image
+          src={yeelightCaseImage}
           alt="Yeelight Case Study"
           class="w-full h-auto rounded-2xl"
-        />
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
+          />
       </div>
       <div class="md:col-span-1">
         <div class="mb-6 flex justify-center md:justify-start">
-          <img
-            src={yeelightLogo.src}
+          <Image
+            src={yeelightLogo}
             alt="Yeelight"
             class="h-12 md:h-20 w-auto mb-6"
-          />
+            loading="lazy"
+            />
         </div>
         <h4 class="text-3xl font-black text-ink uppercase mb-6">
           网红营销和媒体公关
@@ -536,11 +587,14 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
   <section class="bg-white py-24 md:py-48">
     <div class="grid md:grid-cols-2 gap-16 mb-8 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="md:col-span-1">
-        <img
-          src={kranioCaseImage.src}
+        <Image
+          src={kranioCaseImage}
           alt="Kranio Case Study"
           class="w-full h-auto rounded-2xl"
-        />
+          widths={[400, 800, 1200]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          loading="lazy"
+          />
       </div>
       <div class="md:col-span-1">
         <h4 class="text-3xl font-black text-ink uppercase mb-6">
@@ -604,6 +658,8 @@ import kranioCaseImage from "../../assets/images/kranio-case.png";
       </div>
     </div>
   </section>
+
+  </main>
 
   <Footer />
 </BaseLayout>

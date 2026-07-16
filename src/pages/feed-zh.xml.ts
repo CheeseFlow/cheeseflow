@@ -8,17 +8,18 @@ export async function GET(context: { site: URL | undefined }) {
   const sorted = [...posts].sort(
     (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
   );
+  const siteUrl = context.site ?? new URL('https://cheeseflow.com');
   return rss({
     title: 'CheeseFlow 芝士溪谷 - 博客',
     description:
       '品牌策略、设计与营销洞察。用创意提升您的品牌。',
-    site: context.site ?? new URL('https://cheeseflow.com'),
+    site: siteUrl,
     items: sorted.map((post) => ({
       title: post.data.title,
       description:
         post.data.description ?? post.data.excerpt ?? 'CheeseFlow 博客文章。',
       pubDate: post.data.date,
-      link: `/zh/${post.data.slug ?? post.slug}/`,
+      link: new URL(`/zh/${post.data.slug ?? post.id}/`, siteUrl).href,
     })),
     customData: '<language>zh-cn</language>',
   });

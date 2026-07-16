@@ -59,6 +59,13 @@ export async function onRequest(context: any): Promise<Response> {
     return Response.redirect(`${url.origin}/${defaultLocale}${pathname}`, 302);
   }
 
-  // CASE 4: Correct locale on correct domain - serve the page
+  // CASE 4: Canonicalise /blog/1 → /blog (page 1 lives at the index)
+  if (pathLocale && /^\/(en|zh)\/blog\/1\/?$/.test(pathname)) {
+    const target = new URL(`/${pathLocale}/blog/`, url.origin);
+    target.search = url.search;
+    return Response.redirect(target.toString(), 301);
+  }
+
+  // CASE 5: Correct locale on correct domain - serve the page
   return await context.next();
 }

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cheeseflow.com/sitemap-index.xml
+Sitemap: https://cheeseflow.cn/sitemap-index.xml

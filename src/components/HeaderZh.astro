@@ -9,7 +9,7 @@ const { noBorder = false } = Astro.props;
 ---
 
 <header
-  class={`fixed top-0 left-0 right-0 z-50 bg-brand ${noBorder ? '' : 'border-b border-ink/10'} relative`}
+  class={`fixed top-0 left-0 right-0 z-50 bg-brand ${noBorder ? '' : 'border-b border-ink/10'}`}
 >
   <nav class="max-w-7xl mx-auto px-6 py-8 flex items-center justify-between" aria-label="主导航">
     <div class="flex items-center">
@@ -30,6 +30,7 @@ const { noBorder = false } = Astro.props;
     <div class="hidden md:flex items-center gap-10">
       <a
         href="/zh/blog"
+        data-astro-prefetch
         class="text-lg text-ink px-4 py-4 rounded-lg hover:bg-white/20 transition-colors"
         >改良您的品牌</a
       >

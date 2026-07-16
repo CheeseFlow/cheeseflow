@@ -70,9 +70,7 @@ const articleSchema = {
   description={description}
   canonical={canonical}
 >
-  <script slot="head" type="application/ld+json">
-    {JSON.stringify(articleSchema)}
-  </script>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(articleSchema)} />
   <Header noBorder />
 
   <main>
@@ -148,14 +146,19 @@ const articleSchema = {
 
       const tocItems: Array<{ id: string; text: string; level: number }> = [];
 
-      headings.forEach((heading) => {
-        const id =
-          heading.id ||
-          heading.textContent
-            ?.toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/^-|-$/g, "") || "";
-        heading.id = id;
+      headings.forEach((heading, index) => {
+        let id = heading.id;
+        if (!id) {
+          const slug = (heading.textContent || "")
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^\p{L}\p{N}]+/gu, "-")
+            .replace(/-+/g, "-")
+            .replace(/^-|-$/g, "");
+          id = slug || `section-${index + 1}`;
+          heading.id = id;
+        }
 
         const level = parseInt(heading.tagName.charAt(1));
         tocItems.push({ id, text: heading.textContent || "", level });
